@@ -25,10 +25,8 @@
             TEXTURE2D(_CameraDepthTexture);
             SAMPLER(sampler_CameraDepthTexture);
             
-#ifndef RAW_OUTLINE
             TEXTURE2D(_MainTex);
             SAMPLER(sampler_MainTex);
-#endif
             float _Delta;
             int _PosterizationCount;
             
@@ -52,8 +50,8 @@
 #else
                 return SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, uv);
 #endif
-            }
-            
+            }            
+
             float sobel (float2 uv) 
             {
                 float2 delta = float2(_Delta, _Delta);
