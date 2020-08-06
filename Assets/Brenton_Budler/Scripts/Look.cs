@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Look : MonoBehaviour
 {
+    #region Varaibles
     public static bool cursorLocked = true;
 
     public Transform player;
     public Transform cams;
+    public Transform weapon;
 
     public float xSensitivity;
     public float ySensitivity;
@@ -15,11 +17,13 @@ public class Look : MonoBehaviour
     public float maxAngle;
 
     private Quaternion camCenter;
+    #endregion
 
-    // Start is called before the first frame update
+    #region Built-in Functions
+
     void Start()
     {
-        camCenter = cams.localRotation; 
+        camCenter = cams.localRotation;
     }
 
     // Update is called once per frame
@@ -30,17 +34,24 @@ public class Look : MonoBehaviour
         UpdateCursorLock();
     }
 
+    #endregion
+
+    #region Private Methods
+
     void SetY()
     {
         float t_input = Input.GetAxis("Mouse Y") * ySensitivity * Time.deltaTime;
         Quaternion t_adj = Quaternion.AngleAxis(t_input, -Vector3.right);
         Quaternion t_delta = cams.localRotation * t_adj;
 
-        if (Quaternion.Angle(camCenter,t_delta)< maxAngle)
+        if (Quaternion.Angle(camCenter, t_delta) < maxAngle)
         {
-            cams.localRotation = t_delta; 
+            cams.localRotation = t_delta;
+
         }
-       
+        weapon.rotation = cams.rotation;
+
+
     }
 
     void SetX()
@@ -60,7 +71,7 @@ public class Look : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                cursorLocked = false; 
+                cursorLocked = false;
             }
         }
         else
@@ -73,6 +84,9 @@ public class Look : MonoBehaviour
                 cursorLocked = true;
             }
         }
+
+        #endregion
+
     }
 
 }

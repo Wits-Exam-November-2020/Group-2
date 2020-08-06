@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Motion : MonoBehaviour
 {
-
+    #region Variables
     public float speed;
     public float sprintModifier;
     public float jumpForce;
@@ -22,13 +22,39 @@ public class Motion : MonoBehaviour
     private bool sliding;
     private float slide_time;
     private Vector3 slide_dir;
+    #endregion
 
+    #region Built-in Functions
     private void Start()
     {
         baseFOV = normalCam.fieldOfView;
         cameraOrigin = normalCam.transform.localPosition;
         if(Camera.main)Camera.main.enabled = false;
         rig = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        //Input
+        float t_hmove = Input.GetAxisRaw("Horizontal");
+        float t_vmove = Input.GetAxisRaw("Vertical");
+
+        //Controls
+        bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        bool jump = Input.GetKeyDown(KeyCode.Space);
+        bool slide = Input.GetKey(KeyCode.C);
+
+        //States
+        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
+        bool isJumping = jump && isGrounded;
+        bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
+        bool isSliding = isSprinting && slide && !sliding;
+
+        //Jumping 
+        if (isJumping)
+        {
+            rig.AddForce(Vector3.up * jumpForce);
+        }
     }
 
     void FixedUpdate()
@@ -40,7 +66,7 @@ public class Motion : MonoBehaviour
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         bool jump = Input.GetKey(KeyCode.Space);
-        bool slide = Input.GetKey(KeyCode.R);
+        bool slide = Input.GetKey(KeyCode.C);
 
         //States
         bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
@@ -48,16 +74,7 @@ public class Motion : MonoBehaviour
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;
 
-
-        //Jumping 
-        if (isJumping)
-        {
-            rig.AddForce(Vector3.up * jumpForce);
-        }
-
-
         //Movement
-
         Vector3 t_direction = Vector3.zero;
         float t_adjustedSpeed = speed;
 
@@ -114,7 +131,7 @@ public class Motion : MonoBehaviour
         }
 
 
-
+        #endregion
 
     }
 }
