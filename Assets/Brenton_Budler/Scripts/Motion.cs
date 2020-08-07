@@ -11,10 +11,18 @@ public class Motion : MonoBehaviour
     public float lengthOfSlide;
     public float slideModifier;
     public Camera normalCam;
+    public Transform weaponParent;
     public Transform groundDetector;
     public LayerMask ground;
 
     private Rigidbody rig;
+
+    private Vector3 targetWeaponBobPosition;
+    private Vector3 weaponParentOrigin;
+
+    private float movementCounter;
+    private float idleCounter;
+
     private float baseFOV;
     private float sprintFOVModifier = 1.25f;
     private Vector3 cameraOrigin;
@@ -22,15 +30,18 @@ public class Motion : MonoBehaviour
     private bool sliding;
     private float slide_time;
     private Vector3 slide_dir;
+    private Vector3 t_direction = Vector3.zero;
     #endregion
 
     #region Built-in Functions
     private void Start()
     {
         baseFOV = normalCam.fieldOfView;
+        if (Camera.main) Camera.main.enabled = false;
         cameraOrigin = normalCam.transform.localPosition;
-        if(Camera.main)Camera.main.enabled = false;
         rig = GetComponent<Rigidbody>();
+
+        weaponParentOrigin = weaponParent.localPosition;
     }
 
     private void Update()
@@ -42,7 +53,7 @@ public class Motion : MonoBehaviour
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         bool jump = Input.GetKeyDown(KeyCode.Space);
-        bool slide = Input.GetKey(KeyCode.C);
+        bool slide = Input.GetKeyDown(KeyCode.C);
 
         //States
         bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
@@ -55,6 +66,37 @@ public class Motion : MonoBehaviour
         {
             rig.AddForce(Vector3.up * jumpForce);
         }
+
+        //Head Bob 
+        if (t_hmove ==0 && t_vmove==0)
+        {
+            HeadBob(idleCounter, 0.025f, 0.025f);
+            idleCounter += Time.deltaTime;
+            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 2f);
+        }
+        else if(!isSprinting){
+            HeadBob(movementCounter, 0.035f, 0.035f);
+            movementCounter += Time.deltaTime * 3f;
+            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 6f);
+        }
+        else
+        {
+            HeadBob(movementCounter, 0.15f, 0.075f);
+            movementCounter += Time.deltaTime * 7f;
+            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
+        }
+
+
+
+        //Sliding 
+        if (isSliding)
+        {
+            sliding = true;
+            slide_dir = t_direction;
+            slide_time = lengthOfSlide;
+            // normalCam.transform.localPosition += Vector3.down * 0.5f;
+
+        }
     }
 
     void FixedUpdate()
@@ -66,7 +108,7 @@ public class Motion : MonoBehaviour
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         bool jump = Input.GetKey(KeyCode.Space);
-        bool slide = Input.GetKey(KeyCode.C);
+        bool slide = Input.GetKeyDown(KeyCode.C);
 
         //States
         bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
@@ -75,27 +117,27 @@ public class Motion : MonoBehaviour
         bool isSliding = isSprinting && slide && !sliding;
 
         //Movement
-        Vector3 t_direction = Vector3.zero;
+
         float t_adjustedSpeed = speed;
 
         if (!sliding) {
 
-           t_direction = new Vector3(t_hmove, 0, t_vmove);
-           t_direction.Normalize();
-           t_direction = transform.TransformDirection(t_direction);
+            t_direction = new Vector3(t_hmove, 0, t_vmove);
+            t_direction.Normalize();
+            t_direction = transform.TransformDirection(t_direction);
 
             if (isSprinting) { t_adjustedSpeed *= sprintModifier; }
 
-        }   
+        }
         else
         {
             t_direction = slide_dir;
             t_adjustedSpeed *= slideModifier;
             slide_time -= Time.deltaTime;
-            if (slide_time<=0)
+            if (slide_time <= 0)
             {
                 sliding = false;
-               // normalCam.transform.localPosition += Vector3.up  * 0.5f;
+                // normalCam.transform.localPosition += Vector3.up  * 0.5f;
             }
         }
 
@@ -103,15 +145,6 @@ public class Motion : MonoBehaviour
         t_targetVelcotiy.y = rig.velocity.y;
         rig.velocity = t_targetVelcotiy;
 
-        //Sliding 
-        if (isSliding)
-        {
-            sliding = true;
-            slide_dir = t_direction;
-            slide_time = lengthOfSlide;
-           // normalCam.transform.localPosition += Vector3.down * 0.5f;
-
-        }
 
 
         //Camera Stuff
@@ -130,8 +163,23 @@ public class Motion : MonoBehaviour
             normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 6f);
         }
 
+    }
 
-        #endregion
+
+    #endregion
+
+
+    void HeadBob(float p_z, float p_x_intensity, float p_y_intensity)
+    {
+        targetWeaponBobPosition = weaponParentOrigin + new Vector3(Mathf.Cos(p_z) * p_x_intensity, Mathf.Sin(p_z*2) * p_y_intensity, 0);
 
     }
+
+
+
+
+
+
+
+
 }

@@ -644,7 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114074437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cameras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 142891970}
   - component: {fileID: 142891969}
   - component: {fileID: 142891968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bce254fbbcb85ca49a86519ca4a6f510, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2508,7 +2508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 556180416}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Design
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2700,7 +2700,7 @@ GameObject:
   - component: {fileID: 598285709}
   - component: {fileID: 598285708}
   - component: {fileID: 598285707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2738,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bce254fbbcb85ca49a86519ca4a6f510, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3557,7 +3557,7 @@ GameObject:
   - component: {fileID: 849562965}
   - component: {fileID: 849562967}
   - component: {fileID: 849562966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4348,7 +4348,7 @@ GameObject:
   - component: {fileID: 1072103135}
   - component: {fileID: 1072103134}
   - component: {fileID: 1072103133}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4386,7 +4386,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bce254fbbcb85ca49a86519ca4a6f510, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6824,7 +6824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1696778156}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6935,7 +6935,7 @@ GameObject:
   - component: {fileID: 1710189415}
   - component: {fileID: 1710189417}
   - component: {fileID: 1710189416}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7411,7 +7411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1846323680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Misc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8245,7 +8245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1969342122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8519,7 +8519,7 @@ GameObject:
   - component: {fileID: 2123094052}
   - component: {fileID: 2123094053}
   - component: {fileID: 2123094054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8639,6 +8639,7 @@ MonoBehaviour:
   lengthOfSlide: 0.5
   slideModifier: 2.5
   normalCam: {fileID: 1710189417}
+  weaponParent: {fileID: 1696778156}
   groundDetector: {fileID: 1969342122}
   ground:
     serializedVersion: 2
@@ -8676,6 +8677,11 @@ MonoBehaviour:
   loadout:
   - {fileID: 11400000, guid: 36aaeb2715b9f084cbdfbc7f2ea4d676, type: 2}
   weaponParent: {fileID: 1696778156}
+  bulletHolePrefab: {fileID: 2048277062237760779, guid: 0bd004ab514de364d8bc3890cbc68766,
+    type: 3}
+  canBeShot:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &2144869046
 GameObject:
   m_ObjectHideFlags: 0
