@@ -99,6 +99,13 @@ public class Weapon : MonoBehaviour
             GameObject t_newHole = Instantiate(bulletHolePrefab, t_hit.point + t_hit.normal*0.0001f, Quaternion.identity) as GameObject;
             t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
             Destroy(t_newHole, 5f);
+
+            //if (t_hit.collider.gameobject.layer == 11)
+            //{
+            //    //damage enemy
+
+                    // ENEMY.TAKEDAMAGE(loadout[currentIndex].damage)
+            //}
         }
 
         //gun fx 
@@ -109,6 +116,12 @@ public class Weapon : MonoBehaviour
         currentCooldown = loadout[currentIndex].firerate;
 
     }
+
+
+    //private void TakeDamage(p_damage)
+    //{
+    //    GetComponent<ENEMY>.TakeDamage(p_damage);
+    //}
     #endregion
     
 }

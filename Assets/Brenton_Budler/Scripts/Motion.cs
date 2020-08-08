@@ -9,7 +9,15 @@ public class Motion : MonoBehaviour
     public float sprintModifier;
     public float crouchModifier;
     public float jumpForce;
+    public float jetForce;
+    public float jetWait;
+    public float jetRecovery;
     public float lengthOfSlide;
+
+    public float max_fuel;
+    public int max_health;
+    private int current_health;
+
     public float slideModifier;
     public Camera normalCam;
     public Transform weaponParent;
@@ -39,12 +47,29 @@ public class Motion : MonoBehaviour
     private Vector3 slide_dir;
     private Vector3 t_direction = Vector3.zero;
 
+    
     private bool crouched;
+    private bool canJet;
+
+    private Transform ui_fuelbar;
+    private float current_fuel;
+    private float current_recovery;
+
+
+    private GameManager manager;
     #endregion
 
     #region Built-in Functions
     private void Start()
     {
+
+        manager = GameObject.Find("Manager").GetComponent<GameManager>();
+
+
+        current_health = max_health;
+
+        current_fuel = max_fuel;
+
         baseFOV = normalCam.fieldOfView;
         if (Camera.main) Camera.main.enabled = false;
         cameraOrigin = normalCam.transform.localPosition;
@@ -52,10 +77,14 @@ public class Motion : MonoBehaviour
 
         weaponParentOrigin = weaponParent.localPosition;
         weaponParentCurrentPos = weaponParentOrigin;
+
+
+       // ui_fuelbar = GameObject.Find("HUD/Fuel/Bar").transform;
     }
 
     private void Update()
     {
+        
         //Input
         float t_hmove = Input.GetAxisRaw("Horizontal");
         float t_vmove = Input.GetAxisRaw("Vertical");
@@ -68,7 +97,7 @@ public class Motion : MonoBehaviour
 
 
         //States
-        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.2f, ground);
+        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
         bool isJumping = jump && isGrounded;
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;
@@ -86,6 +115,7 @@ public class Motion : MonoBehaviour
         {
             if (crouched) { SetCrouch(false); }
             rig.AddForce(Vector3.up * jumpForce);
+            current_recovery = 0f;
         }
 
         //Head Bob 
@@ -148,8 +178,9 @@ public class Motion : MonoBehaviour
 
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-        bool jump = Input.GetKey(KeyCode.Space);
+        bool jump = Input.GetKeyDown(KeyCode.Space);
         bool slide = Input.GetKeyDown(KeyCode.C);
+        bool jet = Input.GetKey(KeyCode.Space);
 
         //States
         bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
@@ -194,6 +225,39 @@ public class Motion : MonoBehaviour
         t_targetVelcotiy.y = rig.velocity.y;
         rig.velocity = t_targetVelcotiy;
 
+
+        //Jetting
+
+        if (jump && !isGrounded)
+        {
+            canJet = true;
+        }
+        if (isGrounded)
+        {
+            canJet = false;
+        }
+
+        if (canJet && jet && current_fuel >0)
+        {
+            rig.AddForce(Vector3.up * jetForce * Time.fixedDeltaTime, ForceMode.Acceleration);
+            current_fuel = Mathf.Max(0, current_fuel - Time.deltaTime);
+
+        }
+
+
+        if (isGrounded)
+        {
+            if (current_recovery < jetWait)
+            {
+                current_recovery = Mathf.Max(jetWait, current_recovery + Time.fixedDeltaTime);
+            }
+            else
+            {
+                current_fuel = Mathf.Min(max_fuel, current_fuel + Time.fixedDeltaTime * jetRecovery);
+            }
+        }
+
+      //  ui_fuelbar.localScale = new Vector3(current_fuel / max_fuel,1.1);
 
 
         //Camera Stuff
@@ -243,6 +307,18 @@ public class Motion : MonoBehaviour
             standingCollider.SetActive(true);
             crouchingCollider.SetActive(false);
             weaponParentCurrentPos += Vector3.up * crouchAmount;
+        }
+    }
+
+    public void TakeDamage(int p_damage)
+    {
+        current_health -= p_damage;
+        Debug.Log(current_health);
+
+        if (current_health<0)
+        {
+            manager.Spawn();
+            Destroy(gameObject);
         }
     }
 
