@@ -169,7 +169,7 @@ MonoBehaviour:
   jetRecovery: 2
   lengthOfSlide: 0.5
   max_fuel: 2
-  max_health: 0
+  max_health: 1001
   slideModifier: 2.5
   normalCam: {fileID: 1071266609521266915}
   weaponParent: {fileID: 1071266609526291494}
