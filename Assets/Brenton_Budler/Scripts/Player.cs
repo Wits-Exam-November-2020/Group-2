@@ -59,9 +59,27 @@ public class Player : MonoBehaviour
 
 
     private GameManager manager;
+
+
+    //NEW STUFF 
+    private State state;
+    private Vector3 hookshotPosition;
+
+    private enum State {
+        Normal,
+        HookshotFlyingPlayer
+    }
+
     #endregion
 
     #region Built-in Functions
+
+    private void Awake()
+    {
+        state = State.Normal;
+    }
+
+
     private void Start()
     {
 
@@ -96,6 +114,8 @@ public class Player : MonoBehaviour
         {
             TakeDamage(250);
         }
+
+
         
         //Input
         float t_hmove = Input.GetAxisRaw("Horizontal");
@@ -181,6 +201,15 @@ public class Player : MonoBehaviour
             if (!crouched) { SetCrouch(true); }
 
         }
+
+        //Grappling Hook
+        HandleHookshotStart();
+
+        if (state == State.HookshotFlyingPlayer)
+        {
+            HandleHookshotMovement();
+        }
+
 
         //UI REfreshes
         UpdateHealthBar();
@@ -345,6 +374,33 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void HandleHookshotStart()
+    {
+        Transform t_spawn = transform.Find("Cameras/Player Camera");
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Physics.Raycast(t_spawn.position, t_spawn.forward, out RaycastHit raycastHit))
+            {
+                //Hit Something
+                Debug.Log(raycastHit.point);
+                state = State.HookshotFlyingPlayer;
+                hookshotPosition = raycastHit.point;
+            } 
+        }
+    }
+
+    private void HandleHookshotMovement()
+    {
+        //Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
+        //float hookshotSpeed = 5f;
+        //t_direction = transform.TransformDirection(t_direction);
+        //Vector3 t_targetVelcotiy = t_direction * t_adjustedSpeed * Time.deltaTime;
+        //t_targetVelcotiy.y = rig.velocity.y;
+        //rig.velocity = t_targetVelcotiy;
+
+        transform.position = Vector3.Lerp(transform.position, hookshotPosition, Time.deltaTime);
+    }
 
 
 

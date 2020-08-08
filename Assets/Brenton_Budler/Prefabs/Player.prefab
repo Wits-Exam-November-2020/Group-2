@@ -181,6 +181,8 @@ MonoBehaviour:
   crouchAmount: 0.5
   standingCollider: {fileID: 1071266608659604237}
   crouchingCollider: {fileID: 1071266609921387405}
+  debugHitPointTransform: {fileID: 4448061063781972919, guid: ca9679727a90d91499810012fbd53cc6,
+    type: 3}
 --- !u!114 &1071266609167082415
 MonoBehaviour:
   m_ObjectHideFlags: 0
