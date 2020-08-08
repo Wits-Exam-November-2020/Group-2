@@ -20,10 +20,10 @@ public class Raycast : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward,out Focus, rayDistance))
         {
-            //Debug.Log("yo");
-            if (Focus.collider.gameObject.tag == "Chest")
+           
+            if (Focus.collider.gameObject.tag == "Chest"&&Focus.collider.gameObject.GetComponent<ChestController>().open == false)
             {
-                if (interactText.text == "")
+                if (interactText.text == ""&& Focus.collider.gameObject.GetComponent<ChestController>().open==false)
                 {
                     interactText.text = "Press E to open chest";
                 }
@@ -31,6 +31,14 @@ public class Raycast : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Focus.collider.gameObject.GetComponent<ChestController>().Open();
+                 
+                }
+            }
+            else
+            {
+                if (interactText.text != "")
+                {
+                    interactText.text = "";
                 }
             }
            
