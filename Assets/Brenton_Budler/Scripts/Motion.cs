@@ -94,10 +94,11 @@ public class Motion : MonoBehaviour
         bool jump = Input.GetKeyDown(KeyCode.Space);
         bool slide = Input.GetKeyDown(KeyCode.C);
         bool crouch = Input.GetKeyDown(KeyCode.C);
+        bool jet = Input.GetKey(KeyCode.Space);
 
 
         //States
-        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
+        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.15f, ground);
         bool isJumping = jump && isGrounded;
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;
