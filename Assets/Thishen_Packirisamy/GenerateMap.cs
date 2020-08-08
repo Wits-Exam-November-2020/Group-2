@@ -44,21 +44,13 @@ public class GenerateMap : MonoBehaviour
 
         float iPer = (float)i / gridSizeX * perlScale;
         float jPer = (float)j / gridSizeZ * perlScale;
-        
-        //Debug.Log(iPer);
-        //Debug.Log(jPer);
-        //Debug.Log(" ");
+     
         float perl = Mathf.PerlinNoise(seed+iPer, seed+jPer);
-        Debug.Log(perl*10);
         int blockIndex = (int)(perl * 10);
 
-        Debug.Log(blockIndex);
         return blockIndex;
         
     }
 
-    void Update()
-    {
-        
-    }
+  
 }
