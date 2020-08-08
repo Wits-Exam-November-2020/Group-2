@@ -60,24 +60,20 @@ public class Player : MonoBehaviour
 
     private GameManager manager;
 
-
-    //NEW STUFF 
-    private State state;
     private Vector3 hookshotPosition;
+    private bool hitGrap;
+    private float hookShotSpeed;
 
-    private enum State {
-        Normal,
-        HookshotFlyingPlayer
-    }
+    private Vector3 characterVelocityMomentum;
+
+  
+
 
     #endregion
 
     #region Built-in Functions
 
-    private void Awake()
-    {
-        state = State.Normal;
-    }
+
 
 
     private void Start()
@@ -127,6 +123,7 @@ public class Player : MonoBehaviour
         bool slide = Input.GetKeyDown(KeyCode.C);
         bool crouch = Input.GetKeyDown(KeyCode.C);
         bool jet = Input.GetKey(KeyCode.Space);
+
 
 
         //States
@@ -204,15 +201,14 @@ public class Player : MonoBehaviour
 
         //Grappling Hook
         HandleHookshotStart();
-
-        if (state == State.HookshotFlyingPlayer)
-        {
-            HandleHookshotMovement();
-        }
+        
 
 
         //UI REfreshes
         UpdateHealthBar();
+
+
+
     }
 
     void FixedUpdate()
@@ -226,49 +222,96 @@ public class Player : MonoBehaviour
         bool jump = Input.GetKeyDown(KeyCode.Space);
         bool slide = Input.GetKeyDown(KeyCode.C);
         bool jet = Input.GetKey(KeyCode.Space);
+        bool grap = Input.GetKey(KeyCode.E);
 
         //States
         bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
         bool isJumping = jump && isGrounded;
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;
+      
 
         //Movement
 
+
         float t_adjustedSpeed = speed;
 
-        if (!sliding) {
 
-            t_direction = new Vector3(t_hmove, 0, t_vmove);
-            t_direction.Normalize();
-            t_direction = transform.TransformDirection(t_direction);
 
-            if (isSprinting)
+        if (hitGrap)
+        {
+            rig.useGravity = false;
+            float hookshotSpeedMin = 2f;
+            float hookshotSpeedMax = 4f; 
+            hookShotSpeed = Mathf.Clamp(Vector3.Distance(transform.position, hookshotPosition), hookshotSpeedMin,hookshotSpeedMax);
+            
+            transform.position = Vector3.Lerp(transform.position, hookshotPosition, Time.deltaTime * hookShotSpeed);
+
+            if (Vector3.Distance(transform.position,hookshotPosition)<2f)
             {
-                if (crouched) { SetCrouch(false); }
-                t_adjustedSpeed *= sprintModifier;
+                hitGrap = false;
             }
-            else if(crouched)
+
+            Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                t_adjustedSpeed *= crouchModifier;
+
+                float momentumExtraSpeed = 7f;
+                characterVelocityMomentum = hookshotDir * hookShotSpeed * momentumExtraSpeed;
+                rig.AddForce(Vector3.up * jumpForce);
+                hitGrap = false;
             }
+
 
         }
         else
         {
-            t_direction = slide_dir;
-            t_adjustedSpeed *= slideModifier;
-            slide_time -= Time.deltaTime;
-            if (slide_time <= 0)
+            rig.useGravity = true;
+            if (!sliding)
             {
-                sliding = false;
-               weaponParentCurrentPos += Vector3.up  *(slideAmount - crouchAmount);
+
+                t_direction = new Vector3(t_hmove, 0, t_vmove);
+                t_direction.Normalize();
+                t_direction = transform.TransformDirection(t_direction);
+
+                if (isSprinting)
+                {
+                    if (crouched) { SetCrouch(false); }
+                    t_adjustedSpeed *= sprintModifier;
+                }
+                else if (crouched)
+                {
+                    t_adjustedSpeed *= crouchModifier;
+                }
+
+            }
+            else
+            {
+                t_direction = slide_dir;
+                t_adjustedSpeed *= slideModifier;
+                slide_time -= Time.deltaTime;
+                if (slide_time <= 0)
+                {
+                    sliding = false;
+                    weaponParentCurrentPos += Vector3.up * (slideAmount - crouchAmount);
+                }
+            }
+
+            Vector3 t_targetVelcotiy = t_direction * t_adjustedSpeed * Time.deltaTime;
+            t_targetVelcotiy += characterVelocityMomentum;
+            t_targetVelcotiy.y = rig.velocity.y;
+            rig.velocity = t_targetVelcotiy;
+
+            if (characterVelocityMomentum.magnitude >=0f)
+            {
+                float momentumDrag = 3f;
+                characterVelocityMomentum -= characterVelocityMomentum * momentumDrag * Time.deltaTime;
+                if (characterVelocityMomentum.magnitude<.0f)
+                {
+                    characterVelocityMomentum = Vector3.zero;
+                }
             }
         }
-
-        Vector3 t_targetVelcotiy = t_direction * t_adjustedSpeed * Time.deltaTime;
-        t_targetVelcotiy.y = rig.velocity.y;
-        rig.velocity = t_targetVelcotiy;
 
 
         //Jetting
@@ -285,7 +328,7 @@ public class Player : MonoBehaviour
         if (canJet && jet && current_fuel >0)
         {
             rig.AddForce(Vector3.up * jetForce * Time.fixedDeltaTime, ForceMode.Acceleration);
-            current_fuel = Mathf.Max(0, current_fuel - Time.deltaTime);
+            current_fuel = Mathf.Max(0, current_fuel - Time.deltaTime*1.5f);
 
         }
 
@@ -383,24 +426,20 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(t_spawn.position, t_spawn.forward, out RaycastHit raycastHit))
             {
                 //Hit Something
+                
+                hitGrap = true;
                 Debug.Log(raycastHit.point);
-                state = State.HookshotFlyingPlayer;
                 hookshotPosition = raycastHit.point;
+
+            }
+            else
+            {
+                hitGrap = false;
             } 
         }
     }
 
-    private void HandleHookshotMovement()
-    {
-        //Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
-        //float hookshotSpeed = 5f;
-        //t_direction = transform.TransformDirection(t_direction);
-        //Vector3 t_targetVelcotiy = t_direction * t_adjustedSpeed * Time.deltaTime;
-        //t_targetVelcotiy.y = rig.velocity.y;
-        //rig.velocity = t_targetVelcotiy;
 
-        transform.position = Vector3.Lerp(transform.position, hookshotPosition, Time.deltaTime);
-    }
 
 
 
