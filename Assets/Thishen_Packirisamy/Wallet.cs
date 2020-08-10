@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public class Wallet : MonoBehaviour
+[CreateAssetMenu(fileName = "New Wallet", menuName = "Wallet")]
+public class Wallet : ScriptableObject
 {
     public int nuts;
     public int bolts;

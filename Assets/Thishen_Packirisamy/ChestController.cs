@@ -13,7 +13,10 @@ public class ChestController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       item = Instantiate(itemPrefab, transform.position, Quaternion.identity); 
+
+
+        
+       item = Instantiate(itemPrefab, transform.position, Quaternion.identity) as GameObject;
     }
     
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class ChestController : MonoBehaviour
 
     public void Open()
     {
-        if (GameController.instance.playerWallet>=price)
+        if (GameManager.instance.playerWallet>=price)
         {
             StartCoroutine(Move(transform.position + new Vector3(0, 1, 0)));
             open = true;

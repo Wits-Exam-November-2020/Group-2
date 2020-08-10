@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
 
         }
 
-        //Grappling Hook
+        //Grappling Hook SHOOOT 
         HandleHookshotStart();
         
 
@@ -245,7 +245,7 @@ public class Player : MonoBehaviour
             float hookshotSpeedMax = 4f; 
             hookShotSpeed = Mathf.Clamp(Vector3.Distance(transform.position, hookshotPosition), hookshotSpeedMin,hookshotSpeedMax);
             
-            transform.position = Vector3.Lerp(transform.position, hookshotPosition, Time.deltaTime * hookShotSpeed);
+            transform.position = Vector3.Lerp(transform.position, hookshotPosition, Time.fixedDeltaTime * hookShotSpeed);
 
             if (Vector3.Distance(transform.position,hookshotPosition)<2f)
             {
@@ -327,6 +327,7 @@ public class Player : MonoBehaviour
 
         if (canJet && jet && current_fuel >0)
         {
+            
             rig.AddForce(Vector3.up * jetForce * Time.fixedDeltaTime, ForceMode.Acceleration);
             current_fuel = Mathf.Max(0, current_fuel - Time.deltaTime*1.5f);
 

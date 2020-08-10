@@ -6,10 +6,27 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player_prefab;
     public Transform[] spawn_points;
+    public Wallet playerWallet;
+
+    public static GameManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 
     private void Start()
     {
-        Spawn();
+       // Spawn();
     }
 
     public void Spawn()
