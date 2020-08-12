@@ -63,10 +63,18 @@ public class Player : MonoBehaviour
     private Vector3 hookshotPosition;
     private bool hitGrap;
     private float hookShotSpeed;
+    private Transform hookshotTransform;
+    private float hookShotSize;
+    private bool thrownState;
 
     private Vector3 characterVelocityMomentum;
 
-  
+    private bool jet;
+    private bool jump;
+
+
+
+
 
 
     #endregion
@@ -100,11 +108,21 @@ public class Player : MonoBehaviour
         ui_healthbar = GameObject.Find("HUD/Health/Bar").transform;
         ui_fuelbar = GameObject.Find("HUD/Fuel/Bar").transform;
         UpdateHealthBar();
+
+
+        hookshotTransform = GameObject.Find("RopeHolder").transform;
+       // hookshotTransform.gameObject.SetActive(false);
+        thrownState = false;
     }
 
     private void Update()
     {
 
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            rig.useGravity = false;
+        }
      
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -119,15 +137,16 @@ public class Player : MonoBehaviour
 
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-        bool jump = Input.GetKeyDown(KeyCode.Space);
+        jump = Input.GetKeyDown(KeyCode.Space);
         bool slide = Input.GetKeyDown(KeyCode.C);
         bool crouch = Input.GetKeyDown(KeyCode.C);
-        bool jet = Input.GetKey(KeyCode.Space);
+        jet = Input.GetKey(KeyCode.Space);
+        //   bool jet = Input.GetKey(KeyCode.Space);
 
 
 
         //States
-        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.15f, ground);
+        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
         bool isJumping = jump && isGrounded;
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;
@@ -201,11 +220,11 @@ public class Player : MonoBehaviour
 
         //Grappling Hook SHOOOT 
         HandleHookshotStart();
-        
-
 
         //UI REfreshes
         UpdateHealthBar();
+
+
 
 
 
@@ -213,16 +232,17 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+
+
         //Input
         float t_hmove = Input.GetAxisRaw("Horizontal");
         float t_vmove = Input.GetAxisRaw("Vertical");
 
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-        bool jump = Input.GetKeyDown(KeyCode.Space);
+       // bool jump = Input.GetKeyDown(KeyCode.Space);
         bool slide = Input.GetKeyDown(KeyCode.C);
-        bool jet = Input.GetKey(KeyCode.Space);
-        bool grap = Input.GetKey(KeyCode.E);
+
 
         //States
         bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
@@ -232,13 +252,35 @@ public class Player : MonoBehaviour
       
 
         //Movement
-
-
         float t_adjustedSpeed = speed;
 
+        if (thrownState)
+        {
 
+            rig.useGravity = true;
+            hookshotTransform.LookAt(hookshotPosition);
+            float hookShotThrowSpeed = 70f;
+            hookShotSize += hookShotThrowSpeed * Time.fixedDeltaTime;
+            hookshotTransform.localScale = new Vector3(1, 1, hookShotSize);
 
-        if (hitGrap)
+            if (Vector3.Distance(transform.position, hookshotPosition) - hookShotSize < 0.5)
+            {
+                thrownState = false;
+                hitGrap = true;
+                hookshotTransform.localScale = Vector3.zero;
+                hookShotSize=0;
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                rig.useGravity = true;
+                hitGrap = false;
+                thrownState = false;
+                hookshotTransform.localScale = Vector3.zero;
+                hookShotSize=0;
+            }
+        }
+        else if (hitGrap)
         {
             rig.useGravity = false;
             float hookshotSpeedMin = 2f;
@@ -246,6 +288,9 @@ public class Player : MonoBehaviour
             hookShotSpeed = Mathf.Clamp(Vector3.Distance(transform.position, hookshotPosition), hookshotSpeedMin,hookshotSpeedMax);
             
             transform.position = Vector3.Lerp(transform.position, hookshotPosition, Time.fixedDeltaTime * hookShotSpeed);
+
+            
+           
 
             if (Vector3.Distance(transform.position,hookshotPosition)<2f)
             {
@@ -255,17 +300,18 @@ public class Player : MonoBehaviour
             Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
+                rig.useGravity = true;
+                hitGrap = false;
+                thrownState = false;
                 float momentumExtraSpeed = 7f;
                 characterVelocityMomentum = hookshotDir * hookShotSpeed * momentumExtraSpeed;
                 rig.AddForce(Vector3.up * jumpForce);
-                hitGrap = false;
             }
-
 
         }
         else
         {
+
             rig.useGravity = true;
             if (!sliding)
             {
@@ -316,7 +362,7 @@ public class Player : MonoBehaviour
 
         //Jetting
 
-        if (jump && !isGrounded)
+        if (!isGrounded)
         {
             canJet = true;
         }
@@ -422,23 +468,19 @@ public class Player : MonoBehaviour
     {
         Transform t_spawn = transform.Find("Cameras/Player Camera");
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             if (Physics.Raycast(t_spawn.position, t_spawn.forward, out RaycastHit raycastHit))
             {
-                //Hit Something
-                
-                hitGrap = true;
-                Debug.Log(raycastHit.point);
-                hookshotPosition = raycastHit.point;
 
+                //Instantiate(bigcube, raycastHit.point, Quaternion.identity);
+                hookshotPosition = raycastHit.point;
+                thrownState = true;
             }
-            else
-            {
-                hitGrap = false;
-            } 
         }
     }
+
+
 
 
 

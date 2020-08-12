@@ -27,6 +27,8 @@ public class ChestController : MonoBehaviour
 
     public void Open()
     {
+
+        Debug.Log("OPENING");
         if (GameManager.instance.playerWallet>=price)
         {
             StartCoroutine(Move(transform.position + new Vector3(0, 1, 0)));
@@ -52,5 +54,10 @@ public class ChestController : MonoBehaviour
         }
         item.transform.position = target;
         yield return null;
+    }
+
+    public void DestroyPrefab()
+    {
+        Destroy(item);
     }
 }

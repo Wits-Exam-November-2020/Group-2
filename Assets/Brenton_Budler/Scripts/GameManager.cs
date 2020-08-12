@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Wallet playerWallet;
 
     public static GameManager instance;
+
     private void Awake()
     {
         if (instance == null)
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-       // Spawn();
+       Spawn();
     }
 
     public void Spawn()

@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Equip(0);
+          //  Equip(0);
         }
 
         if (currentWeapon!=null)
@@ -47,7 +47,10 @@ public class Weapon : MonoBehaviour
     #endregion
 
     #region Own Methods
-    void Equip(int p_ind)
+
+
+
+    public void Equip(int p_ind)
     {
 
         if (currentWeapon != null) { Destroy(currentWeapon); }
@@ -59,6 +62,15 @@ public class Weapon : MonoBehaviour
         t_newEquipment.transform.localEulerAngles = Vector3.zero;
 
         currentWeapon = t_newEquipment;
+    }
+
+    public void Drop()
+    {
+
+        //GameObject droppedWeapon = Instantiate(currentWeapon, transform.position, Quaternion.identity) as GameObject;
+        //Destroy(currentWeapon);
+        //droppedWeapon.transform.localPosition = Vector3.Lerp(droppedWeapon.transform.localPosition, weaponParent.forward*100f, Time.deltaTime * 0.25f);
+
     }
 
     void Aim(bool p_isAiming)
