@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fd3a7d38b304e42a8dc9620ad1d61f, type: 3}
   m_Name: CostOfChest
   m_EditorClassIdentifier: 
-  nuts: 1
-  bolts: 1
-  cogs: 1
+  nuts: 2
+  bolts: 3
+  cogs: 3

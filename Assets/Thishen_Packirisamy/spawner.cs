@@ -7,7 +7,7 @@ public class spawner : MonoBehaviour
     public GameObject testChestPrefab;
     public GameObject testItemPrefab;
     private GameObject chest;
-    private Wallet testPrice =new Wallet();
+    public Wallet testPrice;
     // Start is called before the first frame update
     void Start()
     {

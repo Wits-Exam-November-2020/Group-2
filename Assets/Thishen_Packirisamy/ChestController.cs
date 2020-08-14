@@ -36,8 +36,7 @@ public class ChestController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Insufficient funds");
-           
+            Debug.Log("Insufficient funds"); 
         }
         
     }

@@ -106,9 +106,10 @@ GameObject:
   - component: {fileID: 2334250529234502482}
   - component: {fileID: 4387499861354574585}
   - component: {fileID: 5160396760441709297}
+  - component: {fileID: 6845696549432498946}
   m_Layer: 0
   m_Name: TestTPBlock (4)
-  m_TagString: Untagged
+  m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +191,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6845696549432498946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350415928038815421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310c230718511874abe8baf64ce8b5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8603190150452924050
 GameObject:
   m_ObjectHideFlags: 0
