@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-          //  Equip(0);
+            Equip(0);
         }
 
         if (currentWeapon!=null)
@@ -116,8 +116,13 @@ public class Weapon : MonoBehaviour
             //{
             //    //damage enemy
 
-                    // ENEMY.TAKEDAMAGE(loadout[currentIndex].damage)
+            // ENEMY.TAKEDAMAGE(loadout[currentIndex].damage)
             //}
+
+            if (t_hit.collider.gameObject.layer == 12)
+            {
+                t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage);
+            }
         }
 
         //gun fx 

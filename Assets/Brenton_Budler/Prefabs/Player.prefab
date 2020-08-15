@@ -231,7 +231,7 @@ MonoBehaviour:
   weapon: {fileID: 1071266609526291494}
   xSensitivity: 100
   ySensitivity: 100
-  maxAngle: 60
+  maxAngle: 75
 --- !u!114 &1071266609167082412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
     type: 3}
   canBeShot:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 6400
 --- !u!114 &1204430168313502996
 MonoBehaviour:
   m_ObjectHideFlags: 0

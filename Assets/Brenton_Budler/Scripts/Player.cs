@@ -72,14 +72,29 @@ public class Player : MonoBehaviour
     private bool jet;
     private bool jump;
 
+    private Vector3 previousPosition;
 
-
-
+    public static Player instance;
 
 
     #endregion
 
     #region Built-in Functions
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 
 
 
@@ -113,17 +128,26 @@ public class Player : MonoBehaviour
         hookshotTransform = GameObject.Find("RopeHolder").transform;
        // hookshotTransform.gameObject.SetActive(false);
         thrownState = false;
+
+        previousPosition = transform.position;
     }
 
     private void Update()
     {
 
+        //if (transform.position-previousPosition)
+        //{
+        //    previousPosition = transform.position;
+        //    Debug.Log("Moving");
+        //}
+        //else
+        //{
+        //    rig.useGravity = true;
+        //}
 
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            rig.useGravity = false;
-        }
-     
+        
+
+
         if (Input.GetKeyDown(KeyCode.U))
         {
             TakeDamage(250);
@@ -219,7 +243,9 @@ public class Player : MonoBehaviour
         }
 
         //Grappling Hook SHOOOT 
-        HandleHookshotStart();
+        if (isGrounded) {
+            HandleHookshotStart();
+        }
 
         //UI REfreshes
         UpdateHealthBar();
@@ -232,6 +258,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+
 
 
         //Input
@@ -410,7 +437,11 @@ public class Player : MonoBehaviour
 
             if (crouched) { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * crouchAmount, Time.deltaTime * 6f); }
             else { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 6f); }
-            
+
+            if (hitGrap) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
+            else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
+
+
         }
 
     }
