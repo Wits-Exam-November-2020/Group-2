@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class GenerateMap : MonoBehaviour
 {
     public GameObject[] genericBlockPrefabs = new GameObject[10];
@@ -17,28 +19,9 @@ public class GenerateMap : MonoBehaviour
 
     void Start()
     {
-        seed = Random.Range(0, 1f);
-        teleporterGridPos.x = Random.Range(0, gridSizeX-1);
-        teleporterGridPos.y = Random.Range(0, gridSizeZ-1);
-        for (int i = 0;i<gridSizeX;i++)
-        {
-            for (int j = 0; j < gridSizeZ; j++)
-            {
-                if (teleporterGridPos.x== i && teleporterGridPos.y == j)
-                {
-                    currentPrefab = TPBlockPrefab;
-                }
-                else
-                {
-                    
-                    currentPrefab = genericBlockPrefabs[chooseBlock(i,j)];
-                }
-
-                
-                Instantiate(currentPrefab, new Vector3(25+i*blockSize*2,0.1f,25+j*blockSize*2), Quaternion.identity);
-            }
-        }
+       
     }
+
     private int chooseBlock(int i, int j)
     {
 
@@ -49,6 +32,31 @@ public class GenerateMap : MonoBehaviour
         int blockIndex = (int)(perl * 10);
 
         return blockIndex;
+    }
+
+    public void CreateMap()
+    {
+        seed = Random.Range(0, 1f);
+        teleporterGridPos.x = Random.Range(0, gridSizeX - 1);
+        teleporterGridPos.y = Random.Range(0, gridSizeZ - 1);
+        for (int i = 0; i < gridSizeX; i++)
+        {
+            for (int j = 0; j < gridSizeZ; j++)
+            {
+                if (teleporterGridPos.x == i && teleporterGridPos.y == j)
+                {
+                    currentPrefab = TPBlockPrefab;
+                }
+                else
+                {
+
+                    currentPrefab = genericBlockPrefabs[chooseBlock(i, j)];
+                }
+
+
+                Instantiate(currentPrefab, new Vector3(25 + i * blockSize * 2, 0.1f, 25 + j * blockSize * 2), Quaternion.identity);
+            }
+        }
         
     }
 

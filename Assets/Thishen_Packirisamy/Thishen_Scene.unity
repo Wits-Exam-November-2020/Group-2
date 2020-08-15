@@ -351,8 +351,8 @@ MonoBehaviour:
   - {fileID: 6994774487918844240, guid: 2c39da66a7f26b04ea9ea2d84c020b9f, type: 3}
   TPBlockPrefab: {fileID: 2577328836303234824, guid: ef3071abe9d68b4408d15889080adb98,
     type: 3}
-  gridSizeX: 10
-  gridSizeZ: 10
+  gridSizeX: 5
+  gridSizeZ: 5
   blockSize: 25
   perlScale: 1.5
 --- !u!4 &622520956
@@ -385,6 +385,7 @@ MonoBehaviour:
     type: 3}
   testItemPrefab: {fileID: 8840929615577175383, guid: 3c8da2ced7395984989d29994f3f15b5,
     type: 3}
+  testPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
 --- !u!114 &622520958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f826ec88b411494c97cfb29de405d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallet: {fileID: 0}
+  MapGenerator: {fileID: 622520955}
+  changingStage: 1
+  playerWallet: {fileID: 11400000, guid: c2367d0a1e26c884e95490b23a674046, type: 2}
 --- !u!1 &762088181
 GameObject:
   m_ObjectHideFlags: 0
