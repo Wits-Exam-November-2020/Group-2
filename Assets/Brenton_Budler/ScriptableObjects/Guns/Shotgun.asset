@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbacfae296c360a488e16ca1ac1b8559, type: 3}
-  m_Name: Pistol
+  m_Name: Shotgun
   m_EditorClassIdentifier: 
-  gunName: Pistol
+  gunName: ShotGun
   damage: 1
-  ammo: 20
-  clipSize: 6
-  reloadTime: 1
-  firerate: 0.15
-  bloom: 20
-  recoil: 10
-  kickback: 0.15
+  ammo: 180
+  clipSize: 2
+  reloadTime: 1.5
+  firerate: 0.1
+  bloom: 100
+  recoil: 30
+  kickback: 0.25
   aimSpeed: 10
   burst: 0
-  pellets: 0
+  pellets: 10
   recovery: 0
-  gunshotSound: {fileID: 8300000, guid: c3a34d3efe4f81e4f8879814f11d967d, type: 3}
+  gunshotSound: {fileID: 8300000, guid: 7c2d588c7ca694743aafbcdef843e09c, type: 3}
   pitchRandomization: 0.05
-  prefab: {fileID: 5287989946736950497, guid: 7d109af585a001f49905c89f6784c4a3, type: 3}
+  prefab: {fileID: 5287989946736950497, guid: bafda47f2de3dea4d839a16fabd5f301, type: 3}

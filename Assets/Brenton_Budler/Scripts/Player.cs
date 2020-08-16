@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -53,12 +54,14 @@ public class Player : MonoBehaviour
 
     private Transform ui_fuelbar;
     private Transform ui_healthbar;
+    private Text ui_ammo;
 
     private float current_fuel;
     private float current_recovery;
 
 
     private GameManager manager;
+    private Weapon weapon;
 
     private Vector3 hookshotPosition;
     private bool hitGrap;
@@ -103,7 +106,7 @@ public class Player : MonoBehaviour
     {
 
         manager = GameObject.Find("Manager").GetComponent<GameManager>();
-
+        weapon = GetComponent<Weapon>();
 
         current_health = max_health;
 
@@ -123,6 +126,7 @@ public class Player : MonoBehaviour
         ui_healthbar = GameObject.Find("HUD/Health/Bar").transform;
         ui_fuelbar = GameObject.Find("HUD/Fuel/Bar").transform;
         UpdateHealthBar();
+        ui_ammo = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
 
 
         hookshotTransform = GameObject.Find("RopeHolder").transform;
@@ -192,10 +196,16 @@ public class Player : MonoBehaviour
         }
 
         //Head Bob 
-        if (sliding)
+        if (!isGrounded)
+        {
+            HeadBob(movementCounter, 0.01f, 0.01f);
+            idleCounter += 0;
+            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
+        }
+        else if (sliding)
         {
             //sliding
-            HeadBob(movementCounter, 0.015f, 0.015f);
+            HeadBob(movementCounter, 0.15f, 0.075f);
             weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
 
         }
@@ -243,13 +253,13 @@ public class Player : MonoBehaviour
         }
 
         //Grappling Hook SHOOOT 
-        if (isGrounded) {
+
             HandleHookshotStart();
-        }
+      
 
         //UI REfreshes
         UpdateHealthBar();
-
+        weapon.RefreshAmmo(ui_ammo);
 
 
 
@@ -435,8 +445,8 @@ public class Player : MonoBehaviour
             if (isSprinting) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
             else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
 
-            if (crouched) { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * crouchAmount, Time.deltaTime * 6f); }
-            else { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 6f); }
+            if (crouched) { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * crouchAmount, Time.deltaTime * 8f); }
+            else { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 8f); }
 
             if (hitGrap) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
             else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
@@ -452,7 +462,12 @@ public class Player : MonoBehaviour
 
     void HeadBob(float p_z, float p_x_intensity, float p_y_intensity)
     {
-        targetWeaponBobPosition = weaponParentCurrentPos + new Vector3(Mathf.Cos(p_z) * p_x_intensity, Mathf.Sin(p_z*2) * p_y_intensity, 0);
+        float t_aim_adjust = 1f;
+        if (weapon.isAiming)
+        {
+            t_aim_adjust = 0.1f;
+        }
+        targetWeaponBobPosition = weaponParentCurrentPos + new Vector3(Mathf.Cos(p_z) * p_x_intensity * t_aim_adjust, Mathf.Sin(p_z*2) * p_y_intensity * t_aim_adjust, 0);
 
     }
 
