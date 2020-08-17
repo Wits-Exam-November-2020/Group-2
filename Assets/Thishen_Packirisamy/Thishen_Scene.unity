@@ -339,22 +339,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genericBlockPrefabs:
-  - {fileID: 1459176292108599533, guid: bc9e39a46241e2b48942046600becc3b, type: 3}
-  - {fileID: 1889637202946975178, guid: d4e9efb9b0d79ac40b1f3aafa01fb222, type: 3}
+  - {fileID: 6403563060385462589, guid: 3497f3d40be622b42b66283a5c9aed06, type: 3}
+  - {fileID: 6403563060385462589, guid: 3497f3d40be622b42b66283a5c9aed06, type: 3}
   - {fileID: 1963459315348771280, guid: 10514b84a36365341a92db2e04e86259, type: 3}
   - {fileID: 3350415928038815421, guid: 97f5097416d101b4d8249766adb88bcc, type: 3}
   - {fileID: 2210521027212240331, guid: 991912ae5fbd7a04a81d7781651057cf, type: 3}
   - {fileID: 966130919679939329, guid: 5cbe92d50f0a14e4aa1a57c4c75082ce, type: 3}
-  - {fileID: 4082892354375097611, guid: 754458022d577bc478b824ce831fef7a, type: 3}
+  - {fileID: 6403563060385462589, guid: 4780cbd5089d6174cb1dd5eeac7ebf8a, type: 3}
   - {fileID: 6935911851508731937, guid: a1aff2e0b775f8146ba1ad7d8dac6dc3, type: 3}
   - {fileID: 5318893898483601574, guid: aaaa41ee0dd63b648a1d3bc25add5957, type: 3}
-  - {fileID: 6994774487918844240, guid: 2c39da66a7f26b04ea9ea2d84c020b9f, type: 3}
+  - {fileID: 6403563060385462589, guid: 4780cbd5089d6174cb1dd5eeac7ebf8a, type: 3}
   TPBlockPrefab: {fileID: 2577328836303234824, guid: ef3071abe9d68b4408d15889080adb98,
     type: 3}
   gridSizeX: 5
   gridSizeZ: 5
-  blockSize: 25
-  perlScale: 1.5
+  blockSize: 15
+  perlScale: 0.8
 --- !u!4 &622520956
 Transform:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1033540089
 RectTransform:
   m_ObjectHideFlags: 0

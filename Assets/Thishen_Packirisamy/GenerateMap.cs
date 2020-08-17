@@ -54,7 +54,10 @@ public class GenerateMap : MonoBehaviour
                 }
 
 
-                Instantiate(currentPrefab, new Vector3(25 + i * blockSize * 2, 0.1f, 25 + j * blockSize * 2), Quaternion.identity);
+                GameObject env =Instantiate(currentPrefab, new Vector3(25 + i * blockSize * 2, 0.1f, 25 + j * blockSize * 2), Quaternion.identity);
+                int rand =Random.Range(1, 4);
+                env.transform.Rotate(new Vector3(0,rand*90,0));
+                
             }
         }
         
