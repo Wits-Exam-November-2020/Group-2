@@ -20,6 +20,10 @@ public class Gun : ScriptableObject
 
     public int burst; //0 semi 1 auto //2-> burst fire
 
+    public bool isProjectile;
+    public GameObject projectilePrefab;
+    public int projectileForce;
+
     //shotgun
     public int pellets;
     public bool recovery;

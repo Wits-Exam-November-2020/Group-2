@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbacfae296c360a488e16ca1ac1b8559, type: 3}
+  m_Name: RPG
+  m_EditorClassIdentifier: 
+  gunName: RPG
+  damage: 10
+  ammo: 100
+  clipSize: 50
+  reloadTime: 2
+  firerate: 1
+  bloom: 1
+  recoil: 50
+  kickback: 0.5
+  aimSpeed: 10
+  burst: 0
+  isProjectile: 1
+  projectilePrefab: {fileID: 296435458798555464, guid: 5121b7e0528ddf14a9566c12fde2bfb1,
+    type: 3}
+  projectileForce: 100
+  pellets: 0
+  recovery: 0
+  gunshotSound: {fileID: 0}
+  pitchRandomization: 0.05
+  prefab: {fileID: 5287989946736950497, guid: 7ec86f5c0f843384d9af60de778e0e44, type: 3}

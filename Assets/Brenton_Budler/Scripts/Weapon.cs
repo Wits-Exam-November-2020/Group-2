@@ -65,6 +65,11 @@ public class Weapon : MonoBehaviour
             Equip(3);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            Equip(4);
+        }
+
         if (currentWeapon!=null)
         {
             Aim(Input.GetMouseButton(1));
@@ -206,12 +211,39 @@ public class Weapon : MonoBehaviour
                 t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
                 Destroy(t_newHole, 5f);
 
+                if (loadout[currentIndex].isProjectile)
+                {
+
+                    Transform shootPoint = currentWeapon.transform.Find("ShootPoint");
+                    
+                    GameObject currentBullet = Instantiate(loadout[currentIndex].projectilePrefab, shootPoint.position, Quaternion.identity);
+                    currentBullet.transform.forward = t_bloom;
+                    currentBullet.GetComponent<Rigidbody>().AddForce(t_bloom * loadout[currentIndex].projectileForce, ForceMode.Impulse);
+                    
+
+                }
+
                 if (t_hit.collider.gameObject.layer == 12)
                 {
                     t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage);
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
                     // sfx.PlayOneShot(hitmarkerSound);
                     hitmarkerWait = 0.5f;
+                }
+            }
+            else
+            {
+
+                if (loadout[currentIndex].isProjectile)
+                {
+
+                    Transform shootPoint = currentWeapon.transform.Find("ShootPoint");
+
+                    GameObject currentBullet = Instantiate(loadout[currentIndex].projectilePrefab, shootPoint.position, Quaternion.identity);
+                    currentBullet.transform.forward = t_bloom;
+                    currentBullet.GetComponent<Rigidbody>().AddForce(t_bloom * loadout[currentIndex].projectileForce, ForceMode.Acceleration);
+                    Debug.Log(this.GetComponent<Rigidbody>().velocity.y);
+
                 }
             }
         }
@@ -223,8 +255,11 @@ public class Weapon : MonoBehaviour
 
 
         //gun fx 
+        
         currentWeapon.transform.Rotate(-loadout[currentIndex].recoil, 0, 0);
         currentWeapon.transform.position -= currentWeapon.transform.forward * loadout[currentIndex].kickback;
+
+
 
 
     }

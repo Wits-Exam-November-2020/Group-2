@@ -23,8 +23,8 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        target = GameObject.Find("Player(Clone)").transform;
-        enemy.SetDestination(target.position);
+        target = GameObject.Find("Player(Clone)").transform; 
+       enemy.SetDestination(target.position);
 
         if (Vector3.Distance(enemy.transform.position,target.position) <= enemy.stoppingDistance)
         {
