@@ -64,11 +64,14 @@ public class Weapon : MonoBehaviour
         {
             Equip(3);
         }
-
+        
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             Equip(4);
         }
+        
+
+
 
         if (currentWeapon!=null)
         {
@@ -277,6 +280,20 @@ public class Weapon : MonoBehaviour
     //{
     //    GetComponent<ENEMY>.TakeDamage(p_damage);
     //}
+
+    public void unEquip()
+    {
+        if (currentWeapon != null)
+        {
+
+            if (isReloading)
+            {
+                StopCoroutine("Reload");
+            }
+            Destroy(currentWeapon);
+
+        }
+    }
     #endregion
     
 }

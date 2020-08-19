@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: RPG
   damage: 10
-  ammo: 100
-  clipSize: 50
+  ammo: 40
+  clipSize: 10
   reloadTime: 2
-  firerate: 1
+  firerate: 1.5
   bloom: 1
   recoil: 50
-  kickback: 0.5
+  kickback: 2
   aimSpeed: 10
   burst: 0
   isProjectile: 1
   projectilePrefab: {fileID: 296435458798555464, guid: 5121b7e0528ddf14a9566c12fde2bfb1,
     type: 3}
-  projectileForce: 100
+  projectileForce: 50
   pellets: 0
   recovery: 0
   gunshotSound: {fileID: 0}

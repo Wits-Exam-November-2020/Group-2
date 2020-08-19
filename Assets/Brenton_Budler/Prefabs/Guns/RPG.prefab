@@ -304,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5287989946736950496}
   - component: {fileID: 4044491062371310945}
+  - component: {fileID: 3642659524984426305}
   m_Layer: 10
   m_Name: RPG
   m_TagString: Untagged
@@ -335,10 +336,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287989946736950497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d558d60341e0484e9e7f29b0ba2bb6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 1
   smooth: 10
+--- !u!114 &3642659524984426305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287989946736950497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce5f953ce7f4de44a9c6a9ceb1a30da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
