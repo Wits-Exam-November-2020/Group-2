@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RPG
   m_EditorClassIdentifier: 
   gunName: RPG
-  damage: 10
+  damage: 0
   ammo: 40
   clipSize: 10
   reloadTime: 2
@@ -24,7 +24,7 @@ MonoBehaviour:
   aimSpeed: 10
   burst: 0
   isProjectile: 1
-  projectilePrefab: {fileID: 296435458798555464, guid: 5121b7e0528ddf14a9566c12fde2bfb1,
+  projectilePrefab: {fileID: 296435458798555464, guid: ba46b29db9f958546a9c7eb8a9c260d2,
     type: 3}
   projectileForce: 50
   pellets: 0

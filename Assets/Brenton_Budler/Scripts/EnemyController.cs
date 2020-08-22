@@ -31,6 +31,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Attack");
         }
 
+        
     }
 
     public void TakeDamage(float amount)
@@ -41,5 +42,17 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void slowSpeed()
+    {
+        enemy.speed = enemy.speed / 100;
+        Invoke("FixSpeed", 5);
+
+    }
+
+    public void FixSpeed()
+    {
+        enemy.speed = enemy.speed * 100; 
     }
 }
