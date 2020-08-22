@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public GenerateMap MapGenerator;
     private int stage = 0;
     public bool changingStage = false;
+    public GameObject player;
 
     private void Awake()
     {
@@ -42,6 +43,8 @@ public class GameController : MonoBehaviour
         {
             NextStage();
         }
+
+       // Debug.Log(GetGridPos());
     }
 
     public void NextStage()
@@ -56,5 +59,25 @@ public class GameController : MonoBehaviour
         MapGenerator.CreateMap(); 
     }
 
+    public Vector3 GetGridPos()
+    {
+        Vector3 gridPos= new Vector3(0,0,0);
+        gridPos.x= (int)(player.transform.position.x / MapGenerator.blockSize/2);
+        gridPos.z = (int)(player.transform.position.z / MapGenerator.blockSize/2);
+        gridPos.y = 0;
+        return gridPos;
+    }
+
+    //public List<Vector3> GetSpawnPos()
+    //{
+    //    List<Vector3> PossibleSpawns = new List<Vector3>();
+    //    Vector3 gridPos= GetGridPos();
+    //    Vector3 spawnPos = new Vector3(0, 0, 0);
+    //    for (int i = 0; i < MapGenerator.gridSizeX; i++)
+    //    {
+            
+    //    }
+    //    return PossibleSpawns;
+    //}
 
 }
