@@ -130,7 +130,9 @@ public class CustomProjectile : MonoBehaviour
         //Create a new physic material 
         physics_mat = new PhysicMaterial();
         physics_mat.bounciness = bounciness;
-        physics_mat.frictionCombine = PhysicMaterialCombine.Minimum;
+        physics_mat.dynamicFriction = 100;
+        physics_mat.staticFriction = 100;
+       physics_mat.frictionCombine = PhysicMaterialCombine.Maximum;
         physics_mat.bounceCombine = PhysicMaterialCombine.Maximum;
 
         //Assign Material 

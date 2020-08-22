@@ -290,6 +290,8 @@ MonoBehaviour:
   equipmentThrowPoint: {fileID: 1888765692849774076}
   grenade: {fileID: 296435458798555464, guid: 5121b7e0528ddf14a9566c12fde2bfb1, type: 3}
   emp: {fileID: 296435458798555464, guid: 61c19b9a98a9dbb499a95040c4951653, type: 3}
+  healer: {fileID: 3040477356409278217, guid: c590e4cc361433842845e312420fb5e1, type: 3}
+  currentEquipmentIndex: 0
 --- !u!1 &1071266609262116131
 GameObject:
   m_ObjectHideFlags: 0

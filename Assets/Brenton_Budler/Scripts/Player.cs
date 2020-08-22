@@ -135,8 +135,11 @@ public class Player : MonoBehaviour
         //    rig.useGravity = true;
         //}
 
-        
 
+        if (current_health>=max_health)
+        {
+            current_health = max_health;
+        }
 
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -498,7 +501,7 @@ public class Player : MonoBehaviour
 
     public void Heal()
     {
-        current_health += 5;
+        current_health += 1;
         UpdateHealthBar();
     }
 

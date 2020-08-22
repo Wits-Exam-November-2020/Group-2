@@ -9,6 +9,7 @@ public class EquipmentHandler : MonoBehaviour
     public  Transform equipmentThrowPoint;
     public GameObject grenade;
     public GameObject emp;
+    public GameObject healer;
     private int previousWeaponIndex;
     private GameObject t_newEquipment;
     public int currentEquipmentIndex;
@@ -37,7 +38,11 @@ public class EquipmentHandler : MonoBehaviour
                 break;
             case 1:
                 currentEquipment = emp;
-                break; 
+                break;
+
+            case 2:
+                currentEquipment = healer;
+                break;
 
         }
 
@@ -53,7 +58,7 @@ public class EquipmentHandler : MonoBehaviour
             }
 
 
-            if (Input.GetKey(KeyCode.Alpha6))
+            if (Input.GetKey(KeyCode.Alpha6) && t_newEquipment != null)
             {
             t_newEquipment.transform.position = equipmentThrowPoint.position;
 
@@ -81,11 +86,11 @@ public class EquipmentHandler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (currentEquipmentIndex==0)
+            if (currentEquipmentIndex<2)
             {
-                currentEquipmentIndex = 1;
+                currentEquipmentIndex++;
             }
-            else if(currentEquipmentIndex == 1)
+            else
             {
                 currentEquipmentIndex = 0;
             }
