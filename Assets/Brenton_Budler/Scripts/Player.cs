@@ -84,20 +84,6 @@ public class Player : MonoBehaviour
 
     #region Built-in Functions
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            if (instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
 
 
 
@@ -508,6 +494,12 @@ public class Player : MonoBehaviour
             manager.Spawn();
             Destroy(gameObject);
         }
+    }
+
+    public void Heal()
+    {
+        current_health += 5;
+        UpdateHealthBar();
     }
 
     private void HandleHookshotStart()

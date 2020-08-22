@@ -12,8 +12,8 @@ public class Weapon : MonoBehaviour
     public LayerMask canBeShot;
 
     private float currentCooldown;
-    private int currentIndex;
-    private GameObject currentWeapon;
+    public int currentIndex;
+    public GameObject currentWeapon;
 
     //SOUND
     public AudioSource sfx;
@@ -69,7 +69,9 @@ public class Weapon : MonoBehaviour
         {
             Equip(4);
         }
-        
+
+
+
 
 
 
@@ -244,7 +246,7 @@ public class Weapon : MonoBehaviour
 
                     GameObject currentBullet = Instantiate(loadout[currentIndex].projectilePrefab, shootPoint.position, Quaternion.identity);
                     currentBullet.transform.forward = t_bloom;
-                    currentBullet.GetComponent<Rigidbody>().AddForce(t_bloom * loadout[currentIndex].projectileForce, ForceMode.Acceleration);
+                    currentBullet.GetComponent<Rigidbody>().AddForce(t_bloom * loadout[currentIndex].projectileForce, ForceMode.Impulse);
                     Debug.Log(this.GetComponent<Rigidbody>().velocity.y);
 
                 }
