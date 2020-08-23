@@ -13,7 +13,7 @@ public class CustomProjectile : MonoBehaviour
     //Stats
     [Range(0f, 1f)]
     public float bounciness;
-    public bool useGravity;
+    //public bool useGravity;
 
     //Damage
     public int explosionDamage;
@@ -24,8 +24,15 @@ public class CustomProjectile : MonoBehaviour
         public float maxLifeTime;
         public bool explodeOnTouch = true;
 
+
+
     int collisions;
     PhysicMaterial physics_mat;
+
+
+    //type
+    public bool isEMP;
+    public bool isGrenade;
 
     private void Start()
     {
@@ -34,15 +41,28 @@ public class CustomProjectile : MonoBehaviour
 
     private void Update()
     {
-        //When to explode
-        if (collisions > maxCollisions) Explode();
 
-        //Countdown Lifetime
-        maxLifeTime -= Time.deltaTime;
-        if (maxLifeTime <= 0) Explode();
+        if (isGrenade)
+        {
+            //When to explode
+            if (collisions > maxCollisions) ExplodeGren();
+
+            //Countdown Lifetime
+            maxLifeTime -= Time.deltaTime;
+            if (maxLifeTime <= 0) ExplodeGren();
+        }else if (isEMP)
+        {
+            //When to explode
+            if (collisions > maxCollisions) ExplodeEMP();
+
+            //Countdown Lifetime
+            maxLifeTime -= Time.deltaTime;
+            if (maxLifeTime <= 0) ExplodeEMP();
+        }
+
     }
 
-    private void Explode()
+    private void ExplodeGren()
     {
         //Instatiate explosion
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
@@ -59,6 +79,26 @@ public class CustomProjectile : MonoBehaviour
         Invoke("Delay", 0.05f);
     }
 
+
+
+    private void ExplodeEMP()
+    {
+        //Instatiate explosion
+        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+
+
+        //Check for enemies
+        Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<EnemyController>().slowSpeed();
+        }
+
+        //Add a little delay 
+        Invoke("Delay", 0.05f);
+    }
+
+
     private void Delay()
     {
         Destroy(gameObject);
@@ -70,7 +110,19 @@ public class CustomProjectile : MonoBehaviour
         collisions++;
 
         //Explode if bullet hits an enemy and explodeonTOuch is activated
-        if (collision.collider.CompareTag("Enemy") && explodeOnTouch) Explode();
+        if (collision.collider.CompareTag("Enemy") && explodeOnTouch)
+        {
+            if (isGrenade)
+            {
+                 ExplodeGren();
+            }
+            else if (isEMP)
+            {
+                ExplodeEMP();
+            }
+
+
+        }
     }
 
     private void SetUp()
@@ -78,14 +130,15 @@ public class CustomProjectile : MonoBehaviour
         //Create a new physic material 
         physics_mat = new PhysicMaterial();
         physics_mat.bounciness = bounciness;
-        physics_mat.frictionCombine = PhysicMaterialCombine.Minimum;
+        physics_mat.dynamicFriction = 100;
+        physics_mat.staticFriction = 100;
+       physics_mat.frictionCombine = PhysicMaterialCombine.Maximum;
         physics_mat.bounceCombine = PhysicMaterialCombine.Maximum;
 
         //Assign Material 
         GetComponent<SphereCollider>().material = physics_mat;
 
-        //Set gravity
-        rb.useGravity = useGravity;
+
     }
 
     private void OnDrawGizmosSelected()

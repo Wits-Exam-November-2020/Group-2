@@ -17,12 +17,15 @@ MonoBehaviour:
   ammo: 180
   clipSize: 30
   reloadTime: 1.5
-  firerate: 0.1
+  firerate: 0.05
   bloom: 20
-  recoil: 5
+  recoil: 7.5
   kickback: 0.05
   aimSpeed: 10
   burst: 0
+  isProjectile: 0
+  projectilePrefab: {fileID: 0}
+  projectileForce: 0
   pellets: 0
   recovery: 0
   gunshotSound: {fileID: 8300000, guid: 02996da27c02502478bf00c2e0384162, type: 3}

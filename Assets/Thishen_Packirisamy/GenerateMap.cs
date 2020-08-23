@@ -16,10 +16,11 @@ public class GenerateMap : MonoBehaviour
     private Vector2 teleporterGridPos;
     private GameObject currentPrefab;
     private float seed;
+    public GameObject[,] chunks;
 
     void Start()
     {
-       
+        chunks = new GameObject[gridSizeX,gridSizeZ];
     }
 
     private int chooseBlock(int i, int j)
@@ -54,14 +55,15 @@ public class GenerateMap : MonoBehaviour
                 }
 
 
-                GameObject env =Instantiate(currentPrefab, new Vector3(25 + i * blockSize * 2, 0.1f, 25 + j * blockSize * 2), Quaternion.identity);
+                chunks[i,j] =Instantiate(currentPrefab, new Vector3(blockSize + i * blockSize * 2, 0.1f, blockSize + j * blockSize * 2), Quaternion.identity);
                 int rand =Random.Range(1, 4);
-                env.transform.Rotate(new Vector3(0,rand*90,0));
+                chunks[i,j].transform.Rotate(new Vector3(0,rand*90,0));
                 
             }
-        }
-        
+        } 
     }
+
+    
 
   
 }
