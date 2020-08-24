@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     #region Variables
     public float speed;
+    public float defaultSpeed;
     public float sprintModifier;
     public float crouchModifier;
     public float jumpForce;
@@ -90,6 +91,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+
+        defaultSpeed = speed;
 
         manager = GameObject.Find("Manager").GetComponent<GameManager>();
         weapon = GetComponent<Weapon>();

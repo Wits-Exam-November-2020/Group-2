@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  defaultSpeed: 0
   sprintModifier: 2.5
   crouchModifier: 0.5
   jumpForce: 1500

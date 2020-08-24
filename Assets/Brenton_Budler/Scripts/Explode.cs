@@ -8,6 +8,11 @@ public class Explode : MonoBehaviour
     public int explosionDamage;
     public float explosionRange;
     public LayerMask whatIsEnemies;
+    public AudioSource explodeSound;
+    private Renderer rend;
+    private Collider col;
+
+    
 
 
     private void OnCollisionEnter(Collision collision)
@@ -21,7 +26,14 @@ public class Explode : MonoBehaviour
         //Instatiate explosion
         //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
-
+        //Sound
+        col = GetComponent<Collider>();
+        col.enabled = false;
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
+        
+        explodeSound.Play();
+        
         //Check for enemies
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
         for (int i = 0; i < enemies.Length; i++)
@@ -35,7 +47,7 @@ public class Explode : MonoBehaviour
 
     private void Delay()
     {
-        Destroy(gameObject);
+       // Destroy(gameObject);
     }
 
 
