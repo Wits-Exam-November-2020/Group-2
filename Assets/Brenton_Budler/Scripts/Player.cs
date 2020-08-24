@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
 
     public float max_fuel;
     public int max_health;
+    public int max_shield;
     private int current_health;
+    public int current_shield;
 
     public float slideModifier;
     public Camera normalCam;
@@ -55,7 +57,12 @@ public class Player : MonoBehaviour
 
     private Transform ui_fuelbar;
     private Transform ui_healthbar;
+    private Transform ui_shieldbar;
     private Text ui_ammo;
+
+
+
+
 
     private float current_fuel;
     private float current_recovery;
@@ -91,13 +98,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-
+        
         defaultSpeed = speed;
 
         manager = GameObject.Find("Manager").GetComponent<GameManager>();
         weapon = GetComponent<Weapon>();
 
         current_health = max_health;
+        current_shield = 0;
 
         current_fuel = max_fuel;
 
@@ -114,7 +122,9 @@ public class Player : MonoBehaviour
 
         ui_healthbar = GameObject.Find("HUD/Health/Bar").transform;
         ui_fuelbar = GameObject.Find("HUD/Fuel/Bar").transform;
+        ui_shieldbar = GameObject.Find("HUD/Shield/Bar").transform;
         UpdateHealthBar();
+        UpdateShieldBar();
         ui_ammo = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
 
 
@@ -144,11 +154,20 @@ public class Player : MonoBehaviour
             current_health = max_health;
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
+        if (current_shield>=max_shield)
         {
-            TakeDamage(250);
+            current_shield = max_shield;
         }
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            TakeDamage(25);
+        }
+
+       // if (Input.GetKeyDown(KeyCode.L))
+       // {
+        //    current_shield += 33;
+        //}
 
         
         //Input
@@ -251,6 +270,7 @@ public class Player : MonoBehaviour
 
         //UI REfreshes
         UpdateHealthBar();
+        UpdateShieldBar();
         weapon.RefreshAmmo(ui_ammo);
 
 
@@ -469,6 +489,12 @@ public class Player : MonoBehaviour
         ui_healthbar.localScale = Vector3.Lerp(ui_healthbar.localScale,new Vector3(t_health_ratio, 1, 1),Time.deltaTime*8f);
     }
 
+    void UpdateShieldBar()
+    {
+        float t_shield_ratio = (float)current_shield / (float)max_shield;
+        ui_shieldbar.localScale = Vector3.Lerp(ui_shieldbar.localScale, new Vector3(t_shield_ratio, 1, 1), Time.deltaTime * 8f);
+    }
+
     void SetCrouch(bool p_state)
     {
         if (crouched == p_state) { return; }
@@ -491,10 +517,22 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int p_damage)
     {
-        current_health -= p_damage;
-        Debug.Log(current_health);
+
+        if (p_damage<current_shield)
+        {
+            current_shield -= p_damage;
+        }
+        else 
+        {
+            current_health -= (p_damage - current_shield);
+            current_shield = 0; 
+
+        }
+
+
 
         UpdateHealthBar();
+        UpdateShieldBar();
         if (current_health<0)
         {
             manager.Spawn();
@@ -508,6 +546,7 @@ public class Player : MonoBehaviour
         UpdateHealthBar();
     }
 
+ 
     private void HandleHookshotStart()
     {
         Transform t_spawn = transform.Find("Cameras/Player Camera");
