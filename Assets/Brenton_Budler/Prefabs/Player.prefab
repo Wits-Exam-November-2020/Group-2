@@ -196,15 +196,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  defaultSpeed: 0
   sprintModifier: 2.5
   crouchModifier: 0.5
   jumpForce: 1500
   jetForce: 4000
   jetWait: 0.5
-  jetRecovery: 2
+  jetRecovery: 0.5
   lengthOfSlide: 0.5
   max_fuel: 2
-  max_health: 1001
+  max_health: 100
+  max_shield: 96
+  current_shield: 0
   slideModifier: 2.5
   normalCam: {fileID: 1071266609521266915}
   weaponParent: {fileID: 1071266609526291494}
