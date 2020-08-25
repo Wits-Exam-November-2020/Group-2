@@ -4,35 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class Powerup
+[CreateAssetMenu(fileName = "New Powerup", menuName = "Powerup")]
+public class Powerup: ScriptableObject
 {
-    [SerializeField]
+
     public string name;
 
-    [SerializeField]
-    public float duration;
 
-    [SerializeField]
-    public UnityEvent startAction;
-
-    [SerializeField]
-    public UnityEvent endAction;
-
-
-    public void End()
-    {
-        if(endAction != null)
-        {
-            endAction.Invoke();
-        }
-    }
-
-    public void Start()
-    {
-        if (startAction != null)
-        {
-            startAction.Invoke();
-        }
-    }
 }

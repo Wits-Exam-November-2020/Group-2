@@ -6,7 +6,7 @@ public class IncreaseShield : MonoBehaviour
 {
     private GameObject player;
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         player = GameObject.Find("Player(Clone)");
         player.GetComponent<Player>().current_shield += 33/2;

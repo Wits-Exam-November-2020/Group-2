@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class PowerUpActions : MonoBehaviour
 {
-    [SerializeField]
-    public Player player;
+    private GameObject player;
 
 
-    public void HighSpeedStartAction()
+    public void invincibleStartAction()
     {
-        Debug.Log("FASTER");
-        player.speed*= 2;
+        player = GameObject.Find("Player(Clone)");
+        player.GetComponent<Player>().invincible = true;
       
     }
 
-    public void HighSpeedEndAction()
+    public void invincibleEndAction()
     {
-        player.speed = player.defaultSpeed;
+        player.GetComponent<Player>().invincible = false;
     } 
 }

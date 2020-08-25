@@ -15,6 +15,8 @@ public class Weapon : MonoBehaviour
     public int currentIndex;
     public GameObject currentWeapon;
 
+    public float warrior;
+
     //SOUND
     public AudioSource sfx;
     // public AudioClip hitmarkerSound;
@@ -32,6 +34,8 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
+
+        warrior = 1;
         foreach (Gun a in loadout)
         {
             a.Initialize();
@@ -197,7 +201,7 @@ public class Weapon : MonoBehaviour
         Transform t_spawn = transform.Find("Cameras/Player Camera");
 
         //cooldown
-        currentCooldown = loadout[currentIndex].firerate;
+        currentCooldown = loadout[currentIndex].firerate / warrior;
 
         for (int i = 0; i < Mathf.Max(1,loadout[currentIndex].pellets); i++)
         {

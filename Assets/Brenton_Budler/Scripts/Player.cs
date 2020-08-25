@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
 
     private Vector3 previousPosition;
 
-    public static Player instance;
+    public bool invincible;
 
 
     #endregion
@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
     {
         
         defaultSpeed = speed;
+        invincible = false;
 
         manager = GameObject.Find("Manager").GetComponent<GameManager>();
         weapon = GetComponent<Weapon>();
@@ -147,6 +148,18 @@ public class Player : MonoBehaviour
         //{
         //    rig.useGravity = true;
         //}
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (invincible==false)
+            {
+                invincible = true;
+            }
+            else if(invincible==true)
+            {
+                invincible = false;
+            }
+        }
 
 
         if (current_health>=max_health)
@@ -517,17 +530,25 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int p_damage)
     {
-
-        if (p_damage<current_shield)
+        if (!invincible)
         {
-            current_shield -= p_damage;
+            if (p_damage < current_shield)
+            {
+                current_shield -= p_damage;
+            }
+            else
+            {
+                current_health -= (p_damage - current_shield);
+                current_shield = 0;
+
+            }
         }
-        else 
+        else
         {
-            current_health -= (p_damage - current_shield);
-            current_shield = 0; 
 
         }
+
+
 
 
 
