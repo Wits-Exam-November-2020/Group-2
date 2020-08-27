@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 1071266609167082412}
   - component: {fileID: 1204430168313502996}
   - component: {fileID: 2015235857428074590}
+  - component: {fileID: -8637597698122829088}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -196,15 +197,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  defaultSpeed: 0
   sprintModifier: 2.5
   crouchModifier: 0.5
   jumpForce: 1500
   jetForce: 4000
   jetWait: 0.5
-  jetRecovery: 2
+  jetRecovery: 0.5
   lengthOfSlide: 0.5
   max_fuel: 2
-  max_health: 1001
+  max_health: 100
+  max_shield: 96
+  current_shield: 0
   slideModifier: 2.5
   normalCam: {fileID: 1071266609521266915}
   weaponParent: {fileID: 1071266609526291494}
@@ -216,6 +220,7 @@ MonoBehaviour:
   crouchAmount: 0.5
   standingCollider: {fileID: 1071266608659604237}
   crouchingCollider: {fileID: 1071266609921387405}
+  invincible: 0
 --- !u!114 &1071266609167082415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +297,22 @@ MonoBehaviour:
   emp: {fileID: 296435458798555464, guid: 61c19b9a98a9dbb499a95040c4951653, type: 3}
   healer: {fileID: 3040477356409278217, guid: c590e4cc361433842845e312420fb5e1, type: 3}
   currentEquipmentIndex: 0
+--- !u!114 &-8637597698122829088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071266609167082388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e824ed6e514d2c4aa0d4a3eb658efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPowerups:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1071266609262116131
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1071266609921387393
 Transform:
   m_ObjectHideFlags: 0
@@ -777,7 +798,6 @@ GameObject:
   - component: {fileID: 6310132448855380413}
   - component: {fileID: 3563132787765793090}
   - component: {fileID: 2397797018788867843}
-  - component: {fileID: 2008714291426978046}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -846,19 +866,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2008714291426978046
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6534187387720659811}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7536404137779174387
 GameObject:
   m_ObjectHideFlags: 0

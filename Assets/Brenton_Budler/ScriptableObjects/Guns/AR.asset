@@ -17,12 +17,12 @@ MonoBehaviour:
   ammo: 180
   clipSize: 30
   reloadTime: 1.5
-  firerate: 0.05
+  firerate: 0.15
   bloom: 20
   recoil: 7.5
   kickback: 0.05
   aimSpeed: 10
-  burst: 0
+  burst: 1
   isProjectile: 0
   projectilePrefab: {fileID: 0}
   projectileForce: 0

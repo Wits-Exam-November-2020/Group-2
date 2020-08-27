@@ -29,6 +29,6 @@ MonoBehaviour:
   projectileForce: 50
   pellets: 0
   recovery: 0
-  gunshotSound: {fileID: 0}
+  gunshotSound: {fileID: 8300000, guid: d0a8ac20274c4744d9fb1d0613dcba82, type: 3}
   pitchRandomization: 0.05
   prefab: {fileID: 5287989946736950497, guid: 7ec86f5c0f843384d9af60de778e0e44, type: 3}
