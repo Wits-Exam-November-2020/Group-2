@@ -90,8 +90,6 @@ public class GameController : MonoBehaviour
 
                 if (zIndex>=0&&zIndex<MapGenerator.gridSizeZ&& xIndex >= 0 && xIndex < MapGenerator.gridSizeX &&!(xIndex==gridPos.x&&zIndex==gridPos.z))
                 {
-                    Debug.Log(xIndex);
-                    Debug.Log(zIndex);
                     Transform spawnPoint = MapGenerator.chunks[xIndex, zIndex].transform.Find("Spawn Point");
                     if (spawnPoint!= null)
                     {
@@ -101,12 +99,6 @@ public class GameController : MonoBehaviour
                 }
                 
             }
-        }
-
-
-        foreach (Vector3 pos in PossibleSpawns)
-        {
-            Debug.Log(pos);
         }
         return PossibleSpawns;
     }
