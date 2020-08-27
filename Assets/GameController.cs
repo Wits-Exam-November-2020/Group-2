@@ -39,12 +39,18 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        //if (Input.GetKeyDown("n"))
+        //{
+        //    NextStage();
+        //}
+
+
         if (Input.GetKeyDown("n"))
         {
-            NextStage();
+            GetSpawnPos();
         }
 
-       // Debug.Log(GetGridPos());
+        // Debug.Log(GetGridPos());
     }
 
     public void NextStage()
@@ -68,16 +74,41 @@ public class GameController : MonoBehaviour
         return gridPos;
     }
 
-    //public List<Vector3> GetSpawnPos()
-    //{
-    //    List<Vector3> PossibleSpawns = new List<Vector3>();
-    //    Vector3 gridPos= GetGridPos();
-    //    Vector3 spawnPos = new Vector3(0, 0, 0);
-    //    for (int i = 0; i < MapGenerator.gridSizeX; i++)
-    //    {
-            
-    //    }
-    //    return PossibleSpawns;
-    //}
+    public List<Vector3> GetSpawnPos()
+    {
+        List<Vector3> PossibleSpawns = new List<Vector3>();
+        Vector3 gridPos = GetGridPos();
+        Vector3 spawnPos = new Vector3(0, 0, 0);
+
+        for (int i=-1;i<=1;i++)
+        {
+            for (int j =-1;j<=1;j++)
+            {
+
+                int xIndex = ((int)gridPos.x) + i;
+                int zIndex = ((int)gridPos.z) + j;
+
+                if (zIndex>=0&&zIndex<MapGenerator.gridSizeZ&& xIndex >= 0 && xIndex < MapGenerator.gridSizeX &&!(xIndex==gridPos.x&&zIndex==gridPos.z))
+                {
+                    Debug.Log(xIndex);
+                    Debug.Log(zIndex);
+                    Transform spawnPoint = MapGenerator.chunks[xIndex, zIndex].transform.Find("Spawn Point");
+                    if (spawnPoint!= null)
+                    {
+                        PossibleSpawns.Add(spawnPoint.position);
+                    }
+                    
+                }
+                
+            }
+        }
+
+
+        foreach (Vector3 pos in PossibleSpawns)
+        {
+            Debug.Log(pos);
+        }
+        return PossibleSpawns;
+    }
 
 }
