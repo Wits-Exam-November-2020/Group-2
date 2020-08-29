@@ -227,9 +227,7 @@ public class Weapon : MonoBehaviour
                     
                     GameObject currentBullet = Instantiate(loadout[currentIndex].projectilePrefab, shootPoint.position, Quaternion.identity);
                     currentBullet.transform.forward = t_bloom;
-                    currentBullet.GetComponent<Rigidbody>().AddForce(t_bloom * loadout[currentIndex].projectileForce, ForceMode.Impulse);
-                    
-
+                    currentBullet.GetComponent<Rigidbody>().AddForce(t_bloom * loadout[currentIndex].projectileForce, ForceMode.Impulse);   
                 }
 
                 if (t_hit.collider.gameObject.layer == 12)
