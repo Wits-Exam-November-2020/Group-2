@@ -28,7 +28,8 @@ public class Weapon : MonoBehaviour
     public bool isAiming = false;
 
 
-    public float dmgModifier; 
+    public float dmgModifier;
+    
     #endregion
 
 
@@ -92,23 +93,31 @@ public class Weapon : MonoBehaviour
             if (loadout[currentIndex].burst != 1)
             {
                 if (loadout[currentIndex].burst!=1) {
-                    if (Input.GetMouseButtonDown(0) && currentCooldown <= 0)
+                    if (Input.GetMouseButtonDown(0) && currentCooldown <= 0 && isReloading == false)
                     { 
-                        if (loadout[currentIndex].FireBullet()) { Shoot(); }
-                        else { StartCoroutine(Reload(loadout[currentIndex].reloadTime)); }
+                        if (loadout[currentIndex].FireBullet()) {
+                           
+                            Shoot(); }
+                        else { StartCoroutine(Reload(loadout[currentIndex].reloadTime));
+                          
+                        }
                     }
                 }
             }
             else
             {
-                if (Input.GetMouseButton(0) && currentCooldown <= 0)
+                if (Input.GetMouseButton(0) && currentCooldown <= 0 && isReloading==false)
                 {
-                    if (loadout[currentIndex].FireBullet()) { Shoot(); }
-                    else { StartCoroutine(Reload(loadout[currentIndex].reloadTime)); }
+                    if (loadout[currentIndex].FireBullet()) {
+                       
+                        Shoot(); }
+                    else { StartCoroutine(Reload(loadout[currentIndex].reloadTime));
+                        
+                    }
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) && !isAiming)
             {
                 StartCoroutine(Reload(loadout[currentIndex].reloadTime));
             }
@@ -205,6 +214,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+
         Transform t_spawn = transform.Find("Cameras/Player Camera");
 
         //cooldown
@@ -273,7 +283,7 @@ public class Weapon : MonoBehaviour
         currentWeapon.transform.Rotate(-loadout[currentIndex].recoil, 0, 0);
         currentWeapon.transform.position -= currentWeapon.transform.forward * loadout[currentIndex].kickback;
 
-
+   
 
 
     }
