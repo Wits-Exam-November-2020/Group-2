@@ -39,6 +39,7 @@ public class GameController : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         NextStage();
         surface.BuildNavMesh();
+        Spawn();
 
     }
 
@@ -60,7 +61,7 @@ public class GameController : MonoBehaviour
 
     public void NextStage()
     {
-        Spawn();
+
         GameObject[] cells = GameObject.FindGameObjectsWithTag("Cell");
         foreach (GameObject cell in cells)
         {
