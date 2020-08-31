@@ -85,6 +85,7 @@ public class GameController : MonoBehaviour
 
     public List<Vector3> GetSpawnPos()
     {
+        //bool spawnFound = false;
         List<Vector3> PossibleSpawns = new List<Vector3>();
         Vector3 gridPos = GetGridPos();
         Vector3 spawnPos = new Vector3(0, 0, 0);
@@ -103,6 +104,7 @@ public class GameController : MonoBehaviour
                     if (spawnPoint!= null)
                     {
                         PossibleSpawns.Add(spawnPoint.position);
+
                     }
                     
                 }

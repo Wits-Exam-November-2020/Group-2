@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public float timeBetweenSpawns;
     public int amountOfEnemiesPerSpawn;
     private float timeSinceSpawn;
+    private int spawnIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +32,13 @@ public class EnemySpawner : MonoBehaviour
         List<Vector3> PossibleSpawns = new List<Vector3>();
 
         PossibleSpawns =  GameController.instance.GetSpawnPos();
-        if (PossibleSpawns != null)
+        if (PossibleSpawns.Count>0)
         {
             for (int i = 0; i < amountPerSpawn; i++)
             {
-                Vector3 spawnPos = PossibleSpawns[Random.Range(0, PossibleSpawns.Count)];
+                spawnIndex = Random.Range(0, PossibleSpawns.Count);
+              
+                Vector3 spawnPos = PossibleSpawns[spawnIndex];
                 //int enemySelector = Random.Range(0, 100);
                 Instantiate(Enemies[Random.Range(0, Enemies.Length)], spawnPos, Quaternion.identity);
 
