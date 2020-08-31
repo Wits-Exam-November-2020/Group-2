@@ -26,7 +26,12 @@ public class Weapon : MonoBehaviour
 
     private bool isReloading;
     public bool isAiming = false;
+
+
+    public float dmgModifier; 
     #endregion
+
+
 
 
 
@@ -35,7 +40,9 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
 
-        warrior = 1;
+             dmgModifier = 1;
+
+           warrior = 1;
         foreach (Gun a in loadout)
         {
             a.Initialize();
@@ -232,7 +239,7 @@ public class Weapon : MonoBehaviour
 
                 if (t_hit.collider.gameObject.layer == 12)
                 {
-                    t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage);
+                    t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage * dmgModifier);
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
                     // sfx.PlayOneShot(hitmarkerSound);
                     hitmarkerWait = 0.5f;

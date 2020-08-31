@@ -11,6 +11,9 @@ TagManager:
   - Bullet
   - Equipment
   - EnemySpawn
+  - Cog
+  - Bolt
+  - Nut
   layers:
   - Default
   - TransparentFX

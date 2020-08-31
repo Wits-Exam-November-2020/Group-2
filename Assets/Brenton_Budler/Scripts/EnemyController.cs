@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-
+    public GameObject cog; 
  
 
     private NavMeshAgent enemy;
@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
         if (health<=0)
         {
             Destroy(gameObject);
+            Instantiate(cog, transform.position, transform.rotation);
         }
     }
 

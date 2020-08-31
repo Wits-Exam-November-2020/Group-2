@@ -12,9 +12,10 @@ public class PowerupPickup : MonoBehaviour
     {
         player = GameObject.Find("Player(Clone)");
         int ind = player.GetComponent<UsablePowerUps>().checkSpace();
-        if (ind != 4)
+        if (other.tag=="Player" && ind != 4)
         {
             player.GetComponent<UsablePowerUps>().currentPowerups[ind] = powerup;
+            Destroy(this.gameObject);
         }
 
 
