@@ -29,7 +29,7 @@ public class ChestController : MonoBehaviour
     {
 
         Debug.Log("OPENING");
-        if (GameManager.instance.playerWallet>=price)
+        if (GameController.instance.playerWallet>=price)
         {
             StartCoroutine(Move(transform.position + new Vector3(0, 1, 0)));
             open = true;

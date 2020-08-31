@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GameController : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class GameController : MonoBehaviour
     private int stage = 0;
     public bool changingStage = false;
     private GameObject player;
+
+    public GameObject player_prefab;
+    public Transform[] spawn_points;
+    public Wallet playerWallet;
+
+    public NavMeshSurface surface;
 
     private void Awake()
     {
@@ -27,8 +34,12 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+
+
         player = GameObject.Find("Player(Clone)");
         NextStage();
+        surface.BuildNavMesh();
+
     }
 
     private void Update()
@@ -49,6 +60,7 @@ public class GameController : MonoBehaviour
 
     public void NextStage()
     {
+        Spawn();
         GameObject[] cells = GameObject.FindGameObjectsWithTag("Cell");
         foreach (GameObject cell in cells)
         {
@@ -56,11 +68,13 @@ public class GameController : MonoBehaviour
         }
         changingStage = true;
         stage++;
-        MapGenerator.CreateMap(); 
+        MapGenerator.CreateMap();
+
     }
 
     public Vector3 GetGridPos()
     {
+        player = GameObject.Find("Player(Clone)");
         Vector3 gridPos= new Vector3(0,0,0);
         gridPos.x= (int)(player.transform.position.x / MapGenerator.blockSize/2);
         gridPos.z = (int)(player.transform.position.z / MapGenerator.blockSize/2);
@@ -95,6 +109,12 @@ public class GameController : MonoBehaviour
             }
         }
         return PossibleSpawns;
+    }
+
+    public void Spawn()
+    {
+        Transform t_spawn = spawn_points[Random.Range(0, spawn_points.Length)];
+        Instantiate(player_prefab, t_spawn.position, t_spawn.rotation);
     }
 
 }

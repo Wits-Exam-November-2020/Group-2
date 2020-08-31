@@ -6060,11 +6060,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285509264}
-  - component: {fileID: 1285509265}
   - component: {fileID: 1285509266}
   - component: {fileID: 1285509267}
   - component: {fileID: 1285509269}
   - component: {fileID: 1285509268}
+  - component: {fileID: 1285509265}
+  - component: {fileID: 1285509270}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6096,14 +6097,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1285509263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9953c5c5e0331b41b5cbaadc1fa9661, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b1c0430a490c840af5c5308644436b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_prefab: {fileID: 1071266609167082388, guid: cd1e3a9e93001da4590593321f43768a,
-    type: 3}
-  spawn_points:
-  - {fileID: 84372865}
-  playerWallet: {fileID: 11400000, guid: c2367d0a1e26c884e95490b23a674046, type: 2}
+  Enemies:
+  - {fileID: 6559466365474908671, guid: 60087798697dc7c43bb242bad8bf07d5, type: 3}
+  timeBetweenSpawns: 2
+  amountOfEnemiesPerSpawn: 1
 --- !u!114 &1285509266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6172,6 +6172,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MapGenerator: {fileID: 1285509268}
   changingStage: 0
+  player_prefab: {fileID: 1071266609167082388, guid: cd1e3a9e93001da4590593321f43768a,
+    type: 3}
+  spawn_points:
+  - {fileID: 84372865}
+  playerWallet: {fileID: 11400000, guid: c2367d0a1e26c884e95490b23a674046, type: 2}
+  surface: {fileID: 2140887700}
+--- !u!114 &1285509270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285509263}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e88ac1e6d5fcb4096bdb236dadb5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testChestPrefab: {fileID: 0}
+  testItemPrefab: {fileID: 0}
+  testPrice: {fileID: 0}
 --- !u!1 &1293926648
 GameObject:
   m_ObjectHideFlags: 0

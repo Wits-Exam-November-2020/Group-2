@@ -54,7 +54,6 @@ public class GenerateMap : MonoBehaviour
                     currentPrefab = genericBlockPrefabs[chooseBlock(i, j)];
                 }
 
-                Debug.Log(currentPrefab);
                 chunks[i,j] =Instantiate(currentPrefab, new Vector3(blockSize + i * blockSize * 2, 0.1f, blockSize + j * blockSize * 2), Quaternion.identity);
 
                 int rand =Random.Range(1, 4);

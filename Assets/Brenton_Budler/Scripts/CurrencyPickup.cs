@@ -13,17 +13,17 @@ public class CurrencyPickup : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         if (other.gameObject.tag == "Player" && gameObject.tag=="Cog")
         {
-            GameManager.instance.playerWallet.cogs += 1;
+            GameController.instance.playerWallet.cogs += 1;
             Destroy(this.gameObject);
         }
         else if (other.gameObject.tag == "Player" && gameObject.tag == "Nut")
         {
-            GameManager.instance.playerWallet.nuts += 1;
+            GameController.instance.playerWallet.nuts += 1;
             Destroy(this.gameObject);
         }
         else if (other.gameObject.tag == "Player" && gameObject.tag == "Bolt")
         {
-            GameManager.instance.playerWallet.bolts += 1;
+            GameController.instance.playerWallet.bolts += 1;
             Destroy(this.gameObject);
         }
 
