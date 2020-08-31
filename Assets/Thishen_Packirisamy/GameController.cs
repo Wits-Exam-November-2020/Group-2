@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     public GenerateMap MapGenerator;
     private int stage = 0;
     public bool changingStage = false;
-    public GameObject player;
+    private GameObject player;
 
     private void Awake()
     {
@@ -25,15 +25,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public Wallet playerWallet;
-
     void Start()
     {
-        playerWallet = new Wallet();
-        //temporary
-        playerWallet.nuts = 1001;
-        playerWallet.bolts = 1002;
-        playerWallet.cogs = 1003;
+        player = GameObject.Find("Player(Clone)");
         NextStage();
     }
 

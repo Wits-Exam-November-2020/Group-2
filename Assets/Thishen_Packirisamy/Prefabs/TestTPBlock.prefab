@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1051946664442785294}
   - component: {fileID: 9034540252417948122}
   - component: {fileID: 4197970659104024159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 1461648240777365069}
   - component: {fileID: 4242613079399003891}
   - component: {fileID: 4018928912950835139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 8716841722101085173}
   - component: {fileID: 1273572320866911059}
   - component: {fileID: -1784764484239410122}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TestTPBlock
   m_TagString: Cell
   m_Icon: {fileID: 0}

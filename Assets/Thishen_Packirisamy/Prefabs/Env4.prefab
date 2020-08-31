@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5725835770466154950}
   - component: {fileID: 4363461231291280914}
   - component: {fileID: 8911834984255369623}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 6172134866474553733}
   - component: {fileID: 8867526914266898747}
   - component: {fileID: 8514363150024564747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6403563060385462562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Env4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 4113884318667596861}
   - component: {fileID: 5783644356377449627}
   - component: {fileID: 2797927828706159614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TestTPBlock
   m_TagString: Cell
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4711900470791634526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lamps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,6 +480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &4342361934770281381 stripped
@@ -555,6 +560,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &4477564940348475450 stripped
@@ -574,6 +584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rubble (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708510969032890116, guid: 99a00e2197c1278478c2f741cb83e99c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3708510969032890232, guid: 99a00e2197c1278478c2f741cb83e99c,
         type: 3}
@@ -705,6 +720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &4125111796913462564 stripped
@@ -724,6 +744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerMid (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254105914281264495, guid: 92611ea9cb023334fb1d93fa163f30d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9190341764298052131, guid: 92611ea9cb023334fb1d93fa163f30d7,
         type: 3}
@@ -855,6 +880,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &3330652935651737393 stripped
@@ -874,6 +904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -949,6 +984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -1080,6 +1120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &3139439080447610526 stripped
@@ -1099,6 +1144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerMid (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254105914281264495, guid: 92611ea9cb023334fb1d93fa163f30d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9190341764298052131, guid: 92611ea9cb023334fb1d93fa163f30d7,
         type: 3}
@@ -1230,6 +1280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &2734993958540173295 stripped
@@ -1249,6 +1304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -1324,6 +1384,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -1455,6 +1520,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &1715637427093204438 stripped
@@ -1474,6 +1544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerMid (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254105914281264495, guid: 92611ea9cb023334fb1d93fa163f30d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9190341764298052131, guid: 92611ea9cb023334fb1d93fa163f30d7,
         type: 3}
@@ -1605,6 +1680,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &1305034865714555434 stripped
@@ -1679,6 +1759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
@@ -1755,6 +1840,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &1007129644819054103 stripped
@@ -1774,6 +1864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -1850,6 +1945,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1925,6 +2025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1999,6 +2104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -2130,6 +2240,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &385213065480227194 stripped
@@ -2205,6 +2320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &526353354658371085 stripped
@@ -2224,6 +2344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -2355,6 +2480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dustbin
       objectReference: {fileID: 0}
+    - target: {fileID: 6920124642273994299, guid: 88b9c66bd3279ee488805abfbb49a148,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88b9c66bd3279ee488805abfbb49a148, type: 3}
 --- !u!4 &2355587596722150607 stripped
@@ -2430,6 +2560,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dustbin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6920124642273994299, guid: 88b9c66bd3279ee488805abfbb49a148,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88b9c66bd3279ee488805abfbb49a148, type: 3}
 --- !u!4 &2410506468154388420 stripped
@@ -2449,6 +2584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -2580,6 +2720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &9094912348112127753 stripped
@@ -2599,6 +2744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerMid (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254105914281264495, guid: 92611ea9cb023334fb1d93fa163f30d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9190341764298052131, guid: 92611ea9cb023334fb1d93fa163f30d7,
         type: 3}
@@ -2730,6 +2880,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dustbin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6920124642273994299, guid: 88b9c66bd3279ee488805abfbb49a148,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88b9c66bd3279ee488805abfbb49a148, type: 3}
 --- !u!4 &2497472402450707092 stripped
@@ -2804,6 +2959,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
@@ -2880,6 +3040,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &8807964781046592156 stripped
@@ -2955,6 +3120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &8329016517917035861 stripped
@@ -2974,6 +3144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708510969032890116, guid: 99a00e2197c1278478c2f741cb83e99c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3708510969032890232, guid: 99a00e2197c1278478c2f741cb83e99c,
         type: 3}
@@ -3105,6 +3280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &8059688299398206501 stripped
@@ -3179,6 +3359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
@@ -3255,6 +3440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &7758354351071206051 stripped
@@ -3330,6 +3520,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &7353250599184802384 stripped
@@ -3349,6 +3544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -3480,6 +3680,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &7042497196217680568 stripped
@@ -3499,6 +3704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -3575,6 +3785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3650,6 +3865,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VendingMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 922162208691644791, guid: 2ae0cb23fb6f5ae41927184a3a47f97d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2452655318795790247, guid: 2ae0cb23fb6f5ae41927184a3a47f97d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3724,6 +3944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rubble (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708510969032890116, guid: 99a00e2197c1278478c2f741cb83e99c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3708510969032890232, guid: 99a00e2197c1278478c2f741cb83e99c,
         type: 3}
@@ -3855,6 +4080,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &6186190637549388138 stripped
@@ -3874,6 +4104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerMid (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254105914281264495, guid: 92611ea9cb023334fb1d93fa163f30d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9190341764298052131, guid: 92611ea9cb023334fb1d93fa163f30d7,
         type: 3}
@@ -3950,6 +4185,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4025,6 +4265,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerMid
       objectReference: {fileID: 0}
+    - target: {fileID: 6254105914281264495, guid: 92611ea9cb023334fb1d93fa163f30d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9190341764298052131, guid: 92611ea9cb023334fb1d93fa163f30d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4099,6 +4344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -4230,6 +4480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
 --- !u!4 &5436971237143949540 stripped
@@ -4249,6 +4504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406042792092749670, guid: fddfc432ac5e42f47a676298d3c73e1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8937847981532896209, guid: fddfc432ac5e42f47a676298d3c73e1b,
         type: 3}
@@ -4324,6 +4584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rubble (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708510969032890116, guid: 99a00e2197c1278478c2f741cb83e99c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3708510969032890232, guid: 99a00e2197c1278478c2f741cb83e99c,
         type: 3}
@@ -4454,6 +4719,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149637938820032743, guid: c34134c135180ac4087bc7b3c7c4152f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34134c135180ac4087bc7b3c7c4152f, type: 3}
