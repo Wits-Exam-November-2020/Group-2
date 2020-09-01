@@ -12,10 +12,7 @@ public class ChestController : MonoBehaviour
     public Wallet price;
     // Start is called before the first frame update
     void Start()
-    {
-
-
-        
+    {    
        item = Instantiate(itemPrefab, transform.position, Quaternion.identity) as GameObject;
     }
     

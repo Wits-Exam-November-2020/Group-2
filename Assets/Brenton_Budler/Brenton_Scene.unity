@@ -6102,7 +6102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 6559466365474908671, guid: 60087798697dc7c43bb242bad8bf07d5, type: 3}
-  timeBetweenSpawns: 2
+  timeBetweenSpawns: 1000
   amountOfEnemiesPerSpawn: 1
 --- !u!114 &1285509266
 MonoBehaviour:
@@ -6158,6 +6158,18 @@ MonoBehaviour:
   gridSizeZ: 3
   blockSize: 15
   perlScale: 0.8
+  powerUpChestPrefab: {fileID: 8295368055301753511, guid: ec4b0d57d57009041b124f8861928aca,
+    type: 3}
+  powerUps:
+  - {fileID: 6859894840864431762, guid: 37213ea0871f71441a9a534f289fb546, type: 3}
+  - {fileID: 289179371773733404, guid: 68afd117ff5eeb54b84e6a0682944d16, type: 3}
+  - {fileID: 3364812730155697115, guid: 9e2c1e8659ab02d4b8ce75d4aff7bd8b, type: 3}
+  powerUpsPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
+  weaponChestPrefab: {fileID: 2750148720496955025, guid: a336170a636c0194681cc05d96bc8629,
+    type: 3}
+  weaponsPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
+  weapons:
+  - {fileID: 5287989946736950497, guid: 7d109af585a001f49905c89f6784c4a3, type: 3}
 --- !u!114 &1285509269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8588,7 +8600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1879120013
 MonoBehaviour:
   m_ObjectHideFlags: 0
