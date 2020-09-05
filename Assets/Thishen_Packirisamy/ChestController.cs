@@ -10,10 +10,11 @@ public class ChestController : MonoBehaviour
     private GameObject item;
     public bool open=false;
     public Wallet price;
+    private AudioSource openSound;
     // Start is called before the first frame update
     void Start()
-    {    
-       item = Instantiate(itemPrefab, transform.position, Quaternion.identity) as GameObject;
+    {
+        openSound = GetComponent<AudioSource>();
     }
     
     // Update is called once per frame
@@ -24,16 +25,22 @@ public class ChestController : MonoBehaviour
 
     public void Open()
     {
-
-        Debug.Log("OPENING");
+       
+        // Debug.Log("OPENING");
         if (GameController.instance.playerWallet>=price)
         {
+            item = Instantiate(itemPrefab, transform.position, Quaternion.identity);
             StartCoroutine(Move(transform.position + new Vector3(0, 1, 0)));
             open = true;
+            openSound.Play();
+           
+            GameController.instance.playerWallet= GameController.instance.playerWallet - price;
+            
         }
         else
         {
-            Debug.Log("Insufficient funds"); 
+            Debug.Log("Insufficient funds");
+           
         }
         
     }

@@ -59,4 +59,14 @@ public class Wallet : ScriptableObject
             return false;
         }
     }
+
+    public static Wallet operator -(Wallet a, Wallet b)
+    {
+        Wallet ret = new Wallet();
+        ret.bolts =a.bolts - b.bolts;
+        ret.cogs = a.cogs - b.cogs;
+        ret.nuts = a.nuts - b.nuts;
+
+        return ret;
+    }
 }
