@@ -6065,7 +6065,6 @@ GameObject:
   - component: {fileID: 1285509269}
   - component: {fileID: 1285509268}
   - component: {fileID: 1285509265}
-  - component: {fileID: 1285509270}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6190,21 +6189,6 @@ MonoBehaviour:
   - {fileID: 84372865}
   playerWallet: {fileID: 11400000, guid: c2367d0a1e26c884e95490b23a674046, type: 2}
   surface: {fileID: 2140887700}
---- !u!114 &1285509270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285509263}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7e88ac1e6d5fcb4096bdb236dadb5db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testChestPrefab: {fileID: 0}
-  testItemPrefab: {fileID: 0}
-  testPrice: {fileID: 0}
 --- !u!1 &1293926648
 GameObject:
   m_ObjectHideFlags: 0
