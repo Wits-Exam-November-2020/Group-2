@@ -61,20 +61,22 @@ public class GenerateMap : MonoBehaviour
                 }
 
                 chunks[i,j] =Instantiate(currentPrefab, new Vector3(blockSize + i * blockSize * 2, 0.1f, blockSize + j * blockSize * 2), Quaternion.identity);
+                int rand = Random.Range(1, 4);
+                chunks[i, j].transform.Rotate(new Vector3(0, rand * 90, 0));
                 Transform ChestSpawnPoint = chunks[i,j].transform.Find("ChestSpawnPoint");
                 //Debug.Log(ChestSpawnPoint);
                 if (ChestSpawnPoint != null)
                 {
-                    SpawnChest(ChestSpawnPoint.position);
+                    SpawnChest(ChestSpawnPoint.position,ChestSpawnPoint.rotation);
+                    Debug.Log(ChestSpawnPoint.position);
                 }
-                int rand =Random.Range(1, 4);
-                chunks[i,j].transform.Rotate(new Vector3(0,rand*90,0));
+                
                 
             }
         } 
     }
 
-    public void SpawnChest(Vector3 pos)
+    public void SpawnChest(Vector3 pos, Quaternion rotation)
     {
         int chestTypeSelector = Random.Range(0, 3);
 
@@ -82,6 +84,7 @@ public class GenerateMap : MonoBehaviour
         {
             GameObject item = powerUps[Random.Range(0, powerUps.Count)];
             GameObject chest = Instantiate(powerUpChestPrefab, pos, Quaternion.identity);
+            chest.transform.rotation = rotation;
             chest.GetComponent<ChestController>().itemPrefab = item;
             chest.GetComponent<ChestController>().price = powerUpsPrice;
         }
@@ -89,6 +92,7 @@ public class GenerateMap : MonoBehaviour
         {
             GameObject item = weapons[Random.Range(0, weapons.Count)];
             GameObject chest = Instantiate(weaponChestPrefab, pos, Quaternion.identity);
+            chest.transform.rotation = rotation;
             chest.GetComponent<ChestController>().itemPrefab = item;
             chest.GetComponent<ChestController>().price = weaponsPrice;
         }

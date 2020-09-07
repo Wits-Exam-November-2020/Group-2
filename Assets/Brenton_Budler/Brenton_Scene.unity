@@ -6101,7 +6101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 6559466365474908671, guid: 60087798697dc7c43bb242bad8bf07d5, type: 3}
-  timeBetweenSpawns: 1000
+  timeBetweenSpawns: 5
   amountOfEnemiesPerSpawn: 1
 --- !u!114 &1285509266
 MonoBehaviour:
@@ -6141,20 +6141,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genericBlockPrefabs:
-  - {fileID: 6403563060385462589, guid: 3497f3d40be622b42b66283a5c9aed06, type: 3}
-  - {fileID: 6403563060385462589, guid: c39fb3c17c1c71b4eb757b085be2e80b, type: 3}
-  - {fileID: 6403563060385462589, guid: 4e7c134e72ad2384c9a135f620c2d69a, type: 3}
-  - {fileID: 6403563060385462589, guid: ca370a4a4397efc49a0e15bbe6dd74ac, type: 3}
-  - {fileID: 6403563060385462589, guid: 5ab32ecc25684dd4aa3065d9929b9399, type: 3}
-  - {fileID: 6403563060385462589, guid: 30f7ce9a0f4db00469f447d4467db0d9, type: 3}
-  - {fileID: 6403563060385462589, guid: b235a3f02efbbeb41a92a481e4c3e2af, type: 3}
-  - {fileID: 6403563060385462589, guid: 38b2e336629964f43a79f3c27053926b, type: 3}
-  - {fileID: 6403563060385462589, guid: 656f20dc01e75244d8e6fe3b4e8fda0d, type: 3}
-  - {fileID: 6403563060385462589, guid: 4780cbd5089d6174cb1dd5eeac7ebf8a, type: 3}
-  TPBlockPrefab: {fileID: 2577328836303234824, guid: ef3071abe9d68b4408d15889080adb98,
+  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
+  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
+  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
+  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
+  - {fileID: 1018600684871964638, guid: 62b09ad533fd25741be4ff6a74dd85a7, type: 3}
+  - {fileID: 1018600684871964638, guid: 62b09ad533fd25741be4ff6a74dd85a7, type: 3}
+  - {fileID: 1018600684871964638, guid: 62b09ad533fd25741be4ff6a74dd85a7, type: 3}
+  - {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873, type: 3}
+  - {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873, type: 3}
+  - {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873, type: 3}
+  TPBlockPrefab: {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873,
     type: 3}
-  gridSizeX: 3
-  gridSizeZ: 3
+  gridSizeX: 5
+  gridSizeZ: 5
   blockSize: 15
   perlScale: 0.8
   powerUpChestPrefab: {fileID: 8295368055301753511, guid: ec4b0d57d57009041b124f8861928aca,
