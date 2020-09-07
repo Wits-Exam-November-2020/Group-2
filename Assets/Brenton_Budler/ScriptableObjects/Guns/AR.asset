@@ -31,3 +31,4 @@ MonoBehaviour:
   gunshotSound: {fileID: 8300000, guid: 02996da27c02502478bf00c2e0384162, type: 3}
   pitchRandomization: 0.05
   prefab: {fileID: 5287989946736950497, guid: 7120e8d4037455e4e9c3cccca1603d59, type: 3}
+  muzzleFlash: {fileID: 160582, guid: 8ff371e17619a504b9822fc6a2facdb2, type: 3}

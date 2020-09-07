@@ -37,6 +37,8 @@ public class Gun : ScriptableObject
     private int stash; //current ammo
     private int clip; //current clip
 
+    public GameObject muzzleFlash;
+
     public void Initialize()
     {
         stash = ammo;
