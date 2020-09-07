@@ -23,8 +23,12 @@ MonoBehaviour:
   kickback: 0.15
   aimSpeed: 15
   burst: 1
+  isProjectile: 0
+  projectilePrefab: {fileID: 0}
+  projectileForce: 0
   pellets: 0
   recovery: 0
   gunshotSound: {fileID: 8300000, guid: b712e82cd6498d84db27595fc010f782, type: 3}
   pitchRandomization: 0.05
   prefab: {fileID: 5287989946736950497, guid: f08506d9db7151d45a079fd70c0d962b, type: 3}
+  muzzleFlash: {fileID: 183908, guid: fa6d29df930056640bf15fb9b6a54e4a, type: 3}

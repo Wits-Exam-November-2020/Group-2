@@ -124,10 +124,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 296435458798555465}
-  explosion: {fileID: 0}
+  explosion: {fileID: 3903689312015385406, guid: 8bb2e0f0d1d38b740bf4be54d3bb7173,
+    type: 3}
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 4096
+  explosionSound: {fileID: 0}
   bounciness: 0.282
   explosionDamage: 10
   explosionRange: 5

@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
     private Transform ui_shieldbar;
     private Text ui_ammo;
 
-
+   
 
 
 
@@ -87,6 +87,9 @@ public class Player : MonoBehaviour
 
     public bool invincible;
 
+    public AudioSource jetpackActivation;
+    public AudioSource jetpackUsing;
+    public AudioSource walking;
 
     #endregion
 
@@ -214,6 +217,8 @@ public class Player : MonoBehaviour
         //Jumping 
         if (isJumping)
         {
+
+            
             if (crouched) { SetCrouch(false); }
             rig.AddForce(Vector3.up * jumpForce);
             current_recovery = 0f;
@@ -315,6 +320,8 @@ public class Player : MonoBehaviour
 
         //Movement
         float t_adjustedSpeed = speed;
+
+
 
         if (thrownState)
         {
@@ -431,11 +438,45 @@ public class Player : MonoBehaviour
         if (isGrounded)
         {
             canJet = false;
+
+            if (t_hmove!=0 || t_vmove!=0)
+            {
+                if (walking.isPlaying)
+                {
+
+                }
+                else
+                {
+                    walking.Play();
+                }
+            }
+            else
+            {
+                walking.Stop();
+            }
+   
+
+
+            if (jetpackUsing.volume>0f)
+            {
+                jetpackUsing.volume -= 0.05f;
+            }
+            else
+            {
+                jetpackUsing.Stop();
+                jetpackUsing.volume = 0.2f;
+            }
+            
         }
 
         if (canJet && jet && current_fuel >0)
         {
+            if (!jetpackUsing.isPlaying)
+            {
+                jetpackUsing.Play();
+            }
             
+            jetpackUsing.volume += 0.05f;
             rig.AddForce(Vector3.up * jetForce * Time.fixedDeltaTime, ForceMode.Acceleration);
             current_fuel = Mathf.Max(0, current_fuel - Time.deltaTime*1.5f);
 

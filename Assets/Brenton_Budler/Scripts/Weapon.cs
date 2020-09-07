@@ -29,6 +29,8 @@ public class Weapon : MonoBehaviour
 
 
     public float dmgModifier;
+    private Transform muzzleFashPoint;
+    private GameObject currentMuzzleFlash;
     
     #endregion
 
@@ -215,7 +217,29 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
 
+
+        if (isAiming)
+        {
+            muzzleFashPoint = currentWeapon.transform.Find("States/ADS/MuzzleFlashPointADS");
+            currentMuzzleFlash = Instantiate(loadout[currentIndex].muzzleFlash, muzzleFashPoint.position, muzzleFashPoint.rotation) as GameObject;
+            
+            currentMuzzleFlash.transform.parent = muzzleFashPoint;
+        }
+        else
+        {
+            muzzleFashPoint = currentWeapon.transform.Find("States/Hip/MuzzleFlashPointHIP");
+            currentMuzzleFlash = Instantiate(loadout[currentIndex].muzzleFlash, muzzleFashPoint.position, muzzleFashPoint.rotation) as GameObject;
+            currentMuzzleFlash.transform.parent = muzzleFashPoint;
+        }
+
+
+       
+
         Transform t_spawn = transform.Find("Cameras/Player Camera");
+
+
+
+
 
         //cooldown
         currentCooldown = loadout[currentIndex].firerate / warrior;
@@ -287,6 +311,8 @@ public class Weapon : MonoBehaviour
 
 
     }
+
+   
 
     public void RefreshAmmo(Text p_text)
     {

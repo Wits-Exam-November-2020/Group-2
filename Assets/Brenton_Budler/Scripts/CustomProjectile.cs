@@ -8,7 +8,7 @@ public class CustomProjectile : MonoBehaviour
     public Rigidbody rb;
     public GameObject explosion;
     public LayerMask whatIsEnemies;
-
+ 
 
     //Stats
     [Range(0f, 1f)]
@@ -64,6 +64,7 @@ public class CustomProjectile : MonoBehaviour
 
     private void ExplodeGren()
     {
+
         //Instatiate explosion
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
