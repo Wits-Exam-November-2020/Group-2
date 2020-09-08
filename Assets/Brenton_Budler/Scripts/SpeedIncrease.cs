@@ -10,7 +10,7 @@ public class SpeedIncrease : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         player = GameObject.Find("Player(Clone)");
-        Debug.Log(player.GetComponent<Player>().speed);
+
         player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.01f);
         Destroy(this.gameObject);
     }

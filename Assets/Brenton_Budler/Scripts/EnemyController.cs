@@ -62,7 +62,7 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
             if (gameObject.tag=="BasicInfantry")
             {
-                Instantiate(cog, transform.position, transform.rotation);
+              //  Instantiate(cog, transform.position, transform.rotation);
             }
             
         }

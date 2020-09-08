@@ -19,6 +19,11 @@ TagManager:
   - ShotGun
   - SMG
   - RPG
+  - Shield
+  - JetPackRecovery
+  - SpeedIncrease
+  - DoubleDamage
+  - Invincible
   layers:
   - Default
   - TransparentFX

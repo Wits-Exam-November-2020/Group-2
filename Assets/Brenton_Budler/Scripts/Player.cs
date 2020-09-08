@@ -284,7 +284,8 @@ public class Player : MonoBehaviour
         //Grappling Hook SHOOOT 
 
             HandleHookshotStart();
-      
+
+
 
         //UI REfreshes
         UpdateHealthBar();
@@ -295,6 +296,8 @@ public class Player : MonoBehaviour
 
 
     }
+
+
 
     void FixedUpdate()
     {
@@ -591,7 +594,7 @@ public class Player : MonoBehaviour
 
         UpdateHealthBar();
         UpdateShieldBar();
-        if (current_health<0)
+        if (current_health<=0)
         {
             GameController.instance.Spawn();
             current_health = max_health;

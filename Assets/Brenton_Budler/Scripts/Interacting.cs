@@ -13,6 +13,12 @@ public class Interacting : MonoBehaviour
 
     private GameObject promptText;
     private GameObject currentChest;
+    private GameObject player;
+
+    public Powerup doubleDamage;
+    public Powerup invincible;
+
+
 
 
     // Start is called before the first frame update
@@ -111,6 +117,83 @@ public class Interacting : MonoBehaviour
                 }
 
             }
+
+            if (Focus.collider.gameObject.tag == "Shield")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Shield";
+
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    player.GetComponent<Player>().current_shield += 33;
+                    Destroy(Focus.collider.gameObject);
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "JetPackRecovery")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Jetpack Recovery Reduction";
+
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    player.GetComponent<Player>().jetRecovery += (player.GetComponent<Player>().jetRecovery * 0.02f);
+                    Destroy(Focus.collider.gameObject);
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "SpeedIncrease")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Speed Increase";
+
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.01f);
+                    Destroy(Focus.collider.gameObject);
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "DoubleDamage")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Double Damage";
+
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    int ind = player.GetComponent<UsablePowerUps>().checkSpace();
+                    if (ind != 4)
+                    {
+                        player.GetComponent<UsablePowerUps>().currentPowerups[ind] = doubleDamage;
+                        Destroy(Focus.collider.gameObject);
+                    }
+                    
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "Invincible")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Invincibility";
+
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    int ind = player.GetComponent<UsablePowerUps>().checkSpace();
+                    if (ind != 4)
+                    {
+                        player.GetComponent<UsablePowerUps>().currentPowerups[ind] = invincible;
+                        Destroy(Focus.collider.gameObject);
+                    }
+
+                }
+
+            }
+
+
         }
         else
         {

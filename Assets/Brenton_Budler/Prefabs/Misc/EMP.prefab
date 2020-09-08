@@ -132,7 +132,7 @@ MonoBehaviour:
   explosionDamage: 10
   explosionRange: 5
   maxCollisions: 0
-  maxLifeTime: 2
+  maxLifeTime: 10
   explodeOnTouch: 1
   isEMP: 1
   isGrenade: 0
