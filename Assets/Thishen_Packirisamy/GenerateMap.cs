@@ -23,6 +23,7 @@ public class GenerateMap : MonoBehaviour
     private GameObject currentPrefab;
     private float seed;
     public GameObject[,] chunks;
+    public GameObject wallPrefab;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class GenerateMap : MonoBehaviour
 
     public void CreateMap()
     {
+        PlaceWalls();
         seed = Random.Range(0, 1f);
         teleporterGridPos.x = Random.Range(0, gridSizeX - 1);
         teleporterGridPos.y = Random.Range(0, gridSizeZ - 1);
@@ -74,6 +76,30 @@ public class GenerateMap : MonoBehaviour
                 
             }
         } 
+    }
+
+    private void PlaceWalls()
+    {
+
+        
+     
+        GameObject wall1 = Instantiate(wallPrefab, Vector3.zero, Quaternion.identity);
+        wall1.transform.Rotate(new Vector3(0,  -90, 0));
+        wall1.transform.localScale = new Vector3(gridSizeZ * blockSize*2, wall1.transform.localScale.y, wall1.transform.localScale.z);
+
+        GameObject wall2 = Instantiate(wallPrefab, new Vector3(gridSizeX*blockSize*2,0,0), Quaternion.identity);
+        wall2.transform.Rotate(new Vector3(0, -90, 0));
+        wall2.transform.localScale = new Vector3(gridSizeZ * blockSize*2, wall2.transform.localScale.y, wall2.transform.localScale.z);
+
+        GameObject wall3 = Instantiate(wallPrefab, Vector3.zero, Quaternion.identity);
+        wall3.transform.Rotate(new Vector3(0, 0, 0));
+        wall3.transform.localScale = new Vector3(gridSizeX * blockSize*2, wall3.transform.localScale.y, wall3.transform.localScale.z);
+
+        GameObject wall4 = Instantiate(wallPrefab, new Vector3(0, 0, gridSizeZ * blockSize*2), Quaternion.identity);
+        wall4.transform.Rotate(new Vector3(0, 0, 0));
+        wall4.transform.localScale = new Vector3(gridSizeX * blockSize*2, wall4.transform.localScale.y, wall4.transform.localScale.z);
+
+
     }
 
     public void SpawnChest(Vector3 pos, Quaternion rotation)

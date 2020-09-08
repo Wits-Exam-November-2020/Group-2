@@ -6173,6 +6173,8 @@ MonoBehaviour:
   - {fileID: 5287989946736950497, guid: e46f71aa054d2e849b97ca455b989aba, type: 3}
   - {fileID: 5287989946736950497, guid: a22af7e5869c40a4da9d2139a360d736, type: 3}
   - {fileID: 5287989946736950497, guid: 7d662c652a680e94a9d77845bc63c6c6, type: 3}
+  wallPrefab: {fileID: 1505183421156174989, guid: 9d29dc908c9637f4890d47b6db3acfc7,
+    type: 3}
 --- !u!114 &1285509269
 MonoBehaviour:
   m_ObjectHideFlags: 0
