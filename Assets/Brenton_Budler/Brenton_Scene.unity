@@ -6168,7 +6168,11 @@ MonoBehaviour:
     type: 3}
   weaponsPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
   weapons:
-  - {fileID: 5287989946736950497, guid: 7d109af585a001f49905c89f6784c4a3, type: 3}
+  - {fileID: 5287989946736950497, guid: fc51527520698794d8e32aeea5fe5d7b, type: 3}
+  - {fileID: 5287989946736950497, guid: 8e23ede2a9078a144b869a5ad9212182, type: 3}
+  - {fileID: 5287989946736950497, guid: e46f71aa054d2e849b97ca455b989aba, type: 3}
+  - {fileID: 5287989946736950497, guid: a22af7e5869c40a4da9d2139a360d736, type: 3}
+  - {fileID: 5287989946736950497, guid: 7d662c652a680e94a9d77845bc63c6c6, type: 3}
 --- !u!114 &1285509269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8497,13 +8501,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868374711}
-  m_LocalRotation: {x: 0.42466173, y: -0, z: -0, w: 0.9053521}
-  m_LocalPosition: {x: 72.9, y: 58.2, z: -59.7}
+  m_LocalRotation: {x: 0.45916608, y: -0, z: -0, w: 0.8883505}
+  m_LocalPosition: {x: 202, y: -30, z: 81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1406490490}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50.259003, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 54.667004, y: 0, z: 0}
 --- !u!108 &1868374713
 Light:
   m_ObjectHideFlags: 0
@@ -9917,21 +9921,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306075223}
     m_Modifications:
-    - target: {fileID: 614725752460052264, guid: 8718706cd76097644b293a6c062030dc,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 614725752460052264, guid: 8718706cd76097644b293a6c062030dc,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 614725752460052264, guid: 8718706cd76097644b293a6c062030dc,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7715601926199633273, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_Name
