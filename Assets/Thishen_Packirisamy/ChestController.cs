@@ -29,12 +29,13 @@ public class ChestController : MonoBehaviour
         // Debug.Log("OPENING");
         if (GameController.instance.playerWallet>=price)
         {
-            item = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+            item = Instantiate(itemPrefab, transform.position, this.transform.rotation );
+            item.transform.Rotate(0, 90, 0);
             StartCoroutine(Move(transform.position + new Vector3(0, 1, 0)));
             open = true;
             openSound.Play();
            
-            GameController.instance.playerWallet= GameController.instance.playerWallet - price;
+          //  GameController.instance.playerWallet= GameController.instance.playerWallet - price;
             
         }
         else

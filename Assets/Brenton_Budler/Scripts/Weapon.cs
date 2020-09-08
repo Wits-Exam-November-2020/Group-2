@@ -59,35 +59,30 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Equip(0);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    Equip(0);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Equip(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    Equip(1);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Equip(2);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    Equip(2);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Equip(3);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    Equip(3);
+        //}
         
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            Equip(4);
-        }
-
-
-
-
-
+        //if (Input.GetKeyDown(KeyCode.Alpha5))
+        //{
+        //    Equip(4);
+        //}
 
         if (currentWeapon!=null)
         {
@@ -257,9 +252,9 @@ public class Weapon : MonoBehaviour
             RaycastHit t_hit = new RaycastHit();
             if (Physics.Raycast(t_spawn.position, t_bloom, out t_hit, 1000f, canBeShot))
             {
-                GameObject t_newHole = Instantiate(bulletHolePrefab, t_hit.point + t_hit.normal * 0.0001f, Quaternion.identity) as GameObject;
-                t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
-                Destroy(t_newHole, 5f);
+                //GameObject t_newHole = Instantiate(bulletHolePrefab, t_hit.point + t_hit.normal * 0.0001f, Quaternion.identity) as GameObject;
+                //t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
+                //Destroy(t_newHole, 5f);
 
                 if (loadout[currentIndex].isProjectile)
                 {

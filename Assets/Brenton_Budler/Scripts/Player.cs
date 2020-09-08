@@ -589,15 +589,12 @@ public class Player : MonoBehaviour
 
         }
 
-
-
-
-
         UpdateHealthBar();
         UpdateShieldBar();
         if (current_health<0)
         {
-            manager.Spawn();
+            GameController.instance.Spawn();
+            current_health = max_health;
             Destroy(gameObject);
         }
     }

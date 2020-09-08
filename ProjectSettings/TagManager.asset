@@ -15,6 +15,10 @@ TagManager:
   - Bolt
   - Nut
   - BasicInfantry
+  - AR
+  - ShotGun
+  - SMG
+  - RPG
   layers:
   - Default
   - TransparentFX

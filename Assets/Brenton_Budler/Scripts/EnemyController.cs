@@ -5,16 +5,21 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject cog; 
- 
+    public GameObject cog;
+    public int damage = 100;
+    private GameObject player;
+
 
     private NavMeshAgent enemy;
     private Transform target;
     private float health;
-    private float maxHealth = 5;
+    public float maxHealth;
+
+    private bool isAttacking = false;
 
     private void Start()
     {
+        
         health = maxHealth;
         enemy = this.GetComponent<NavMeshAgent>();
        
@@ -23,15 +28,29 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        player = GameObject.Find("Player(Clone)");
         target = GameObject.Find("Player(Clone)").transform; 
        enemy.SetDestination(target.position);
 
         if (Vector3.Distance(enemy.transform.position,target.position) <= enemy.stoppingDistance)
         {
+            if (!isAttacking)
+            {
+                isAttacking = true;
+               // player.GetComponent<Player>().TakeDamage(damage);
+                Invoke("ResetAttack", 2);
+                
+
+            }
             Debug.Log("Attack");
         }
 
         
+    }
+
+    public void ResetAttack()
+    {
+        isAttacking = false;
     }
 
     public void TakeDamage(float amount)
@@ -60,4 +79,11 @@ public class EnemyController : MonoBehaviour
     {
         enemy.speed = enemy.speed * 100; 
     }
+
+    public void Attack()
+    {
+        
+    }
+
+
 }

@@ -53,7 +53,7 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "Pistol")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Weapon";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Pistol";
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -61,6 +61,55 @@ public class Interacting : MonoBehaviour
                     this.gameObject.GetComponent<Weapon>().Equip(0);
                 }
                 
+            }
+
+
+            if (Focus.collider.gameObject.tag == "AR")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip AR";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    this.gameObject.GetComponent<Weapon>().Equip(1);
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "ShotGun")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Shot Gun";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    this.gameObject.GetComponent<Weapon>().Equip(2);
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "SMG")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip SMG";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    this.gameObject.GetComponent<Weapon>().Equip(3);
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "RPG")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip RPG";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    this.gameObject.GetComponent<Weapon>().Equip(4);
+                }
+
             }
         }
         else

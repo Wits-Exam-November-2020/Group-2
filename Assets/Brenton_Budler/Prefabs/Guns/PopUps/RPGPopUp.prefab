@@ -417,9 +417,9 @@ GameObject:
   - component: {fileID: 5287989946736950496}
   - component: {fileID: 4044491062371310945}
   - component: {fileID: 3642659524984426305}
-  - component: {fileID: 5233650765611536174}
+  - component: {fileID: 2003947300600600399}
   m_Layer: 10
-  m_Name: RPG
+  m_Name: RPGPopUp
   m_TagString: RPG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce5f953ce7f4de44a9c6a9ceb1a30da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &5233650765611536174
+--- !u!135 &2003947300600600399
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
