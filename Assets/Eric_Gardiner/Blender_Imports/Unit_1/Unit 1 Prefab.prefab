@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3144766946802535173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit 1 Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 2581759761020303965}
   - component: {fileID: 793600617978331927}
   - component: {fileID: 4190271453704365955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,6 +260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FenceCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
@@ -506,6 +511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 5057211300290948035, guid: 7ebb54bd3c206794c8699255c98ed909,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8171832666372223785, guid: 7ebb54bd3c206794c8699255c98ed909,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -581,6 +591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampCollider (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5057211300290948035, guid: 7ebb54bd3c206794c8699255c98ed909,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8171832666372223785, guid: 7ebb54bd3c206794c8699255c98ed909,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -655,6 +670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LampCollider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057211300290948035, guid: 7ebb54bd3c206794c8699255c98ed909,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8171832666372223785, guid: 7ebb54bd3c206794c8699255c98ed909,
         type: 3}
@@ -805,6 +825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChestSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750148720496955025, guid: 9d69034c416d7914091d22be05eebb84,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d69034c416d7914091d22be05eebb84, type: 3}
