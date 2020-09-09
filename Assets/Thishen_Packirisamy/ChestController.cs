@@ -63,11 +63,20 @@ public class ChestController : MonoBehaviour
         while (timeSinceStart < waitTime)
         {
             timeSinceStart += Time.deltaTime;
-            item.transform.position = Vector3.Lerp(item.transform.position, target, 0.005f);
+
+            if (item!=null)
+            {
+                item.transform.position = Vector3.Lerp(item.transform.position, target, 0.005f);
+            }
+           
 
             yield return null;
         }
-        item.transform.position = target;
+        if (item != null)
+        {
+            item.transform.position = target;
+        }
+        
         yield return null;
         
        
