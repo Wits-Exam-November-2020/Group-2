@@ -70,7 +70,7 @@ public class GenerateMap : MonoBehaviour
                 if (ChestSpawnPoint != null)
                 {
                     SpawnChest(ChestSpawnPoint.position,ChestSpawnPoint.rotation);
-                    Debug.Log(ChestSpawnPoint.position);
+                   
                 }
                 
                 

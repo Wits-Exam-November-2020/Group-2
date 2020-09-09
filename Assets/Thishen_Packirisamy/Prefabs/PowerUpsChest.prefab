@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8295368055301753511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
     type: 3}
   open: 0
   price: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!82 &648714123346053707
 AudioSource:
   m_ObjectHideFlags: 0
