@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
             if (!isAttacking)
             {
                 isAttacking = true;
-               // player.GetComponent<Player>().TakeDamage(damage);
+                player.GetComponent<Player>().TakeDamage(damage);
                 Invoke("ResetAttack", 2);
                 
 

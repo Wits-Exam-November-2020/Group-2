@@ -50,8 +50,18 @@ public class SetPowerUp : MonoBehaviour
 
         if (player.GetComponent<UsablePowerUps>().usingDoubleDamage)
         {
-            tempScale -= 0.1f*Time.deltaTime; 
+            tempScale -= 0.065f*Time.deltaTime; 
             block.localScale = new Vector3(1,tempScale,1);
+        }
+        else if (player.GetComponent<UsablePowerUps>().usingInvincible)
+        {
+            tempScale -= 0.125f * Time.deltaTime;
+            block.localScale = new Vector3(1, tempScale, 1);
+        }
+        else
+        {
+            tempScale = 1; 
+            block.localScale = new Vector3(1, 0, 1);
         }
 
     }
