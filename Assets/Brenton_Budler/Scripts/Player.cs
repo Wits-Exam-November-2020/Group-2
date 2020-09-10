@@ -462,12 +462,12 @@ public class Player : MonoBehaviour
 
             if (jetpackUsing.volume>0f)
             {
-                jetpackUsing.volume -= 0.05f;
+                jetpackUsing.volume -= 0.02f;
             }
             else
             {
                 jetpackUsing.Stop();
-                jetpackUsing.volume = 0.2f;
+                jetpackUsing.volume = 0.05f;
             }
             
         }
@@ -479,7 +479,7 @@ public class Player : MonoBehaviour
                 jetpackUsing.Play();
             }
             
-            jetpackUsing.volume += 0.05f;
+            jetpackUsing.volume += 0.009f;
             rig.AddForce(Vector3.up * jetForce * Time.fixedDeltaTime, ForceMode.Acceleration);
             current_fuel = Mathf.Max(0, current_fuel - Time.deltaTime*1.5f);
 
