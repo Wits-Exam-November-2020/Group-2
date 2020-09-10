@@ -52,7 +52,7 @@ public class ChestController : MonoBehaviour
     {
         float timeBeforeStart = 0;
         float timeSinceStart = 0;
-        float waitTime = 3f;
+        float waitTime = 3.5f;
         
         
         while (timeBeforeStart < 0.8f)
@@ -66,7 +66,7 @@ public class ChestController : MonoBehaviour
 
             if (item!=null)
             {
-                item.transform.position = Vector3.Lerp(item.transform.position, target, 0.005f);
+                item.transform.position = Vector3.Lerp(item.transform.position, target, 1f * Time.deltaTime);
             }
            
 

@@ -5,19 +5,22 @@ using UnityEngine;
 public class UsablePowerUps : MonoBehaviour
 {
 
-    public Powerup[] currentPowerups = new Powerup[3];
+    public Powerup[] currentPowerups = new Powerup[2];
     private GameObject player;
 
-
+    
+    public bool usingDoubleDamage;
+    public bool usingInvincible; 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha8))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             player = GameObject.Find("Player(Clone)");
 
             if (currentPowerups[0]!=null && currentPowerups[0].name=="Invincible")
             {
+                usingInvincible = true;
                 player.GetComponent<Player>().invincible = true;
                 Invoke("endInvincible", 8);
                 currentPowerups[0] = null;
@@ -32,18 +35,20 @@ public class UsablePowerUps : MonoBehaviour
 
             if (currentPowerups[0] != null && currentPowerups[0].name == "DoubleDamage")
             {
+                usingDoubleDamage = true;
                 player.GetComponent<Weapon>().dmgModifier = 2f;
                 Invoke("endDoubleDamage", 15);
                 currentPowerups[0] = null;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             player = GameObject.Find("Player(Clone)");
 
             if (currentPowerups[1] != null && currentPowerups[1].name == "Invincible")
             {
+                usingInvincible = true;
                 player.GetComponent<Player>().invincible = true;
                 Invoke("endInvincible", 8);
                 currentPowerups[1] = null;
@@ -58,37 +63,13 @@ public class UsablePowerUps : MonoBehaviour
 
             if (currentPowerups[1] != null && currentPowerups[1].name == "DoubleDamage")
             {
+                usingDoubleDamage = true; 
                 player.GetComponent<Weapon>().dmgModifier = 2f;
                 Invoke("endDoubleDamage", 15);
                 currentPowerups[1] = null;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            player = GameObject.Find("Player(Clone)");
-
-            if (currentPowerups[2] != null && currentPowerups[2].name == "Invincible")
-            {
-                player.GetComponent<Player>().invincible = true;
-                Invoke("endInvincible", 8);
-                currentPowerups[2] = null;
-            }
-
-            if (currentPowerups[2] != null && currentPowerups[2].name == "Warrior")
-            {
-                player.GetComponent<Weapon>().warrior = 2f;
-                Invoke("endWarrior", 5);
-                currentPowerups[2] = null;
-            }
-
-            if (currentPowerups[2] != null && currentPowerups[2].name == "DoubleDamage")
-            {
-                player.GetComponent<Weapon>().dmgModifier = 2f;
-                Invoke("endDoubleDamage", 15);
-                currentPowerups[2] = null;
-            }
-        }
 
     }
 
@@ -101,9 +82,6 @@ public class UsablePowerUps : MonoBehaviour
         else if(currentPowerups[1] == null)
         {
             return 1;
-        }else if (currentPowerups[2] == null)
-        {
-            return 2;
         }
        
         
@@ -112,6 +90,7 @@ public class UsablePowerUps : MonoBehaviour
 
     public void endInvincible()
     {
+        usingInvincible = false;
         player.GetComponent<Player>().invincible = false;
     }
 
@@ -122,6 +101,7 @@ public class UsablePowerUps : MonoBehaviour
 
     public void endDoubleDamage()
     {
+        usingDoubleDamage = false;
         player.GetComponent<Weapon>().dmgModifier = 1f;
     }
 

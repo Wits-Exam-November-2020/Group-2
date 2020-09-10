@@ -307,6 +307,9 @@ MonoBehaviour:
   emp: {fileID: 296435458798555464, guid: 61c19b9a98a9dbb499a95040c4951653, type: 3}
   healer: {fileID: 3040477356409278217, guid: c590e4cc361433842845e312420fb5e1, type: 3}
   currentEquipmentIndex: 0
+  grenadeAmount: 0
+  empAmount: 0
+  healthBeaconAmount: 0
 --- !u!114 &-8637597698122829088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPowerups:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!82 &8011954204533432112

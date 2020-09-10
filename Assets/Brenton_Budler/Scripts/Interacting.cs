@@ -201,8 +201,8 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<EquipmentHandler>().grenadeAmount += 1; 
-
+                    player.GetComponent<EquipmentHandler>().grenadeAmount += 1;
+                    Destroy(Focus.collider.gameObject);
                 }
 
             }
@@ -215,7 +215,7 @@ public class Interacting : MonoBehaviour
                 {
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<EquipmentHandler>().empAmount += 1;
-
+                    Destroy(Focus.collider.gameObject);
                 }
 
             }
@@ -228,7 +228,7 @@ public class Interacting : MonoBehaviour
                 {
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<EquipmentHandler>().healthBeaconAmount += 1;
-
+                    Destroy(Focus.collider.gameObject);
                 }
 
             }
