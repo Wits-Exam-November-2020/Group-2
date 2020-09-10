@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        killsText.text = "kills: " + kills;
+        killsText.text = "" + kills;
 
         //if (Input.GetKeyDown("n"))
         //{
