@@ -59,7 +59,9 @@ public class EnemyController : MonoBehaviour
         Debug.Log(health);
         if (health<=0)
         {
+            GameController.instance.kills++;
             Destroy(gameObject);
+            
             if (gameObject.tag=="BasicInfantry")
             {
               //  Instantiate(cog, transform.position, transform.rotation);

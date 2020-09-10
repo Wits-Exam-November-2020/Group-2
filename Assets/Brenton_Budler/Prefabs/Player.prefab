@@ -325,6 +325,8 @@ MonoBehaviour:
   currentPowerups:
   - {fileID: 0}
   - {fileID: 0}
+  usingDoubleDamage: 0
+  usingInvincible: 0
 --- !u!82 &8011954204533432112
 AudioSource:
   m_ObjectHideFlags: 0
