@@ -43,7 +43,7 @@ public class Gun : ScriptableObject
     {
         stash = ammo;
         clip = clipSize;
-
+        
     }
 
     public bool FireBullet()
