@@ -294,7 +294,7 @@ public class Weapon : MonoBehaviour
         //sfx.Stop();
         sfx.clip = loadout[currentIndex].gunshotSound;
         sfx.pitch = 1 - loadout[currentIndex].pitchRandomization + Random.Range(-loadout[currentIndex].pitchRandomization, loadout[currentIndex].pitchRandomization);
-        sfx.volume = 0.4f;
+        sfx.volume = 0.2f;
         sfx.Play();
 
 
