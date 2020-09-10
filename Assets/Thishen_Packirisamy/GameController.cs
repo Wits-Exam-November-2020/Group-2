@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameController : MonoBehaviour
     private int stage = 0;
     public bool changingStage = false;
     private GameObject player;
+    public int kills=0;
+    public Text killsText;
 
     public GameObject player_prefab;
     public Transform[] spawn_points;
@@ -45,19 +48,22 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        killsText.text = "kills: " + kills;
+
         //if (Input.GetKeyDown("n"))
         //{
         //    NextStage();
         //}
 
 
-        if (Input.GetKeyDown("n"))
-        {
-            GetSpawnPos();
-        }
+        //if (Input.GetKeyDown("n"))
+        //{
+        //    GetSpawnPos();
+        //}
 
         // Debug.Log(GetGridPos());
     }
+    
 
     public void NextStage()
     {
@@ -118,6 +124,7 @@ public class GameController : MonoBehaviour
     {
         Transform t_spawn = spawn_points[Random.Range(0, spawn_points.Length)];
         Instantiate(player_prefab, t_spawn.position, t_spawn.rotation);
+        kills = 0;
     }
 
 }
