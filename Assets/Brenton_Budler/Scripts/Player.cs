@@ -613,7 +613,7 @@ public class Player : MonoBehaviour
     {
         Transform t_spawn = transform.Find("Cameras/Player Camera");
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G)&& Input.GetKeyDown(KeyCode.H))
         {
             if (Physics.Raycast(t_spawn.position, t_spawn.forward, out RaycastHit raycastHit))
             {

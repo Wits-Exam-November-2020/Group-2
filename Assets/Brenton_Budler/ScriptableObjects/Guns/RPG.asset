@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: RPG
   damage: 0
-  ammo: 40
-  clipSize: 10
+  ammo: 6
+  clipSize: 1
   reloadTime: 2
   firerate: 1.5
   bloom: 1

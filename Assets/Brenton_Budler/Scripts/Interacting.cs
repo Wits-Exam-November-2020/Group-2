@@ -19,6 +19,8 @@ public class Interacting : MonoBehaviour
     public Powerup invincible;
 
 
+    public AudioSource pickupSound;
+
 
 
     // Start is called before the first frame update
@@ -49,6 +51,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
+                  
                     Focus.collider.gameObject.GetComponent<ChestController>().Open();
                     currentChest = Focus.collider.gameObject;
 
@@ -63,6 +66,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     currentChest.GetComponent<ChestController>().DestroyPrefab();
                     this.gameObject.GetComponent<Weapon>().Equip(0);
                 }
@@ -76,6 +80,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     currentChest.GetComponent<ChestController>().DestroyPrefab();
                     this.gameObject.GetComponent<Weapon>().Equip(1);
                 }
@@ -88,6 +93,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     currentChest.GetComponent<ChestController>().DestroyPrefab();
                     this.gameObject.GetComponent<Weapon>().Equip(2);
                 }
@@ -100,6 +106,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     currentChest.GetComponent<ChestController>().DestroyPrefab();
                     this.gameObject.GetComponent<Weapon>().Equip(3);
                 }
@@ -112,6 +119,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     currentChest.GetComponent<ChestController>().DestroyPrefab();
                     this.gameObject.GetComponent<Weapon>().Equip(4);
                 }
@@ -124,6 +132,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<Player>().current_shield += 33;
                     Destroy(Focus.collider.gameObject);
@@ -137,6 +146,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<Player>().jetRecovery += (player.GetComponent<Player>().jetRecovery * 0.02f);
                     Destroy(Focus.collider.gameObject);
@@ -150,6 +160,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.01f);
                     Destroy(Focus.collider.gameObject);
@@ -163,6 +174,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     int ind = player.GetComponent<UsablePowerUps>().checkSpace();
                     if (ind != 4)
@@ -181,6 +193,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     int ind = player.GetComponent<UsablePowerUps>().checkSpace();
                     if (ind != 4)
@@ -200,6 +213,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<EquipmentHandler>().grenadeAmount += 1;
                     Destroy(Focus.collider.gameObject);
@@ -213,6 +227,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<EquipmentHandler>().empAmount += 1;
                     Destroy(Focus.collider.gameObject);
@@ -226,6 +241,7 @@ public class Interacting : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<EquipmentHandler>().healthBeaconAmount += 1;
                     Destroy(Focus.collider.gameObject);

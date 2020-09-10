@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: AR
   damage: 1
-  ammo: 180
+  ammo: 90
   clipSize: 30
   reloadTime: 1.5
   firerate: 0.15

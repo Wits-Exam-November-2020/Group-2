@@ -53,7 +53,12 @@ public class CustomProjectile : MonoBehaviour
         }else if (isEMP)
         {
             //When to explode
-            if (collisions > maxCollisions) ExplodeEMP();
+            if (collisions > maxCollisions)
+            {
+
+                ExplodeEMP();
+                collisions = maxCollisions;
+            }
 
             //Countdown Lifetime
             maxLifeTime -= Time.deltaTime;

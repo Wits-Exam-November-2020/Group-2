@@ -12,6 +12,7 @@ public class Explode : MonoBehaviour
     private Renderer rend;
     private Collider col;
 
+    public GameObject explosionEffect; 
     
 
 
@@ -33,8 +34,10 @@ public class Explode : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.enabled = false;
         
-        explodeSound.Play();
-        
+      //  explodeSound.Play();
+
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+
         //Check for enemies
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
         for (int i = 0; i < enemies.Length; i++)

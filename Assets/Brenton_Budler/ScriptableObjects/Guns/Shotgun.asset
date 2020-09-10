@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: ShotGun
   damage: 1
-  ammo: 180
+  ammo: 18
   clipSize: 2
   reloadTime: 1.5
   firerate: 0.1

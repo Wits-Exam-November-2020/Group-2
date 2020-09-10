@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Pistol
   damage: 1
-  ammo: 20
+  ammo: 36
   clipSize: 6
   reloadTime: 1
   firerate: 0.15
