@@ -120,9 +120,9 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "Shield")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Shield";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Shield";
 
-                if (Input.GetKeyDown(KeyCode.P))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<Player>().current_shield += 33;
@@ -133,9 +133,9 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "JetPackRecovery")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Jetpack Recovery Reduction";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Jetpack Recovery Reduction";
 
-                if (Input.GetKeyDown(KeyCode.P))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<Player>().jetRecovery += (player.GetComponent<Player>().jetRecovery * 0.02f);
@@ -146,9 +146,9 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "SpeedIncrease")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Speed Increase";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Speed Increase";
 
-                if (Input.GetKeyDown(KeyCode.P))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     player = GameObject.Find("Player(Clone)");
                     player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.01f);
@@ -159,9 +159,9 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "DoubleDamage")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Double Damage";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Double Damage";
 
-                if (Input.GetKeyDown(KeyCode.P))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     player = GameObject.Find("Player(Clone)");
                     int ind = player.GetComponent<UsablePowerUps>().checkSpace();
@@ -177,9 +177,9 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "Invincible")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press P to Pickup Invincibility";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Invincibility";
 
-                if (Input.GetKeyDown(KeyCode.P))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     player = GameObject.Find("Player(Clone)");
                     int ind = player.GetComponent<UsablePowerUps>().checkSpace();
@@ -192,6 +192,47 @@ public class Interacting : MonoBehaviour
                 }
 
             }
+
+
+            if (Focus.collider.gameObject.tag == "Grenade")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Grenade";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    player.GetComponent<EquipmentHandler>().grenadeAmount += 1; 
+
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "EMP")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup EMP";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    player.GetComponent<EquipmentHandler>().empAmount += 1;
+
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "HealthBeacon")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup HealthBeacon";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    player = GameObject.Find("Player(Clone)");
+                    player.GetComponent<EquipmentHandler>().healthBeaconAmount += 1;
+
+                }
+
+            }
+
 
 
         }

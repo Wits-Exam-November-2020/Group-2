@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 967484000807781956}
   m_Layer: 14
   m_Name: HealthBeacon
-  m_TagString: Equipment
+  m_TagString: HealthBeacon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

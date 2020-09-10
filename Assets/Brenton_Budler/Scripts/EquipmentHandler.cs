@@ -19,9 +19,9 @@ public class EquipmentHandler : MonoBehaviour
     private bool isDown;
     private bool isReleased;
 
-    private int grenadeAmount = 2;
-    private int empAmount = 2;
-    private int healthBeaconAmount = 1; 
+    public int grenadeAmount = 2;
+    public int empAmount = 2;
+    public int healthBeaconAmount = 1; 
 
     private void Start()
     {

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 995151247145100527}
   m_Layer: 10
   m_Name: EMP
-  m_TagString: Equipment
+  m_TagString: EMP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

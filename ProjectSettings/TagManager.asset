@@ -24,6 +24,9 @@ TagManager:
   - SpeedIncrease
   - DoubleDamage
   - Invincible
+  - Grenade
+  - EMP
+  - HealthBeacon
   layers:
   - Default
   - TransparentFX
