@@ -6166,7 +6166,7 @@ MonoBehaviour:
   - {fileID: 3247718397182603629, guid: 28489192bac9a9a4687f461e1690467a, type: 3}
   - {fileID: 4246092267835585834, guid: e612faddeac902046abe2c441885410e, type: 3}
   powerUpsPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
-  weaponChestPrefab: {fileID: 2750148720496955025, guid: a336170a636c0194681cc05d96bc8629,
+  weaponChestPrefab: {fileID: 2781560497635062284, guid: 5d302c49bcf01104bad5fcd97c4d6aae,
     type: 3}
   weaponsPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
   weapons:
