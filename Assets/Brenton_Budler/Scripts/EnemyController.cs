@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     private NavMeshAgent enemy;
     private Transform target;
-    private float health;
+    public float health;
     public float maxHealth;
 
     private bool isAttacking = false;
@@ -61,6 +61,7 @@ public class EnemyController : MonoBehaviour
         {
             GameController.instance.kills++;
             Destroy(gameObject);
+            
             
             if (gameObject.tag=="BasicInfantry")
             {

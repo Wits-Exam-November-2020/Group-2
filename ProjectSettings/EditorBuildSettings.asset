@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Brenton_Budler/OpeningMenu.unity
+    guid: 136f2fe2845e8394382490017e95d3cb
+  - enabled: 1
     path: Assets/Brenton_Budler/Brenton_Scene.unity
     guid: be83fdfbbc4f000449d69c2211c12c53
   m_configObjects: {}

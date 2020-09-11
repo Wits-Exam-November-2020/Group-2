@@ -4950,7 +4950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705172101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75, y: 22, z: 75}
+  m_LocalPosition: {x: 75, y: 21, z: 75}
   m_LocalScale: {x: 300, y: 2, z: 300}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8250,11 +8250,11 @@ MonoBehaviour:
     type: 3}
   weaponsPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
   weapons:
-  - {fileID: 5287989946736950497, guid: e46f71aa054d2e849b97ca455b989aba, type: 3}
   - {fileID: 5287989946736950497, guid: 8e23ede2a9078a144b869a5ad9212182, type: 3}
-  - {fileID: 5287989946736950497, guid: fc51527520698794d8e32aeea5fe5d7b, type: 3}
+  - {fileID: 5287989946736950497, guid: e46f71aa054d2e849b97ca455b989aba, type: 3}
   - {fileID: 5287989946736950497, guid: a22af7e5869c40a4da9d2139a360d736, type: 3}
   - {fileID: 5287989946736950497, guid: 7d662c652a680e94a9d77845bc63c6c6, type: 3}
+  - {fileID: 5287989946736950497, guid: fc51527520698794d8e32aeea5fe5d7b, type: 3}
   - {fileID: 296435458798555464, guid: aef58d16cd789454cb38ad0517baf13b, type: 3}
   - {fileID: 296435458798555464, guid: 8c8acd28f62766944a1827000df19ef0, type: 3}
   - {fileID: 3040477356409278217, guid: 309bc7cf1e6d29140b290ec94d64b948, type: 3}

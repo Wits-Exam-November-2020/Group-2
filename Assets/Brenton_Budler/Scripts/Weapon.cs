@@ -268,10 +268,12 @@ public class Weapon : MonoBehaviour
 
                 if (t_hit.collider.gameObject.layer == 12)
                 {
-                    t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage * dmgModifier);
+                    if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) {
+                        t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage * dmgModifier);
+                    }
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
                     // sfx.PlayOneShot(hitmarkerSound);
-                    hitmarkerWait = 0.5f;
+                    hitmarkerWait = 0.1f;
                 }
             }
             else

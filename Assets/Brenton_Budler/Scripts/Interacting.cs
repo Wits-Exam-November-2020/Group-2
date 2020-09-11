@@ -31,11 +31,23 @@ public class Interacting : MonoBehaviour
         promptText = GameObject.Find("HUD/PromptText");
         
     }
+    private void FixedUpdate()
+    {
 
+        if (this.transform.position.y > 10 && Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            promptText.GetComponent<UnityEngine.UI.Text>().text = "Health Beacons must be placed on the ground";
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        
+
+
+        if (this.transform.position.y >10 && Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            promptText.GetComponent<UnityEngine.UI.Text>().text = "Health Beacons must be placed on the ground";
+        }
         
 
 
