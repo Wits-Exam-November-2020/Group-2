@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -596,6 +597,7 @@ public class Player : MonoBehaviour
         UpdateShieldBar();
         if (current_health<=0)
         {
+            SceneManager.LoadScene(0);
             GameController.instance.Spawn();
             current_health = max_health;
             Destroy(gameObject);
