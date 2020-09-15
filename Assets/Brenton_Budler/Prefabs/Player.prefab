@@ -204,7 +204,7 @@ MonoBehaviour:
   defaultSpeed: 0
   sprintModifier: 1.5
   crouchModifier: 0.5
-  jumpForce: 1500
+  jumpForce: 1000
   jetForce: 4000
   jetWait: 0.5
   jetRecovery: 0.5

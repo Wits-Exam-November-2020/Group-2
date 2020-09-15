@@ -202,7 +202,7 @@ public class Player : MonoBehaviour
 
 
         //States
-        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
+        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.05f, ground);
         bool isJumping = jump && isGrounded;
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;
@@ -293,6 +293,14 @@ public class Player : MonoBehaviour
         UpdateShieldBar();
         weapon.RefreshAmmo(ui_ammo);
 
+
+        if (!isGrounded)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                canJet = true;
+            }
+        }
 
 
 
@@ -437,7 +445,9 @@ public class Player : MonoBehaviour
 
         if (!isGrounded)
         {
-            canJet = true;
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                canJet = true;
+            }
         }
         if (isGrounded)
         {
