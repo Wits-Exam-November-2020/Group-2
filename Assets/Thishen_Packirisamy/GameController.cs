@@ -109,8 +109,8 @@ public class GameController : MonoBehaviour
             for (int j =-1;j<=1;j++)
             {
 
-                int xIndex = ((int)gridPos.x) + i;
-                int zIndex = ((int)gridPos.z) + j;
+                int xIndex = ((int)gridPos.x) + i*2;
+                int zIndex = ((int)gridPos.z) + j*2;
 
                 if (zIndex>=0&&zIndex<MapGenerator.gridSizeZ&& xIndex >= 0 && xIndex < MapGenerator.gridSizeX &&!(xIndex==gridPos.x&&zIndex==gridPos.z))
                 {
