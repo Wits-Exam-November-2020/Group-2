@@ -4894,7 +4894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &705172103
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8180,7 +8180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 6559466365474908671, guid: 60087798697dc7c43bb242bad8bf07d5, type: 3}
+  - {fileID: 2567873558655504251, guid: fefe1c6889dde2f4b9e5ba71fa83507e, type: 3}
   timeBetweenSpawns: 5
   amountOfEnemiesPerSpawn: 1
 --- !u!114 &1285509266
