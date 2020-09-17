@@ -27,6 +27,7 @@ TagManager:
   - Grenade
   - EMP
   - HealthBeacon
+  - FlyingEnemy1
   layers:
   - Default
   - TransparentFX

@@ -8180,7 +8180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 2567873558655504251, guid: fefe1c6889dde2f4b9e5ba71fa83507e, type: 3}
+  - {fileID: 6559466365474908671, guid: f8f1e5600f0628d4491193c002ac4455, type: 3}
   timeBetweenSpawns: 5
   amountOfEnemiesPerSpawn: 1
 --- !u!114 &1285509266

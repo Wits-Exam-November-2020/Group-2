@@ -10,18 +10,20 @@ public class EnemyController : MonoBehaviour
     private GameObject player;
 
 
-    private NavMeshAgent enemy;
+    public NavMeshAgent enemy;
     private Transform target;
     public float health;
     public float maxHealth;
 
     private bool isAttacking = false;
 
+    private Vector3 playerLoc;
+
     private void Start()
     {
         
         health = maxHealth;
-        enemy = this.GetComponent<NavMeshAgent>();
+       // enemy = this.GetComponent<NavMeshAgent>();
        
     }
 
@@ -30,22 +32,62 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.Find("Player(Clone)");
         target = GameObject.Find("Player(Clone)").transform; 
-       enemy.SetDestination(target.position);
+        enemy.SetDestination(target.position);
 
-        if (Vector3.Distance(enemy.transform.position,target.position) <= enemy.stoppingDistance)
+
+
+        //transform.Translate(0,1f,0);
+
+        if (gameObject.tag=="FlyingEnemy1")
         {
-            if (!isAttacking)
-            {
-                isAttacking = true;
-                player.GetComponent<Player>().TakeDamage(damage);
-                Invoke("ResetAttack", 2);
-                
 
+
+
+            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(transform.localPosition.x, player.transform.position.y, transform.localPosition.z), 0.5f * Time.deltaTime);
+
+
+
+            playerLoc.x = player.transform.position.x;
+            playerLoc.z = player.transform.position.z;
+            playerLoc.y = enemy.transform.position.y;
+
+            if (Vector3.Distance(enemy.transform.position, playerLoc) <= enemy.stoppingDistance)
+            {
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                    player.GetComponent<Player>().TakeDamage(damage);
+                    Invoke("ResetAttack", 2);
+
+
+                }
+                Debug.Log("Attack");
             }
-            Debug.Log("Attack");
+        }
+        else
+        {
+            if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.stoppingDistance)
+            {
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                    player.GetComponent<Player>().TakeDamage(damage);
+                    Invoke("ResetAttack", 2);
+
+
+                }
+                Debug.Log("Attack");
+            }
+
         }
 
-        
+
+
+
+
+
+
+
     }
 
     public void ResetAttack()
