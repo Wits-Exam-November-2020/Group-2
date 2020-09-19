@@ -8221,17 +8221,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   genericBlockPrefabs:
-  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
-  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
-  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
-  - {fileID: 2373296178314760639, guid: 2f92553ff9e78f94f86d5cf04c28c07a, type: 3}
-  - {fileID: 1018600684871964638, guid: 62b09ad533fd25741be4ff6a74dd85a7, type: 3}
-  - {fileID: 1018600684871964638, guid: 62b09ad533fd25741be4ff6a74dd85a7, type: 3}
-  - {fileID: 1018600684871964638, guid: 62b09ad533fd25741be4ff6a74dd85a7, type: 3}
-  - {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873, type: 3}
-  - {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873, type: 3}
-  - {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873, type: 3}
-  TPBlockPrefab: {fileID: 1270515304687310702, guid: b90698601c1a260439cc59c1e4f63873,
+  - {fileID: 7036372885595394543, guid: 60e8bac27b0b5814da2681f75d821e93, type: 3}
+  - {fileID: 7036372885595394543, guid: 60e8bac27b0b5814da2681f75d821e93, type: 3}
+  - {fileID: 7036372885595394543, guid: 60e8bac27b0b5814da2681f75d821e93, type: 3}
+  - {fileID: 8253515168903184260, guid: abc1f4de3c56c9e4d88c32fb768c696b, type: 3}
+  - {fileID: 8253515168903184260, guid: abc1f4de3c56c9e4d88c32fb768c696b, type: 3}
+  - {fileID: 5523583851763678931, guid: d7fdbf13c72bd084ab4c0dc4fa474280, type: 3}
+  - {fileID: 5523583851763678931, guid: d7fdbf13c72bd084ab4c0dc4fa474280, type: 3}
+  - {fileID: 4012525115047088027, guid: 0cbf8349ff26f8644b255c80e4b180cd, type: 3}
+  - {fileID: 4012525115047088027, guid: 0cbf8349ff26f8644b255c80e4b180cd, type: 3}
+  - {fileID: 4012525115047088027, guid: 0cbf8349ff26f8644b255c80e4b180cd, type: 3}
+  TPBlockPrefab: {fileID: 7036372885595394543, guid: 60e8bac27b0b5814da2681f75d821e93,
     type: 3}
   gridSizeX: 5
   gridSizeZ: 5
