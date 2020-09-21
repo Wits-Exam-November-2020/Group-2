@@ -511,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 47.900085, y: 132.99997}
+  m_AnchoredPosition: {x: 47.900146, y: 133}
   m_SizeDelta: {x: 19.599976, y: 45.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74217658
@@ -1768,7 +1768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -38.299988, y: -141.5}
+  m_AnchoredPosition: {x: -38.30005, y: -141.5}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329050273
@@ -8241,7 +8241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 6559466365474908671, guid: f8f1e5600f0628d4491193c002ac4455, type: 3}
-  timeBetweenSpawns: 10
+  timeBetweenSpawns: 4
   amountOfEnemiesPerSpawn: 1
 --- !u!114 &1285509266
 MonoBehaviour:
@@ -13593,7 +13593,7 @@ PrefabInstance:
     - target: {fileID: 4694801597197369575, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -17.799866
+      value: -17.799805
       objectReference: {fileID: 0}
     - target: {fileID: 4694801597197369575, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
@@ -13929,12 +13929,12 @@ PrefabInstance:
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.400085
+      value: -24.400024
       objectReference: {fileID: 0}
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -19.099915
+      value: -19.099854
       objectReference: {fileID: 0}
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}

@@ -122,6 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cog: {fileID: 0}
   damage: 10
+  rotationSpeed: 1.5
+  startSpeed: 8
+  raycastOffset: 1
+  rayDistance: 3
+  turnSpeed: 200
   enemy: {fileID: 6559466365474908641}
   health: 2
   maxHealth: 2

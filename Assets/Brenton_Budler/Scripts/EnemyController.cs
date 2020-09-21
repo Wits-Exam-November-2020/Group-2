@@ -7,6 +7,12 @@ public class EnemyController : MonoBehaviour
 {
     public GameObject cog;
     public int damage = 100;
+    public float rotationSpeed = 0.5f;
+    private float moveSpeed = 2f;
+    public float startSpeed = 3f;
+    public float raycastOffset = 1;
+    public float rayDistance;
+    public float turnSpeed;
     private GameObject player;
 
 
@@ -24,6 +30,7 @@ public class EnemyController : MonoBehaviour
     {
         
         health = maxHealth;
+        moveSpeed = startSpeed;
        // enemy = this.GetComponent<NavMeshAgent>();
        
     }
@@ -31,10 +38,17 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        enemy.enabled = false;
         player = GameObject.Find("Player(Clone)");
-        target = GameObject.Find("Player(Clone)").transform; 
-      
+        target = GameObject.Find("Player(Clone)").transform;
 
+        // point();
+        rays();
+        if (Vector3.Distance(transform.position, player.transform.position) > 4)
+        {
+            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        }
+        
 
         //   enemy.agentTypeID = -334000983;
         // finalDestination = new Vector3(target.position.x, target.position.y + 3, target.position.z);
@@ -49,19 +63,19 @@ public class EnemyController : MonoBehaviour
         //    transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(transform.localPosition.x, player.transform.position.y, transform.localPosition.z), 0.5f * Time.deltaTime);
 
         if (player.transform.position.y>10) {
-            enemy.enabled = false;
+            //enemy.enabled = false;
             //   transform.localPosition = Vector3.Lerp(transform.localPosition, player.transform.position, 0.5f * Time.deltaTime);
            // if (Vector3.Distance(enemy.transform.position, player.transform.position) <= 10)
            // {
-                transform.position = Vector3.Lerp(transform.position, player.transform.position, 1f * Time.deltaTime);
+              //  transform.position = Vector3.Lerp(transform.position, player.transform.position, 1f * Time.deltaTime);
            // }
            
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(0,1,0), 0.5f * Time.deltaTime);
-            enemy.enabled = true;
-            enemy.SetDestination(target.position);
+            //transform.position = Vector3.Lerp(transform.position, new Vector3(0,1,0), 0.5f * Time.deltaTime);
+           // enemy.enabled = true;
+           // enemy.SetDestination(target.position);
         }
         
 
@@ -109,6 +123,62 @@ public class EnemyController : MonoBehaviour
 
 
 
+    }
+
+    private void point()
+    {
+        Vector3 dir = player.transform.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+    }
+
+    private void rays()
+    {
+        Vector3 turn = Vector3.zero;
+        RaycastHit hit;
+        Vector3 left = transform.position - transform.right * raycastOffset;
+        Vector3 right = transform.position + transform.right * raycastOffset;
+        Vector3 up = transform.position + transform.up * raycastOffset;
+        Vector3 down = transform.position - transform.up * raycastOffset;
+
+        Debug.DrawRay(left, transform.forward * rayDistance,Color.cyan);
+        Debug.DrawRay(right, transform.forward * rayDistance, Color.cyan);
+        Debug.DrawRay(up, transform.forward * rayDistance, Color.cyan);
+        Debug.DrawRay(down, transform.forward * rayDistance, Color.cyan);
+
+        if (Physics.Raycast(left, transform.forward, out hit, rayDistance))
+        {
+            turn += Vector3.up;
+        }else if(Physics.Raycast(right, transform.forward, out hit, rayDistance))
+        {
+            turn += Vector3.down;
+        }
+        //if (Physics.Raycast(down, transform.forward, out hit, rayDistance))
+        //{
+        //   // turn -= Vector3.up;
+        //}
+        //else if (Physics.Raycast(up, transform.forward, out hit, rayDistance))
+        //{
+        //   // turn += Vector3.down;
+        //}
+       
+        if (turn != Vector3.zero )
+        {
+            if (hit.collider!=null)
+            {
+                if (hit.collider.tag == "Building")
+                {
+                    moveSpeed = hit.distance-0.5f;
+                    transform.Rotate(turn * turnSpeed * Time.deltaTime);
+                }
+            }
+            
+        }
+        else
+        {
+            moveSpeed = startSpeed;
+            point();
+        }
     }
 
     public void ResetAttack()

@@ -28,6 +28,7 @@ TagManager:
   - EMP
   - HealthBeacon
   - FlyingEnemy1
+  - Building
   layers:
   - Default
   - TransparentFX
