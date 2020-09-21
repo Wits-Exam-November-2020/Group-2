@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        enemy.enabled = false;
+
         player = GameObject.Find("Player(Clone)");
         target = GameObject.Find("Player(Clone)").transform;
 
@@ -101,18 +101,18 @@ public class EnemyController : MonoBehaviour
         //}
         //else
         //{
-            if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.stoppingDistance)
-            {
-                if (!isAttacking)
-                {
-                    isAttacking = true;
-                    player.GetComponent<Player>().TakeDamage(damage);
-                    Invoke("ResetAttack", 2);
+            //if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.stoppingDistance)
+            //{
+            //    if (!isAttacking)
+            //    {
+            //        isAttacking = true;
+            //        player.GetComponent<Player>().TakeDamage(damage);
+            //        Invoke("ResetAttack", 2);
 
 
-                }
-                Debug.Log("Attack");
-            }
+            //    }
+            //    Debug.Log("Attack");
+            //}
 
       //  }
 
