@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5920969253540220937}
   - component: {fileID: 8544516457884267323}
   - component: {fileID: 1702159409833083924}
-  - component: {fileID: 6352442678844437869}
+  - component: {fileID: 8271727233208296834}
+  - component: {fileID: 5085661045678110619}
   m_Layer: 12
   m_Name: Sphere
   m_TagString: FlyingEnemy1
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4967766183823699162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6395761357789598178}
@@ -95,7 +96,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8265798
   m_Center: {x: 0.012738228, y: 0.30645967, z: -0.04313755}
---- !u!114 &6352442678844437869
+--- !u!114 &8271727233208296834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967766183823699162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b1671f04921ce4baa313f89ad9199c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5085661045678110619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cog: {fileID: 0}
-  damage: 5
+  damage: 10
   enemy: {fileID: 6559466365474908641}
   health: 2
   maxHealth: 2
@@ -125,7 +138,6 @@ GameObject:
   - component: {fileID: 6559466365474908669}
   - component: {fileID: 6559466365474908641}
   - component: {fileID: 649217482206357480}
-  - component: {fileID: 5654554185214056014}
   m_Layer: 12
   m_Name: FlyingEnemy1
   m_TagString: FlyingEnemy1
@@ -203,13 +215,13 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6559466365474908671}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
-  m_Radius: 1.25
-  m_Speed: 10
+  m_AgentTypeID: -902729914
+  m_Radius: 1
+  m_Speed: 5
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 10
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -313,18 +325,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5654554185214056014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6559466365474908671}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c8df72946f8be4992330b2259f29d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5921169741623073683
 PrefabInstance:
   m_ObjectHideFlags: 0
