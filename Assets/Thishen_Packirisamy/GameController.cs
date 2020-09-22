@@ -19,7 +19,8 @@ public class GameController : MonoBehaviour
     public Transform[] spawn_points;
     public Wallet playerWallet;
 
-    public NavMeshSurface surface;
+    public NavMeshSurface basicSurface;
+    public NavMeshSurface flySurface;
 
     private void Awake()
     {
@@ -42,7 +43,9 @@ public class GameController : MonoBehaviour
 
         player = GameObject.Find("Player(Clone)");
         NextStage();
-        surface.BuildNavMesh();
+        basicSurface.BuildNavMesh();
+        flySurface.BuildNavMesh();
+        
         Spawn();
 
     }
