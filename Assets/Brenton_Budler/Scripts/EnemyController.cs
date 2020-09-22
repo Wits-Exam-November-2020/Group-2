@@ -127,7 +127,8 @@ public class EnemyController : MonoBehaviour
 
     private void point()
     {
-        Vector3 dir = player.transform.position - transform.position;
+        Vector3 targetPosition = new Vector3(player.transform.position.x, player.transform.position.y+2, player.transform.position.z);
+        Vector3 dir = targetPosition - transform.position;
         Quaternion rotation = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
@@ -155,7 +156,7 @@ public class EnemyController : MonoBehaviour
         }
         //if (Physics.Raycast(down, transform.forward, out hit, rayDistance))
         //{
-        //   // turn -= Vector3.up;
+        //  // turn -= Vector3.up;
         //}
         //else if (Physics.Raycast(up, transform.forward, out hit, rayDistance))
         //{
@@ -170,6 +171,14 @@ public class EnemyController : MonoBehaviour
                 {
                     moveSpeed = hit.distance-0.5f;
                     transform.Rotate(turn * turnSpeed * Time.deltaTime);
+                }
+
+                if (hit.collider.tag=="FlyingEnemy1")
+                {
+                    //moveSpeed = hit.distance - 0.5f;
+                   transform.Rotate(turn * turnSpeed * Time.deltaTime);
+              //     transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f*Time.deltaTime);
+                   
                 }
             }
             
