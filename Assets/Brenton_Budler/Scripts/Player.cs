@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
     private Transform ui_shieldbar;
     private Text ui_ammo;
 
-   
+    private Transform ui_ammobar;
+
 
 
 
@@ -127,6 +128,7 @@ public class Player : MonoBehaviour
 
         ui_healthbar = GameObject.Find("HUD/Health/Bar").transform;
         ui_fuelbar = GameObject.Find("HUD/Fuel/Bar").transform;
+        ui_ammobar = GameObject.Find("HUD/AmmoBar/Bar").transform;
         ui_shieldbar = GameObject.Find("HUD/Shield/Bar").transform;
         UpdateHealthBar();
         UpdateShieldBar();
@@ -291,7 +293,7 @@ public class Player : MonoBehaviour
         //UI REfreshes
         UpdateHealthBar();
         UpdateShieldBar();
-        weapon.RefreshAmmo(ui_ammo);
+        weapon.RefreshAmmo(ui_ammobar);
 
 
         if (!isGrounded)

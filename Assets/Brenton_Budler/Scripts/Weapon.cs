@@ -16,6 +16,10 @@ public class Weapon : MonoBehaviour
     public GameObject currentWeapon;
 
     public float warrior;
+    public int currentAmmo;
+    private int maxAmmo ;
+
+    private Transform ui_ammobar;
 
     //SOUND
     public AudioSource sfx;
@@ -31,6 +35,8 @@ public class Weapon : MonoBehaviour
     public float dmgModifier;
     private Transform muzzleFashPoint;
     private GameObject currentMuzzleFlash;
+
+
     
     #endregion
 
@@ -42,10 +48,12 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
+        maxAmmo = 100;
+        currentAmmo = maxAmmo;
 
-             dmgModifier = 1;
+        dmgModifier = 1;
 
-           warrior = 1;
+        warrior = 1;
         foreach (Gun a in loadout)
         {
             a.Initialize();
@@ -78,11 +86,23 @@ public class Weapon : MonoBehaviour
         //{
         //    Equip(3);
         //}
-        
+
         //if (Input.GetKeyDown(KeyCode.Alpha5))
         //{
         //    Equip(4);
         //}
+
+
+        //Ammo 
+        if (currentAmmo<0)
+        {
+            currentAmmo = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            currentAmmo = maxAmmo;
+        }
 
         if (currentWeapon!=null)
         {
@@ -92,10 +112,10 @@ public class Weapon : MonoBehaviour
                 if (loadout[currentIndex].burst!=1) {
                     if (Input.GetMouseButtonDown(0) && currentCooldown <= 0 && isReloading == false)
                     { 
-                        if (loadout[currentIndex].FireBullet()) {
+                        if (currentAmmo > 0) {
                            
                             Shoot(); }
-                        else { StartCoroutine(Reload(loadout[currentIndex].reloadTime));
+                        else { //no ammmo);
                           
                         }
                     }
@@ -105,19 +125,15 @@ public class Weapon : MonoBehaviour
             {
                 if (Input.GetMouseButton(0) && currentCooldown <= 0 && isReloading==false)
                 {
-                    if (loadout[currentIndex].FireBullet()) {
+                    if (currentAmmo>0) {
                        
                         Shoot(); }
-                    else { StartCoroutine(Reload(loadout[currentIndex].reloadTime));
+                    else { //no ammo);
                         
                     }
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.R) && !isAiming)
-            {
-                StartCoroutine(Reload(loadout[currentIndex].reloadTime));
-            }
 
             //weapon position elasticity 
             currentWeapon.transform.localPosition = Vector3.Lerp(currentWeapon.transform.localPosition, Vector3.zero, Time.deltaTime*4f);
@@ -151,7 +167,7 @@ public class Weapon : MonoBehaviour
 
         yield return new WaitForSeconds(p_wait);
 
-        loadout[currentIndex].Reload();
+       // loadout[currentIndex].Reload();
         currentWeapon.SetActive(true);
         isReloading = false;
     }
@@ -233,7 +249,8 @@ public class Weapon : MonoBehaviour
         Transform t_spawn = transform.Find("Cameras/Player Camera");
 
 
-
+        //Ammo
+        currentAmmo -= loadout[currentIndex].bulletValue;
 
 
         //cooldown
@@ -312,12 +329,15 @@ public class Weapon : MonoBehaviour
 
    
 
-    public void RefreshAmmo(Text p_text)
+    public void RefreshAmmo(Transform pbar)
     {
-        int t_clip = loadout[currentIndex].GetClip();
-        int t_stache = loadout[currentIndex].GetStash();
+        //int t_clip = loadout[currentIndex].GetClip();
+        //int t_stache = loadout[currentIndex].GetStash();
 
-        p_text.text = t_clip.ToString("D2") + "/ " + t_stache.ToString("D2");
+        float t_ammo_ratio = (float)currentAmmo / (float)maxAmmo;
+        pbar.localScale = Vector3.Lerp(pbar.localScale, new Vector3(t_ammo_ratio, 1, 1), Time.deltaTime * 8f);
+
+
     }
 
 
