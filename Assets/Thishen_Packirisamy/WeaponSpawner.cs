@@ -25,11 +25,9 @@ public class WeaponSpawner : MonoBehaviour
 
             if (currentPrefabs.Count <= 0)
             {
-                Debug.Log(currentPrefabs.Count);
-                Debug.Log("asdasdd");
+               
                 currentPrefabs = new List<GameObject>(weaponPrefabs);
-                Debug.Log(weaponPrefabs.Count);
-                Debug.Log(currentPrefabs.Count);
+             
             }
 
         }
