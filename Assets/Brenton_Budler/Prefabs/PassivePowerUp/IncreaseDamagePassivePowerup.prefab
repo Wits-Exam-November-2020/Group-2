@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3247718397182603539}
   - component: {fileID: 3247718397182603538}
   m_Layer: 0
-  m_Name: DoubleDamagePickupUsable
-  m_TagString: DoubleDamage
+  m_Name: IncreaseDamagePassivePowerup
+  m_TagString: IncreaseDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

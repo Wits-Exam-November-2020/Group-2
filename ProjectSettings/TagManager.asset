@@ -22,13 +22,13 @@ TagManager:
   - Shield
   - JetPackRecovery
   - SpeedIncrease
-  - DoubleDamage
   - Invincible
   - Grenade
   - EMP
   - HealthBeacon
   - FlyingEnemy1
   - Building
+  - IncreaseDamage
   layers:
   - Default
   - TransparentFX

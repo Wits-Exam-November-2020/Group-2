@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour
         maxAmmo = 100;
         currentAmmo = maxAmmo;
 
-        dmgModifier = 1;
+        dmgModifier = 0;
 
         warrior = 1;
         foreach (Gun a in loadout)
@@ -286,7 +286,7 @@ public class Weapon : MonoBehaviour
                 if (t_hit.collider.gameObject.layer == 12)
                 {
                     if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) {
-                        t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage * dmgModifier);
+                        t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage + dmgModifier);
                     }
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
                     // sfx.PlayOneShot(hitmarkerSound);

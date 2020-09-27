@@ -180,7 +180,7 @@ public class Interacting : MonoBehaviour
 
             }
 
-            if (Focus.collider.gameObject.tag == "DoubleDamage")
+            if (Focus.collider.gameObject.tag == "IncreaseDamage")
             {
                 promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Double Damage";
 
@@ -188,13 +188,9 @@ public class Interacting : MonoBehaviour
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
-                    int ind = player.GetComponent<UsablePowerUps>().checkSpace();
-                    if (ind != 4)
-                    {
-                        player.GetComponent<UsablePowerUps>().currentPowerups[ind] = doubleDamage;
-                        Destroy(Focus.collider.gameObject);
-                    }
-                    
+                    player.GetComponent<Weapon>().dmgModifier += 1;
+                    Destroy(Focus.collider.gameObject);
+
                 }
 
             }
