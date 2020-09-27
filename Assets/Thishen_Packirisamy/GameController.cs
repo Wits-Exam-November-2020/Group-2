@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     public Wallet playerWallet;
 
     public NavMeshSurface basicSurface;
-    public NavMeshSurface flySurface;
+
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         NextStage();
         basicSurface.BuildNavMesh();
-        flySurface.BuildNavMesh();
+
         
         Spawn();
 

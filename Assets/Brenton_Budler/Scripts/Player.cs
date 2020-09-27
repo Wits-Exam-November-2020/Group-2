@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public float max_fuel;
     public int max_health;
     public int max_shield;
-    private int current_health;
+    public int current_health;
     public int current_shield;
 
     public float slideModifier;
