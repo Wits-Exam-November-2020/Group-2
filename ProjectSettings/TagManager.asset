@@ -29,6 +29,7 @@ TagManager:
   - HealthBeacon
   - FlyingEnemy1
   - Building
+  - WeaponSpawnPoint
   layers:
   - Default
   - TransparentFX
