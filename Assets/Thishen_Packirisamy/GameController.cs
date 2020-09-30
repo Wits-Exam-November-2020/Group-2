@@ -14,10 +14,10 @@ public class GameController : MonoBehaviour
     private GameObject player;
     public int kills=0;
     public Text killsText;
-
     public GameObject player_prefab;
     public Transform[] spawn_points;
     public Wallet playerWallet;
+    
 
     public NavMeshSurface basicSurface;
 

@@ -31,6 +31,7 @@ TagManager:
   - HealthRegen
   - Undefined
   - Building
+  - EnemySpawnPoint
   layers:
   - Default
   - TransparentFX
