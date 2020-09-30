@@ -180,39 +180,31 @@ public class Interacting : MonoBehaviour
 
             }
 
-            if (Focus.collider.gameObject.tag == "DoubleDamage")
+            if (Focus.collider.gameObject.tag == "IncreaseDamage")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Double Damage";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Damage Increase";
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
-                    int ind = player.GetComponent<UsablePowerUps>().checkSpace();
-                    if (ind != 4)
-                    {
-                        player.GetComponent<UsablePowerUps>().currentPowerups[ind] = doubleDamage;
-                        Destroy(Focus.collider.gameObject);
-                    }
-                    
+                    player.GetComponent<Weapon>().dmgModifier += 1;
+                    Destroy(Focus.collider.gameObject);
+
                 }
 
             }
 
-            if (Focus.collider.gameObject.tag == "Invincible")
+            if (Focus.collider.gameObject.tag == "HealthRegen")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Invincibility";
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Health";
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
-                    int ind = player.GetComponent<UsablePowerUps>().checkSpace();
-                    if (ind != 4)
-                    {
-                        player.GetComponent<UsablePowerUps>().currentPowerups[ind] = invincible;
-                        Destroy(Focus.collider.gameObject);
-                    }
+                    player.GetComponent<Player>().current_health += player.GetComponent<Player>().max_health/4;
+                    Destroy(Focus.collider.gameObject);
 
                 }
 

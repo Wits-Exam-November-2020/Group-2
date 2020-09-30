@@ -21,7 +21,7 @@ public class WeaponSpawner : MonoBehaviour
             
             Instantiate(weapon, spawnPoint.transform.position, spawnPoint.transform.rotation);
             currentPrefabs.RemoveAt(index);
-            Debug.Log(weaponPrefabs.Count);
+
 
             if (currentPrefabs.Count <= 0)
             {

@@ -272,6 +272,7 @@ MonoBehaviour:
   currentIndex: 0
   currentWeapon: {fileID: 0}
   warrior: 0
+  currentAmmo: 0
   sfx: {fileID: 4972838723558282929}
   isAiming: 0
   dmgModifier: 0
