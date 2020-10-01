@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
         health = maxHealth;
         moveSpeed = startSpeed;
        
-            enemy = this.GetComponent<NavMeshAgent>();
+            
         
     }
 
@@ -37,18 +37,22 @@ public class EnemyController : MonoBehaviour
 
         player = GameObject.Find("Player(Clone)");
         target = GameObject.Find("Player(Clone)").transform;
-        enemy.SetDestination(target.position);
+      
 
         ////point();
-        //if (gameObject.tag=="FlyingEnemy1") {
-        //    rays();
-        //    if (Vector3.Distance(transform.position, player.transform.position) > 5)
-        //    {
-        //        transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        //    }
-        //}
-        //else
-        //{
+        if (gameObject.tag == "FlyingEnemy1")
+        {
+            rays();
+            if (Vector3.Distance(transform.position, player.transform.position) > 5)
+            {
+                transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            }
+        }
+        else
+        {
+
+            enemy = this.GetComponent<NavMeshAgent>();
+            enemy.SetDestination(target.position);
             if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.stoppingDistance)
             {
                 if (!isAttacking)
@@ -61,19 +65,19 @@ public class EnemyController : MonoBehaviour
                 }
                 Debug.Log("Attack");
             }
-        //}
-
-
-        
-
-
-
-
-
-
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
+}
 
     private void point()
     {

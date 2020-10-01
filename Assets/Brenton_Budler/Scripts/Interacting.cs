@@ -160,7 +160,7 @@ public class Interacting : MonoBehaviour
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Player>().jetRecovery += (player.GetComponent<Player>().jetRecovery * 0.02f);
+                    player.GetComponent<Player>().jetRecovery += (player.GetComponent<Player>().jetRecovery * 0.1f);
                     Destroy(Focus.collider.gameObject);
                 }
 
@@ -174,7 +174,7 @@ public class Interacting : MonoBehaviour
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.01f);
+                    player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.1f);
                     Destroy(Focus.collider.gameObject);
                 }
 
@@ -188,7 +188,7 @@ public class Interacting : MonoBehaviour
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Weapon>().dmgModifier += 1;
+                    player.GetComponent<Weapon>().dmgModifier += 10;
                     Destroy(Focus.collider.gameObject);
 
                 }
@@ -206,6 +206,20 @@ public class Interacting : MonoBehaviour
                     player.GetComponent<Player>().current_health += player.GetComponent<Player>().max_health/4;
                     Destroy(Focus.collider.gameObject);
 
+                }
+
+            }
+
+            if (Focus.collider.gameObject.tag == "AmmoPrice")
+            {
+                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Ammo Price Reduction";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    pickupSound.Play();
+                    player = GameObject.Find("Player(Clone)");
+                    player.GetComponent<Player>().costOfAmmo -= 10;
+                    Destroy(Focus.collider.gameObject);
                 }
 
             }

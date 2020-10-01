@@ -8255,6 +8255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - {fileID: 6559466365474908671, guid: 60087798697dc7c43bb242bad8bf07d5, type: 3}
+  - {fileID: 6559466365474908671, guid: f8f1e5600f0628d4491193c002ac4455, type: 3}
   timeBetweenSpawns: 4
   amountOfEnemiesPerSpawn: 1
 --- !u!114 &1285509266
@@ -8314,8 +8315,7 @@ MonoBehaviour:
   powerUpChestPrefab: {fileID: 7596802538496778544, guid: 3f4c7a77a8143ef4c840f6b0728eaf5b,
     type: 3}
   powerUps:
-  - {fileID: 3247718397182603629, guid: 28489192bac9a9a4687f461e1690467a, type: 3}
-  - {fileID: 4246092267835585834, guid: e612faddeac902046abe2c441885410e, type: 3}
+  - {fileID: 4246092267835585834, guid: a1df68bd6cec8ba42ade0ce467b2e61e, type: 3}
   powerUpsPrice: {fileID: 11400000, guid: 28294011507c4d040b7fce40d63071c8, type: 2}
   weaponChestPrefab: {fileID: 2781560497635062284, guid: 5d302c49bcf01104bad5fcd97c4d6aae,
     type: 3}
@@ -13711,7 +13711,7 @@ PrefabInstance:
     - target: {fileID: 4694801597197369575, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -17.799683
+      value: -17.799744
       objectReference: {fileID: 0}
     - target: {fileID: 4694801597197369575, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
@@ -14052,7 +14052,7 @@ PrefabInstance:
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -19.099731
+      value: -19.099792
       objectReference: {fileID: 0}
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}

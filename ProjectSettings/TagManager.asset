@@ -31,6 +31,7 @@ TagManager:
   - HealthRegen
   - Undefined
   - Building
+  - AmmoPrice
   layers:
   - Default
   - TransparentFX

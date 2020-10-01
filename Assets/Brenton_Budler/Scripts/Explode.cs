@@ -5,7 +5,11 @@ using UnityEngine;
 public class Explode : MonoBehaviour
 {
 
-    public int explosionDamage;
+    private int explosionDamage;
+
+    public int minDamage;
+    public int maxDamage; 
+
     public float explosionRange;
     public LayerMask whatIsEnemies;
     public AudioSource explodeSound;
@@ -25,6 +29,9 @@ public class Explode : MonoBehaviour
 
     private void Exploding()
     {
+
+
+        explosionDamage = Random.Range(minDamage, maxDamage);
         //Instatiate explosion
         //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 

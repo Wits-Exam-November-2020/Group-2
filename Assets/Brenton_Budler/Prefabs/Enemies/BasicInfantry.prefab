@@ -134,9 +134,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cog: {fileID: 5417391958299915572, guid: 51d9efe0d19d00248a0df4dce6472845, type: 3}
   damage: 10
+  rotationSpeed: 0.5
+  startSpeed: 3
+  raycastOffset: 1
+  rayDistance: 0
+  turnSpeed: 0
   enemy: {fileID: 0}
   health: 0
-  maxHealth: 2
+  maxHealth: 200
 --- !u!82 &649217482206357480
 AudioSource:
   m_ObjectHideFlags: 0

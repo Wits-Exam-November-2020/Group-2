@@ -18,6 +18,8 @@ MonoBehaviour:
   clipSize: 6
   reloadTime: 1
   bulletValue: 2
+  minDamage: 5
+  maxDamage: 25
   firerate: 0.15
   bloom: 20
   recoil: 10

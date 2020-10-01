@@ -228,6 +228,10 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
 
+        //Generate random amount of damage
+        int tempDamage = Random.Range(loadout[currentIndex].minDamage, loadout[currentIndex].maxDamage);
+        Debug.Log("DAMAGE: " + tempDamage);
+
 
         if (isAiming)
         {
@@ -286,7 +290,7 @@ public class Weapon : MonoBehaviour
                 if (t_hit.collider.gameObject.layer == 12)
                 {
                     if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) {
-                        t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(loadout[currentIndex].damage + dmgModifier);
+                        t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(tempDamage + dmgModifier);
                     }
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
                     // sfx.PlayOneShot(hitmarkerSound);

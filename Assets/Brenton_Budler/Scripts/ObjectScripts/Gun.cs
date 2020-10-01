@@ -13,6 +13,9 @@ public class Gun : ScriptableObject
     public float reloadTime;
     public int bulletValue;
 
+    public int minDamage;
+    public int maxDamage;
+
     public float firerate;
     public float bloom;
     public float recoil;
@@ -45,6 +48,8 @@ public class Gun : ScriptableObject
     
         
     }
+
+   
 
     //public bool FireBullet()
     //{

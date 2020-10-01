@@ -93,6 +93,9 @@ public class Player : MonoBehaviour
     public AudioSource jetpackUsing;
     public AudioSource walking;
 
+
+    public int costOfAmmo;
+
     #endregion
 
     #region Built-in Functions
@@ -103,7 +106,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        
+
+
+        costOfAmmo = 100;
         defaultSpeed = speed;
         invincible = false;
 
