@@ -33,13 +33,13 @@ public class UsablePowerUps : MonoBehaviour
                 currentPowerups[0] = null;
             }
 
-            if (currentPowerups[0] != null && currentPowerups[0].name == "DoubleDamage")
-            {
-                usingDoubleDamage = true;
-                player.GetComponent<Weapon>().dmgModifier = 2f;
-                Invoke("endDoubleDamage", 15);
-                currentPowerups[0] = null;
-            }
+            //if (currentPowerups[0] != null && currentPowerups[0].name == "DoubleDamage")
+            //{
+            //    usingDoubleDamage = true;
+            //    player.GetComponent<Weapon>().dmgModifier = 2;
+            //    Invoke("endDoubleDamage", 15);
+            //    currentPowerups[0] = null;
+            //}
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
@@ -64,7 +64,7 @@ public class UsablePowerUps : MonoBehaviour
             if (currentPowerups[1] != null && currentPowerups[1].name == "DoubleDamage")
             {
                 usingDoubleDamage = true; 
-                player.GetComponent<Weapon>().dmgModifier = 2f;
+                player.GetComponent<Weapon>().dmgModifier = 2;
                 Invoke("endDoubleDamage", 15);
                 currentPowerups[1] = null;
             }
@@ -102,7 +102,7 @@ public class UsablePowerUps : MonoBehaviour
     public void endDoubleDamage()
     {
         usingDoubleDamage = false;
-        player.GetComponent<Weapon>().dmgModifier = 1f;
+        player.GetComponent<Weapon>().dmgModifier = 1;
     }
 
 

@@ -140,10 +140,10 @@ GameObject:
   - component: {fileID: 1071266609167082412}
   - component: {fileID: 1204430168313502996}
   - component: {fileID: 2015235857428074590}
-  - component: {fileID: -8637597698122829088}
   - component: {fileID: 8011954204533432112}
   - component: {fileID: 6153660947120116375}
   - component: {fileID: 1965196052050553451}
+  - component: {fileID: 2223625587859349260}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -211,6 +211,7 @@ MonoBehaviour:
   max_fuel: 2
   max_health: 100
   max_shield: 96
+  current_health: 0
   current_shield: 0
   slideModifier: 1.5
   normalCam: {fileID: 1071266609521266915}
@@ -227,6 +228,7 @@ MonoBehaviour:
   jetpackActivation: {fileID: 8011954204533432112}
   jetpackUsing: {fileID: 6153660947120116375}
   walking: {fileID: 8011954204533432112}
+  costOfAmmo: 0
 --- !u!114 &1071266609167082415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +278,7 @@ MonoBehaviour:
   sfx: {fileID: 4972838723558282929}
   isAiming: 0
   dmgModifier: 0
+  popups: {fileID: 2223625587859349260}
 --- !u!114 &1204430168313502996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,23 +315,6 @@ MonoBehaviour:
   grenadeAmount: 1
   empAmount: 3
   healthBeaconAmount: 1
---- !u!114 &-8637597698122829088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071266609167082388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e824ed6e514d2c4aa0d4a3eb658efbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentPowerups:
-  - {fileID: 0}
-  - {fileID: 0}
-  usingDoubleDamage: 0
-  usingInvincible: 0
 --- !u!82 &8011954204533432112
 AudioSource:
   m_ObjectHideFlags: 0
@@ -617,6 +603,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2223625587859349260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071266609167082388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a027d3619d79a694fb79e32e1d38ac15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePopup: {fileID: 7742554790852347645, guid: 068767c8130dd3349ac9cc8b9588f9ff,
+    type: 3}
 --- !u!1 &1071266609262116131
 GameObject:
   m_ObjectHideFlags: 0

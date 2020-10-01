@@ -32,10 +32,11 @@ public class Weapon : MonoBehaviour
     public bool isAiming = false;
 
 
-    public float dmgModifier;
+    public int dmgModifier;
     private Transform muzzleFashPoint;
     private GameObject currentMuzzleFlash;
 
+    public PopUpController popups;
 
     
     #endregion
@@ -229,8 +230,8 @@ public class Weapon : MonoBehaviour
     {
 
         //Generate random amount of damage
-        int tempDamage = Random.Range(loadout[currentIndex].minDamage, loadout[currentIndex].maxDamage);
-        Debug.Log("DAMAGE: " + tempDamage);
+        //int tempDamage = Random.Range(loadout[currentIndex].minDamage, loadout[currentIndex].maxDamage);
+        
 
 
         if (isAiming)
@@ -262,6 +263,7 @@ public class Weapon : MonoBehaviour
 
         for (int i = 0; i < Mathf.Max(1,loadout[currentIndex].pellets); i++)
         {
+            int tempDamage = Random.Range(loadout[currentIndex].minDamage, loadout[currentIndex].maxDamage);
             //bloom (ACUURACY)
             Vector3 t_bloom = t_spawn.position + t_spawn.forward * 1000f;
             t_bloom += Random.Range(-loadout[currentIndex].bloom, loadout[currentIndex].bloom) * t_spawn.up;
@@ -295,6 +297,7 @@ public class Weapon : MonoBehaviour
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
                     // sfx.PlayOneShot(hitmarkerSound);
                     hitmarkerWait = 0.1f;
+                   // popups.DamageDealt(tempDamage + dmgModifier , Vector3.Distance(transform.position, t_hit.collider.transform.position));
                 }
             }
             else

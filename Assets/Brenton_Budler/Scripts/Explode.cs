@@ -50,6 +50,8 @@ public class Explode : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<EnemyController>().TakeDamage(explosionDamage);
+            PopUpController popup = new PopUpController();
+        
         }
 
         //Add a little delay 

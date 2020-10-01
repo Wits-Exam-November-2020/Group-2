@@ -151,6 +151,12 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        if (amount>0)
+        {
+            PopUpController popup = player.GetComponent<PopUpController>();
+            popup.DamageDealt((int)amount, Vector3.Distance(player.transform.position, transform.position));
+        }
+      
         health -= amount;
         Debug.Log(health);
         if (health<=0)
