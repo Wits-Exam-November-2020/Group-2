@@ -32,6 +32,7 @@ TagManager:
   - Undefined
   - Building
   - AmmoPrice
+  - EnemySpawnPoint
   layers:
   - Default
   - TransparentFX
