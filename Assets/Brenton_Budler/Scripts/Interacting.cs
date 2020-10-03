@@ -18,8 +18,11 @@ public class Interacting : MonoBehaviour
     public Powerup doubleDamage;
     public Powerup invincible;
 
+    public GameObject pistolPopup;
 
     public AudioSource pickupSound;
+
+
 
 
 
@@ -42,6 +45,7 @@ public class Interacting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
 
         if (this.transform.position.y >10 && Input.GetKeyDown(KeyCode.Alpha3))
@@ -79,7 +83,7 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
-                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                   // currentChest.GetComponent<ChestController>().DestroyPrefab();
                     this.gameObject.GetComponent<Weapon>().Equip(0);
                 }
                 
@@ -106,9 +110,17 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
-                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    //  currentChest.GetComponent<ChestController>().DestroyPrefab();
+                  
+                    //Instantiate 
+                    player = GameObject.Find("Player(Clone)");
+                    Instantiate(pistolPopup, Focus.collider.transform.position, Quaternion.identity);
+                    Debug.Log(player.GetComponent<Weapon>().currentWeapon.tag); 
                     this.gameObject.GetComponent<Weapon>().Equip(2);
+                    Destroy(Focus.collider.gameObject);
                 }
+
+                Debug.Log("FUCKING SHOTGUN");
 
             }
 

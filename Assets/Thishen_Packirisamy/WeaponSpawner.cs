@@ -33,6 +33,16 @@ public class WeaponSpawner : MonoBehaviour
         }
     }
 
+    public void newGun(string tag, Transform pos)
+    {
+        switch (tag)
+        {
+            case "Pistol": Instantiate(weaponPrefabs[0], pos);
+
+                break;
+
+        }
+    }
     // Update is called once per frame
     void Update()
     {

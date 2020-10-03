@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public GameObject cog;
     public int damage = 100;
     public float rotationSpeed = 0.5f;
-    private float moveSpeed = 2f;
+    private float moveSpeed = 5f;
     public float startSpeed = 3f;
     public float raycastOffset = 1;
     public float rayDistance;

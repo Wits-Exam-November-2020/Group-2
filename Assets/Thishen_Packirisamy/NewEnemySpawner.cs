@@ -25,15 +25,18 @@ public class NewEnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player(Clone)");
-        enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint").ToList<GameObject>();
-        waveSetup = true;
+        
        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        player = GameObject.Find("Player(Clone)");
+        enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint").ToList<GameObject>();
+        waveSetup = true;
+
         if (wavesCompleted == false)
         {
             if (changingWave == true)

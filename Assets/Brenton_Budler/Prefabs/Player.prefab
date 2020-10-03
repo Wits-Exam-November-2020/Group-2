@@ -168,6 +168,7 @@ Transform:
   - {fileID: 1071266609526291494}
   - {fileID: 5482270534655874549}
   - {fileID: 8074386180388618886}
+  - {fileID: 1208808729133450837}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -294,6 +295,8 @@ MonoBehaviour:
   rayDistance: 5
   doubleDamage: {fileID: 11400000, guid: b6d2489982dc34344a0e9e09a5cfb47d, type: 2}
   invincible: {fileID: 11400000, guid: aa8eb5e5b33319b46a86cd5472c61426, type: 2}
+  pistolPopup: {fileID: 5287989946736950497, guid: fc51527520698794d8e32aeea5fe5d7b,
+    type: 3}
   pickupSound: {fileID: 1965196052050553451}
 --- !u!114 &2015235857428074590
 MonoBehaviour:
@@ -1390,6 +1393,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8287460456696867881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208808729133450837}
+  m_Layer: 9
+  m_Name: FollowMe
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1208808729133450837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8287460456696867881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1071266609167082408}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8668457491465920413
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,8 +41,8 @@ public class GameController : MonoBehaviour
     {
 
         player = GameObject.Find("Player(Clone)");
-        NextStage();
-        basicSurface.BuildNavMesh();
+       // NextStage();
+       // basicSurface.BuildNavMesh();
 
         
         Spawn();
