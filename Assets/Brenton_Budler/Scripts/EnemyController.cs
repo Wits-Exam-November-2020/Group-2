@@ -109,35 +109,48 @@ public class EnemyController : MonoBehaviour
         if (Physics.Raycast(left, transform.forward, out hit, rayDistance))
         {
             turn += Vector3.up;
+            Debug.Log("right");
         }else if(Physics.Raycast(right, transform.forward, out hit, rayDistance))
         {
             turn += Vector3.down;
+            Debug.Log("left");
         }
-        //if (Physics.Raycast(down, transform.forward, out hit, rayDistance))
-        //{
-        //  // turn -= Vector3.up;
-        //}
-        //else if (Physics.Raycast(up, transform.forward, out hit, rayDistance))
-        //{
-        //   // turn += Vector3.down;
-        //}
-       
+        else if (Physics.Raycast(down, transform.forward, out hit, rayDistance))
+        {
+            turn -= Vector3.right;
+            Debug.Log("up");
+        }
+        else if (Physics.Raycast(up, transform.forward, out hit, rayDistance))
+        {
+            turn += Vector3.left;
+            Debug.Log("down");
+        }
+
         if (turn != Vector3.zero )
         {
             if (hit.collider!=null)
             {
-                if (hit.collider.tag == "Building")
-                {
-                    moveSpeed = hit.distance-0.5f;
-                    transform.Rotate(turn * turnSpeed * Time.deltaTime);
-                }
+                //if (hit.collider.tag == "Building")
+                //{
+                //    moveSpeed = hit.distance - 0.5f;
+                //    transform.Rotate(turn * turnSpeed * Time.deltaTime);
+                //}
 
                 if (hit.collider.tag=="FlyingEnemy1")
                 {
                     //moveSpeed = hit.distance - 0.5f;
                    transform.Rotate(turn * turnSpeed * Time.deltaTime);
-                 transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f*Time.deltaTime);
-                   
+                   transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f*Time.deltaTime);
+
+                }
+                else
+                {
+                    if ((hit.distance - 1f)>0)
+                    {
+                        moveSpeed = hit.distance - 1f;
+                    }
+                    
+                    transform.Rotate(turn * turnSpeed * Time.deltaTime);
                 }
             }
             

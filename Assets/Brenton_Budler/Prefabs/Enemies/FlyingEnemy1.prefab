@@ -114,11 +114,11 @@ MonoBehaviour:
   cog: {fileID: 0}
   chip1: {fileID: 0}
   damage: 10
-  rotationSpeed: 1.5
+  rotationSpeed: 5
   startSpeed: 8
   raycastOffset: 1
   rayDistance: 3
-  turnSpeed: 200
+  turnSpeed: 1000
   enemy: {fileID: 0}
   health: 2
   maxHealth: 100
