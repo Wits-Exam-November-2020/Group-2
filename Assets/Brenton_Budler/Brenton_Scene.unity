@@ -9806,7 +9806,7 @@ MonoBehaviour:
   waves:
   - enemies:
     - amount: 1
-      EnemyPrefabIndex: 1
+      EnemyPrefabIndex: 2
   timeBetweenSpawns: 1
   timeBetweenWaves: 10
 --- !u!1 &1293926648
@@ -15960,7 +15960,7 @@ PrefabInstance:
     - target: {fileID: 4694801597197369575, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -17.799622
+      value: -17.79956
       objectReference: {fileID: 0}
     - target: {fileID: 4694801597197369575, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
@@ -16301,7 +16301,7 @@ PrefabInstance:
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -19.09967
+      value: -19.09961
       objectReference: {fileID: 0}
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
