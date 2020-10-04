@@ -295,8 +295,12 @@ MonoBehaviour:
   rayDistance: 5
   doubleDamage: {fileID: 11400000, guid: b6d2489982dc34344a0e9e09a5cfb47d, type: 2}
   invincible: {fileID: 11400000, guid: aa8eb5e5b33319b46a86cd5472c61426, type: 2}
-  pistolPopup: {fileID: 5287989946736950497, guid: fc51527520698794d8e32aeea5fe5d7b,
-    type: 3}
+  popUps:
+  - {fileID: 5287989946736950497, guid: fc51527520698794d8e32aeea5fe5d7b, type: 3}
+  - {fileID: 5287989946736950497, guid: 8e23ede2a9078a144b869a5ad9212182, type: 3}
+  - {fileID: 5287989946736950497, guid: 7d662c652a680e94a9d77845bc63c6c6, type: 3}
+  - {fileID: 5287989946736950497, guid: a22af7e5869c40a4da9d2139a360d736, type: 3}
+  - {fileID: 5287989946736950497, guid: e46f71aa054d2e849b97ca455b989aba, type: 3}
   pickupSound: {fileID: 1965196052050553451}
 --- !u!114 &2015235857428074590
 MonoBehaviour:

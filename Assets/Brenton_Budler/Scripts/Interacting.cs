@@ -18,7 +18,7 @@ public class Interacting : MonoBehaviour
     public Powerup doubleDamage;
     public Powerup invincible;
 
-    public GameObject pistolPopup;
+    public GameObject[] popUps;
 
     public AudioSource pickupSound;
 
@@ -83,8 +83,11 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
-                   // currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    player = GameObject.Find("Player(Clone)");
+                    int weaponIndex = checkWeapon(player.GetComponent<Weapon>().currentWeapon.tag);
+                    Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Quaternion.identity);
                     this.gameObject.GetComponent<Weapon>().Equip(0);
+                    Destroy(Focus.collider.gameObject);
                 }
                 
             }
@@ -97,8 +100,11 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
-                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    player = GameObject.Find("Player(Clone)");
+                    int weaponIndex = checkWeapon(player.GetComponent<Weapon>().currentWeapon.tag);
+                    Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Quaternion.identity);
                     this.gameObject.GetComponent<Weapon>().Equip(1);
+                    Destroy(Focus.collider.gameObject);
                 }
 
             }
@@ -110,17 +116,13 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
-                    //  currentChest.GetComponent<ChestController>().DestroyPrefab();
-                  
-                    //Instantiate 
                     player = GameObject.Find("Player(Clone)");
-                    Instantiate(pistolPopup, Focus.collider.transform.position, Quaternion.identity);
-                    Debug.Log(player.GetComponent<Weapon>().currentWeapon.tag); 
+                    int weaponIndex = checkWeapon(player.GetComponent<Weapon>().currentWeapon.tag);
+                    Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Quaternion.identity); 
                     this.gameObject.GetComponent<Weapon>().Equip(2);
                     Destroy(Focus.collider.gameObject);
                 }
-
-                Debug.Log("FUCKING SHOTGUN");
+                
 
             }
 
@@ -131,8 +133,11 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
-                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    player = GameObject.Find("Player(Clone)");
+                    int weaponIndex = checkWeapon(player.GetComponent<Weapon>().currentWeapon.tag);
+                    Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Quaternion.identity);
                     this.gameObject.GetComponent<Weapon>().Equip(3);
+                    Destroy(Focus.collider.gameObject);
                 }
 
             }
@@ -144,8 +149,11 @@ public class Interacting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
-                    currentChest.GetComponent<ChestController>().DestroyPrefab();
+                    player = GameObject.Find("Player(Clone)");
+                    int weaponIndex = checkWeapon(player.GetComponent<Weapon>().currentWeapon.tag);
+                    Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Quaternion.identity);
                     this.gameObject.GetComponent<Weapon>().Equip(4);
+                    Destroy(Focus.collider.gameObject);
                 }
 
             }
@@ -279,8 +287,35 @@ public class Interacting : MonoBehaviour
 
             }
 
+            if (Focus.collider.gameObject.tag == "AmmoBox")
+            {
+                player = GameObject.Find("Player(Clone)");
+
+                if (this.gameObject.GetComponent<Weapon>().currentAmmo >= this.gameObject.GetComponent<Weapon>().maxAmmo)
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Ammo Full"; 
+                }
+                else if (player.GetComponent<Player>().wallet < player.GetComponent<Player>().costOfAmmo)
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Not enough Money";
+                }
+                else 
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press R to Reload Gun. COST: " + player.GetComponent<Player>().costOfAmmo;
 
 
+                    if (Input.GetKeyDown(KeyCode.R))
+                    {
+                        player.GetComponent<Player>().wallet -= player.GetComponent<Player>().costOfAmmo;
+                        this.gameObject.GetComponent<Weapon>().currentAmmo = this.gameObject.GetComponent<Weapon>().maxAmmo;
+
+                    }
+                }
+
+
+            }
+
+            
         }
         else
         {
@@ -289,6 +324,28 @@ public class Interacting : MonoBehaviour
 
 
 
+    }
+
+    public int checkWeapon(string tag)
+    {
+        int ind = 0;
+
+        switch (tag)
+        {
+            case "Pistol": ind = 0; 
+                break;
+            case "AR": ind = 1; 
+                break;
+            case "SMG": ind = 2; 
+                break;
+            case "ShotGun": ind = 3;
+                break;
+            case "RPG": ind = 4; 
+                break; 
+
+        }
+
+        return ind;
     }
 
 

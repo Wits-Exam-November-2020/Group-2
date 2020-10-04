@@ -10,23 +10,20 @@ public class CurrencyPickup : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+      
+
+
+
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
         player = GameObject.Find("Player(Clone)");
-        if (other.gameObject.tag == "Player" && gameObject.tag=="Cog")
+        if (other.gameObject.tag == "Player" && gameObject.tag == "Cog")
         {
-            GameController.instance.playerWallet.cogs += 1;
+            player.GetComponent<Player>().wallet += 10;
             Destroy(this.gameObject);
         }
-        else if (other.gameObject.tag == "Player" && gameObject.tag == "Nut")
-        {
-            GameController.instance.playerWallet.nuts += 1;
-            Destroy(this.gameObject);
-        }
-        else if (other.gameObject.tag == "Player" && gameObject.tag == "Bolt")
-        {
-            GameController.instance.playerWallet.bolts += 1;
-            Destroy(this.gameObject);
-        }
-
-
     }
 }

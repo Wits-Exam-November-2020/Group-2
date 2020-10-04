@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public GameObject cog;
+    public GameObject chip1;
     public int damage = 100;
     public float rotationSpeed = 0.5f;
     private float moveSpeed = 5f;
@@ -159,17 +160,23 @@ public class EnemyController : MonoBehaviour
       
         health -= amount;
         Debug.Log(health);
+
         if (health<=0)
         {
             GameController.instance.kills++;
             Destroy(gameObject);
-            
-            
-            if (gameObject.tag=="BasicInfantry")
-            {
-              //  Instantiate(cog, transform.position, transform.rotation);
-            }
-            
+            Instantiate(cog, transform.position, transform.rotation);
+
+            //if (gameObject.tag=="BasicInfantry")
+            //{
+
+
+            //}
+
+            Instantiate(chip1, transform.position, transform.rotation);
+
+
+
         }
     }
 

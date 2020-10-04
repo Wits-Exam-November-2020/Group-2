@@ -33,6 +33,7 @@ TagManager:
   - Building
   - AmmoPrice
   - EnemySpawnPoint
+  - AmmoBox
   layers:
   - Default
   - TransparentFX

@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
 
     public float warrior;
     public int currentAmmo;
-    private int maxAmmo ;
+    public int maxAmmo ;
 
     private Transform ui_ammobar;
 
@@ -100,10 +100,10 @@ public class Weapon : MonoBehaviour
             currentAmmo = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            currentAmmo = maxAmmo;
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    currentAmmo = maxAmmo;
+        //}
 
         if (currentWeapon!=null)
         {

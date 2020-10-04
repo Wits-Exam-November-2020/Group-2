@@ -95,6 +95,7 @@ public class Player : MonoBehaviour
 
 
     public int costOfAmmo;
+    public int wallet;
 
     #endregion
 
@@ -107,7 +108,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
 
-
+        wallet = 50;
         costOfAmmo = 100;
         defaultSpeed = speed;
         invincible = false;
