@@ -9805,8 +9805,8 @@ MonoBehaviour:
   - {fileID: 6559466365474908671, guid: 246c7efd671824a47acc894d2c6160de, type: 3}
   waves:
   - enemies:
-    - amount: 5
-      EnemyPrefabIndex: 0
+    - amount: 1
+      EnemyPrefabIndex: 1
   timeBetweenSpawns: 1
   timeBetweenWaves: 10
 --- !u!1 &1293926648

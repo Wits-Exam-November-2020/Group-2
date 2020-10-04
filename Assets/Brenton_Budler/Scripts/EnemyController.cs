@@ -23,6 +23,10 @@ public class EnemyController : MonoBehaviour
 
     private bool isAttacking = false;
 
+    public AudioSource hit1Sound;
+    public AudioSource hit2Sound;
+    public AudioSource hit3Sound;
+
     private void Start()
     { 
         health = maxHealth;
@@ -152,6 +156,25 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+
+
+        float choice = Random.Range(0f, 3f);
+
+        if (choice > 0 && choice<1)
+        {
+            hit1Sound.Play();
+        }
+        else if (choice > 1 && choice<2)
+        {
+            hit2Sound.Play();
+        }
+        else
+        {
+            hit3Sound.Play();
+        }
+
+
+
         if (amount>0)
         {
             PopUpController popup = player.GetComponent<PopUpController>();
@@ -165,15 +188,16 @@ public class EnemyController : MonoBehaviour
         {
             GameController.instance.kills++;
             Destroy(gameObject);
-            Instantiate(cog, transform.position, transform.rotation);
+            Vector3 randomAdd = new Vector3(Random.Range(0.1f,1f),0, Random.Range(0.1f, 1f));
+            Instantiate(cog, transform.position + randomAdd, transform.rotation);
 
             //if (gameObject.tag=="BasicInfantry")
             //{
-
+            randomAdd = new Vector3(Random.Range(0.1f, 1f), 0, Random.Range(0.1f, 1f));
 
             //}
 
-            Instantiate(chip1, transform.position, transform.rotation);
+            Instantiate(chip1, transform.position + randomAdd, transform.rotation);
 
 
 

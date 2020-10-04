@@ -38,6 +38,7 @@ public class Weapon : MonoBehaviour
 
     public PopUpController popups;
 
+
     
     #endregion
 
@@ -291,10 +292,14 @@ public class Weapon : MonoBehaviour
 
                 if (t_hit.collider.gameObject.layer == 12)
                 {
+
+
                     if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) {
                         t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(tempDamage + dmgModifier);
                     }
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
+
+                  
                     // sfx.PlayOneShot(hitmarkerSound);
                     hitmarkerWait = 0.1f;
                    // popups.DamageDealt(tempDamage + dmgModifier , Vector3.Distance(transform.position, t_hit.collider.transform.position));
