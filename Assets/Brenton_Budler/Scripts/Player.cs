@@ -92,6 +92,8 @@ public class Player : MonoBehaviour
     public AudioSource jetpackActivation;
     public AudioSource jetpackUsing;
     public AudioSource walking;
+    public AudioSource slidingSound;
+    public AudioSource runningSound;
 
 
     public int costOfAmmo;
@@ -108,7 +110,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
 
-        wallet = 50;
+        wallet = 200;
         costOfAmmo = 100;
         defaultSpeed = speed;
         invincible = false;
@@ -216,12 +218,19 @@ public class Player : MonoBehaviour
         bool isSliding = isSprinting && slide && !sliding;
         bool isCrouching = crouch && !isSprinting && !isJumping && isGrounded;
 
+        if (isSprinting && Input.GetKeyDown(KeyCode.C))
+        {
+            slidingSound.Play();
+        }
+
         //Crouching
         if (isCrouching)
         {
             SetCrouch(!crouched);
         }
 
+
+    
 
         //Jumping 
         if (isJumping)
@@ -243,6 +252,7 @@ public class Player : MonoBehaviour
         else if (sliding)
         {
             //sliding
+          
             HeadBob(movementCounter, 0.15f, 0.075f);
             weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
 
@@ -272,11 +282,22 @@ public class Player : MonoBehaviour
         else
         {
             //sprinting 
+            
             HeadBob(movementCounter, 0.15f, 0.075f);
             movementCounter += Time.deltaTime * 7f;
             weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
         }
 
+        if (isSprinting && !runningSound.isPlaying)
+        {
+                runningSound.Play();
+                walking.Stop();
+
+        }
+        else
+        {
+
+        }
 
 
         //Sliding 
@@ -309,6 +330,7 @@ public class Player : MonoBehaviour
                 canJet = true;
             }
         }
+
 
 
 
@@ -463,6 +485,13 @@ public class Player : MonoBehaviour
 
             if (t_hmove!=0 || t_vmove!=0)
             {
+
+
+      
+
+
+
+
                 if (walking.isPlaying)
                 {
 
