@@ -9884,10 +9884,24 @@ MonoBehaviour:
   - {fileID: 6559466365474908671, guid: 246c7efd671824a47acc894d2c6160de, type: 3}
   waves:
   - enemies:
-    - amount: 1
+    - amount: 10
+      EnemyPrefabIndex: 0
+    - amount: 5
+      EnemyPrefabIndex: 1
+  - enemies:
+    - amount: 8
+      EnemyPrefabIndex: 1
+    - amount: 8
       EnemyPrefabIndex: 2
-  timeBetweenSpawns: 1
-  timeBetweenWaves: 10
+  - enemies:
+    - amount: 8
+      EnemyPrefabIndex: 0
+    - amount: 8
+      EnemyPrefabIndex: 1
+    - amount: 8
+      EnemyPrefabIndex: 2
+  timeBetweenSpawns: 4
+  timeBetweenWaves: 15
 --- !u!1 &1293926648
 GameObject:
   m_ObjectHideFlags: 0
