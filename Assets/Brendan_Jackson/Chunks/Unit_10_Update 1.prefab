@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 24841898702397363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit_10_Update 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 587849089836576491}
   - component: {fileID: 2377719173869262753}
   - component: {fileID: 1286587882164712245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,6 +219,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCollider (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6879502091737443517, guid: 816ef5983effb2841a6c5c2d9b169d42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816ef5983effb2841a6c5c2d9b169d42, type: 3}
 --- !u!4 &198928914619041768 stripped
@@ -324,6 +329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 6879502091737443517, guid: 816ef5983effb2841a6c5c2d9b169d42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816ef5983effb2841a6c5c2d9b169d42, type: 3}
 --- !u!4 &140963670450026930 stripped
@@ -343,6 +353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VendingMachineCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983886086857533080, guid: 2bff4499bad495344add66cf37557840,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7873851458506782617, guid: 2bff4499bad495344add66cf37557840,
         type: 3}
@@ -484,6 +499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &8850600481630312359 stripped
@@ -573,6 +593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FenceCollider (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
@@ -678,6 +703,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallCollider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879502091737443517, guid: 816ef5983effb2841a6c5c2d9b169d42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816ef5983effb2841a6c5c2d9b169d42, type: 3}
@@ -859,6 +889,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &765670939042171537 stripped
@@ -953,6 +988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HydrantCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 518504770505049011, guid: cdf3c11a89a62464daa0edf82acbf444,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7597637598470114372, guid: cdf3c11a89a62464daa0edf82acbf444,
         type: 3}
@@ -1113,6 +1153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallCollider (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879502091737443517, guid: 816ef5983effb2841a6c5c2d9b169d42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816ef5983effb2841a6c5c2d9b169d42, type: 3}

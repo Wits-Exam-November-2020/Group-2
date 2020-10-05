@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7734414167365904678}
   - component: {fileID: 4864177767777161324}
   - component: {fileID: 8260936289941386488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7144429222484433022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit_5_Grill_Mod 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GrillCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536183221444032972, guid: 3881abbe62dbefc468da3596249e4d5e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3881abbe62dbefc468da3596249e4d5e, type: 3}

@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public GameObject cog;
     public GameObject chip1;
+    public GameObject chip2;
     public int damage = 100;
     public float rotationSpeed = 0.5f;
     private float moveSpeed = 5f;
@@ -26,6 +27,8 @@ public class EnemyController : MonoBehaviour
     public AudioSource hit1Sound;
     public AudioSource hit2Sound;
     public AudioSource hit3Sound;
+
+    public int attackRate;
 
     private void Start()
     { 
@@ -52,6 +55,17 @@ public class EnemyController : MonoBehaviour
             {
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
             }
+            else
+            {
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                    player.GetComponent<Player>().TakeDamage(damage);
+                    Invoke("ResetAttack", attackRate);
+
+
+                }
+            }
         }
         else
         {
@@ -64,7 +78,7 @@ public class EnemyController : MonoBehaviour
                 {
                     isAttacking = true;
                     player.GetComponent<Player>().TakeDamage(damage);
-                    Invoke("ResetAttack", 2);
+                    Invoke("ResetAttack", attackRate);
 
 
                 }
@@ -201,16 +215,26 @@ public class EnemyController : MonoBehaviour
         {
             GameController.instance.kills++;
             Destroy(gameObject);
-            Vector3 randomAdd = new Vector3(Random.Range(0.1f,1f),0, Random.Range(0.1f, 1f));
-            Instantiate(cog, transform.position + randomAdd, transform.rotation);
+            Vector3 randomAdd = new Vector3(Random.Range(0.1f,2f),0, Random.Range(0.1f, 2f));
+            Instantiate(cog, transform.position + randomAdd, Quaternion.identity);
 
             //if (gameObject.tag=="BasicInfantry")
             //{
-            randomAdd = new Vector3(Random.Range(0.1f, 1f), 0, Random.Range(0.1f, 1f));
+            randomAdd = new Vector3(Random.Range(0.1f, 2f), 0, Random.Range(0.1f, 2f));
 
             //}
 
-            Instantiate(chip1, transform.position + randomAdd, transform.rotation);
+
+            int spawnChip = Random.Range(1, 10);// 1,20
+            if (spawnChip==2)
+            {
+                Instantiate(chip1, transform.position + randomAdd, Quaternion.identity);
+            }
+            else if (spawnChip==3)
+            {
+                Instantiate(chip2, transform.position + randomAdd, Quaternion.identity);
+            }
+            
 
 
 

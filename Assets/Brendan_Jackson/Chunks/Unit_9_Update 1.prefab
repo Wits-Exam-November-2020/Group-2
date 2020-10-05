@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988657499565910578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit_9_Update 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 416687364588165994}
   - component: {fileID: 3251442452812915232}
   - component: {fileID: 2034161992476575412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,6 +206,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HydrantCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 518504770505049011, guid: cdf3c11a89a62464daa0edf82acbf444,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7597637598470114372, guid: cdf3c11a89a62464daa0edf82acbf444,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -276,6 +281,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 988657499565910578}
     m_Modifications:
+    - target: {fileID: 961338296016048455, guid: 71507371f7ae6ef4cb3d84a1841c494f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780098598079078834, guid: 71507371f7ae6ef4cb3d84a1841c494f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071089212885157671, guid: 71507371f7ae6ef4cb3d84a1841c494f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5278341662356495177, guid: 71507371f7ae6ef4cb3d84a1841c494f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -331,10 +351,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6968605559355264074, guid: 71507371f7ae6ef4cb3d84a1841c494f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8343371344607162140, guid: 71507371f7ae6ef4cb3d84a1841c494f,
         type: 3}
       propertyPath: m_Name
       value: RampBridgeCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343371344607162140, guid: 71507371f7ae6ef4cb3d84a1841c494f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71507371f7ae6ef4cb3d84a1841c494f, type: 3}
@@ -421,6 +451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &8694136691913501841 stripped
@@ -440,6 +475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LampCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057211300290948035, guid: 7ebb54bd3c206794c8699255c98ed909,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8171832666372223785, guid: 7ebb54bd3c206794c8699255c98ed909,
         type: 3}
@@ -581,6 +621,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &1075108316121222678 stripped
@@ -676,6 +721,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6879502091737443517, guid: 816ef5983effb2841a6c5c2d9b169d42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816ef5983effb2841a6c5c2d9b169d42, type: 3}
 --- !u!4 &5267208694041872533 stripped
@@ -770,6 +820,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879502091737443517, guid: 816ef5983effb2841a6c5c2d9b169d42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816ef5983effb2841a6c5c2d9b169d42, type: 3}

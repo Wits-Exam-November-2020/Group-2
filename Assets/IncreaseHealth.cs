@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReduceJetpackRecovery : MonoBehaviour
+public class IncreaseHealth : MonoBehaviour
 {
     private GameObject player;
 
     private void OnTriggerEnter(Collider other)
     {
         player = GameObject.Find("Player(Clone)");
-        player.GetComponent<Player>().jetRecovery += 0.1f ;
+
+        player.GetComponent<Player>().current_health = player.GetComponent<Player>().max_health;
         Destroy(this.gameObject);
     }
 }

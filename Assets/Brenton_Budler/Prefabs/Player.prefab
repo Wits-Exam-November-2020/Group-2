@@ -209,7 +209,7 @@ MonoBehaviour:
   jumpForce: 1000
   jetForce: 4000
   jetWait: 0.5
-  jetRecovery: 0.5
+  jetRecovery: 0.2
   lengthOfSlide: 0.5
   max_fuel: 2
   max_health: 100
@@ -640,7 +640,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d80653d4bdb66894bae23609419e1384, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f221657998f6fe847b4535bea1cd9e6b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -736,7 +736,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3c624032baa319a44ab79f4977accb6f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 481a77dce8ea7524495bc4c93151b735, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1

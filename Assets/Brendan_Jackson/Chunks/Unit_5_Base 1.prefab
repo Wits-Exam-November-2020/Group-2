@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1043509369017341082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit_5_Base 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 435580382107084226}
   - component: {fileID: 3376663228447530120}
   - component: {fileID: 2304131559086503964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,6 +199,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1043509369017341082}
     m_Modifications:
+    - target: {fileID: 304210675874373472, guid: e5d040d0bc03ea94c9fe7456da15dbba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3781684459435214145, guid: e5d040d0bc03ea94c9fe7456da15dbba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -258,6 +263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DustbinCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991856069095479397, guid: e5d040d0bc03ea94c9fe7456da15dbba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d040d0bc03ea94c9fe7456da15dbba, type: 3}
@@ -404,10 +414,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5208802881229917845, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414636701512860349, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
         type: 3}
       propertyPath: m_Name
       value: PillarCollider (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd50fc949e79b94d91a92b214023bee, type: 3}
@@ -479,10 +504,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5208802881229917845, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414636701512860349, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
         type: 3}
       propertyPath: m_Name
       value: PillarCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd50fc949e79b94d91a92b214023bee, type: 3}
@@ -554,10 +594,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5208802881229917845, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414636701512860349, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
         type: 3}
       propertyPath: m_Name
       value: PillarCollider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd50fc949e79b94d91a92b214023bee, type: 3}
@@ -629,10 +684,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5208802881229917845, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414636701512860349, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
         type: 3}
       propertyPath: m_Name
       value: PillarCollider (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908728494927793704, guid: 3fd50fc949e79b94d91a92b214023bee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd50fc949e79b94d91a92b214023bee, type: 3}

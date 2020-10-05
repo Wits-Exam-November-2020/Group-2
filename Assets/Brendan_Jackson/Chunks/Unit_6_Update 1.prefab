@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6554630685837208867}
   - component: {fileID: 2178289573321620481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BuildingCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5539977187540244100}
   - component: {fileID: 3389066304792208294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7242615795176129953}
   - component: {fileID: 7497184088132996676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465074454834117027}
   - component: {fileID: 7692651657648704673}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3266926905518029831}
   - component: {fileID: 8136344228648122520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 6875111829424767777}
   - component: {fileID: 8628442324769258091}
   - component: {fileID: 5087898476523691775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520232508475815263}
   - component: {fileID: 575549724505829782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6418095966187836466}
   - component: {fileID: 5276184541701978192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5668691737074953266}
   - component: {fileID: 4969367700533281309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8547866066884277197}
   - component: {fileID: 1647097527889173744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PipeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6276181674015208057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit_6_Update 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7339947240634212590}
   - component: {fileID: 3694997232026722235}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,6 +633,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &8914493025764619465 stripped
@@ -708,6 +713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &8553915679486751534 stripped
@@ -727,6 +737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HydrantCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 518504770505049011, guid: cdf3c11a89a62464daa0edf82acbf444,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7597637598470114372, guid: cdf3c11a89a62464daa0edf82acbf444,
         type: 3}
@@ -802,6 +817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LampCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057211300290948035, guid: 7ebb54bd3c206794c8699255c98ed909,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8171832666372223785, guid: 7ebb54bd3c206794c8699255c98ed909,
         type: 3}
@@ -947,6 +967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FenceCollider (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}

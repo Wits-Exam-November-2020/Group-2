@@ -22,7 +22,7 @@ public class CurrencyPickup : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         if (other.gameObject.tag == "Player" && gameObject.tag == "Cog")
         {
-            player.GetComponent<Player>().wallet += 10;
+            player.GetComponent<Player>().wallet += 25;
             Destroy(this.gameObject);
         }
     }

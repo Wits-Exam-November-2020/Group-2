@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371107922679620573}
   - component: {fileID: 8944549420693678573}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BuildingSideCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 8450478941922072225}
   - component: {fileID: 6742186126104932331}
   - component: {fileID: 7833084313312562047}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8002083942448433949}
   - component: {fileID: 128790072164416900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BuildingSideCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8812186009175522617}
   - component: {fileID: 827619108215722308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BuildingSideCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9022422961971406841}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Unit_7_Update 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,6 +419,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &7211127208796540878 stripped
@@ -438,6 +443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 304210675874373472, guid: e5d040d0bc03ea94c9fe7456da15dbba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3781684459435214145, guid: e5d040d0bc03ea94c9fe7456da15dbba,
         type: 3}
@@ -498,6 +508,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DustbinCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991856069095479397, guid: e5d040d0bc03ea94c9fe7456da15dbba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d040d0bc03ea94c9fe7456da15dbba, type: 3}
@@ -589,6 +604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 6778068806346002768, guid: 6efcd21fb17e15c4b9fc4df683be7f02,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcd21fb17e15c4b9fc4df683be7f02, type: 3}
 --- !u!4 &9110262090409544275 stripped
@@ -663,6 +683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879502091737443517, guid: 816ef5983effb2841a6c5c2d9b169d42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816ef5983effb2841a6c5c2d9b169d42, type: 3}
@@ -758,6 +783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LampCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057211300290948035, guid: 7ebb54bd3c206794c8699255c98ed909,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8171832666372223785, guid: 7ebb54bd3c206794c8699255c98ed909,
         type: 3}

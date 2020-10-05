@@ -11,7 +11,7 @@ public class SpeedIncrease : MonoBehaviour
     {
         player = GameObject.Find("Player(Clone)");
 
-        player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.01f);
+        player.GetComponent<Player>().speed += 250;
         Destroy(this.gameObject);
     }
 }

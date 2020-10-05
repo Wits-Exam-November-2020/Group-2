@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
     #region Built-in Functions
 
 
-
+    private Text currencyText;
 
 
     private void Start()
@@ -138,9 +138,10 @@ public class Player : MonoBehaviour
         ui_fuelbar = GameObject.Find("HUD/Fuel/Bar").transform;
         ui_ammobar = GameObject.Find("HUD/AmmoBar/Bar").transform;
         ui_shieldbar = GameObject.Find("HUD/Shield/Bar").transform;
+        currencyText = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
         UpdateHealthBar();
         UpdateShieldBar();
-        ui_ammo = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
+        //ui_ammo = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
 
 
         hookshotTransform = GameObject.Find("RopeHolder").transform;
@@ -162,6 +163,7 @@ public class Player : MonoBehaviour
         //{
         //    rig.useGravity = true;
         //}
+        currencyText.text = wallet.ToString(); 
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -212,7 +214,8 @@ public class Player : MonoBehaviour
 
 
         //States
-        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.05f, ground);
+        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.2f, ground);
+        Debug.DrawRay(groundDetector.position, Vector3.down , Color.green);
         bool isJumping = jump && isGrounded;
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;
@@ -354,7 +357,7 @@ public class Player : MonoBehaviour
 
 
         //States
-        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
+        bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.2f, ground);
         bool isJumping = jump && isGrounded;
         bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
         bool isSliding = isSprinting && slide && !sliding;

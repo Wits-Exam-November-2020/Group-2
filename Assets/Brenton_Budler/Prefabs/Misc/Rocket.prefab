@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77162a1368e0aca4facec239309df1d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDamage: 100
-  maxDamage: 200
+  minDamage: 200
+  maxDamage: 400
   explosionRange: 10
   whatIsEnemies:
     serializedVersion: 2
