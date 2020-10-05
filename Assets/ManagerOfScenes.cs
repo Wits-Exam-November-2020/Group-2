@@ -8,6 +8,8 @@ public class ManagerOfScenes : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+       // Look.cursorLocked = false;
     }
 
     public void PlayGame()

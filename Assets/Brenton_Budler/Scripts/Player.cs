@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-
+        weapon.RefreshAmmo(ui_ammobar);
         //if (transform.position-previousPosition)
         //{
         //    previousPosition = transform.position;
