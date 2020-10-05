@@ -489,11 +489,7 @@ public class Player : MonoBehaviour
             if (t_hmove!=0 || t_vmove!=0)
             {
 
-
-      
-
-
-
+         
 
                 if (walking.isPlaying)
                 {
@@ -501,7 +497,13 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    walking.Play();
+                    if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift)) {
+                        if (isGrounded)
+                        {
+                            walking.Play();
+                        }
+                        
+                    }
                 }
             }
             else
