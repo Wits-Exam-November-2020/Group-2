@@ -214,7 +214,15 @@ public class EnemyController : MonoBehaviour
         if (health<=0)
         {
             GameController.instance.kills++;
-            Destroy(gameObject);
+            if (tag == "FlyingEnemy1")
+            {
+                Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            
             Vector3 randomAdd = new Vector3(Random.Range(0.1f,2f),0, Random.Range(0.1f, 2f));
             Instantiate(cog, transform.position + randomAdd, Quaternion.identity);
 
