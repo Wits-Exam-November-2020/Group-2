@@ -44,6 +44,7 @@ public class NewEnemySpawner : MonoBehaviour
 
                 GameObject[] Basicinfantries = GameObject.FindGameObjectsWithTag("BasicInfantry");
                 GameObject[] FlyingEnemy = GameObject.FindGameObjectsWithTag("FlyingEnemy1");
+                
 
 
                 if (Basicinfantries.Length == 0 && FlyingEnemy.Length == 0)
@@ -86,7 +87,8 @@ public class NewEnemySpawner : MonoBehaviour
                     }
                     
                     Vector3 spawnObjectPos = enemySpawnPoints[Random.Range(0, randomLimit)].transform.position;
-                    Vector3 spawnPoint = new Vector3(spawnObjectPos.x,20,spawnObjectPos.z);
+                    //Vector3 spawnPoint = new Vector3(spawnObjectPos.x,20,spawnObjectPos.z);
+                    Vector3 spawnPoint = spawnObjectPos;
 
 
                     int selector = Random.Range(0, enemyCount);

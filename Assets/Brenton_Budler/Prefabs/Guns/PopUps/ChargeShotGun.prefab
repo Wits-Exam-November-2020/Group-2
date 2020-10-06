@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5287989946736950496}
   - component: {fileID: 8246151749732295795}
-  - component: {fileID: -8415601959947453156}
+  - component: {fileID: -8657564530655986477}
   m_Layer: 10
-  m_Name: ShotGun PopUp
+  m_Name: ChargeShotGun
   m_TagString: ShotGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8415601959947453156
+--- !u!114 &-8657564530655986477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9921ffd5738674fae25876db3bfd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponCost: 0
+  weaponCost: 75
 --- !u!1 &8371375446026979860
 GameObject:
   m_ObjectHideFlags: 0

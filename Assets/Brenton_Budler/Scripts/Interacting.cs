@@ -11,7 +11,7 @@ public class Interacting : MonoBehaviour
     private Transform t_spawn;
     private RaycastHit Focus;
 
-    private GameObject promptText;
+    public GameObject promptText;
     private GameObject currentChest;
     private GameObject player;
 
@@ -78,7 +78,14 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "Pistol")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Pistol";
+                if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Pistol";
+                }
+                else
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy Pistol for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
+                }
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -95,7 +102,18 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "AR")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip AR";
+
+                if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost==0)
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip AR";
+                }
+                else
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy AR for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
+                }
+
+
+               
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -111,14 +129,21 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "ShotGun")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Shot Gun";
+                if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Shotgun";
+                }
+                else
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy Shotgun for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
+                }
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
                     int weaponIndex = checkWeapon(player.GetComponent<Weapon>().currentWeapon.tag);
-                    Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Quaternion.identity); 
+                    Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Focus.collider.transform.rotation); 
                     this.gameObject.GetComponent<Weapon>().Equip(2);
                     Destroy(Focus.collider.gameObject);
                 }
@@ -128,7 +153,14 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "SMG")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip SMG";
+                if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip SMG";
+                }
+                else
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy SMG for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
+                }
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -144,7 +176,14 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "RPG")
             {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip RPG";
+                if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip RPG";
+                }
+                else
+                {
+                    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy RPG for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
+                }
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
