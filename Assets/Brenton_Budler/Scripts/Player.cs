@@ -206,8 +206,8 @@ public class Player : MonoBehaviour
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         jump = Input.GetKeyDown(KeyCode.Space);
-        bool slide = Input.GetKeyDown(KeyCode.C);
-        bool crouch = Input.GetKeyDown(KeyCode.C);
+        bool slide = Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.C);
+        bool crouch = Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.C);
         jet = Input.GetKey(KeyCode.Space);
         //   bool jet = Input.GetKey(KeyCode.Space);
 
@@ -221,9 +221,11 @@ public class Player : MonoBehaviour
         bool isSliding = isSprinting && slide && !sliding;
         bool isCrouching = crouch && !isSprinting && !isJumping && isGrounded;
 
-        if (isSprinting && Input.GetKeyDown(KeyCode.C))
+        if (isSprinting )
         {
-            slidingSound.Play();
+            if (Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl)|| Input.GetKeyDown(KeyCode.C)) {
+                slidingSound.Play();
+            }
         }
 
         //Crouching
@@ -352,8 +354,8 @@ public class Player : MonoBehaviour
 
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-       // bool jump = Input.GetKeyDown(KeyCode.Space);
-        bool slide = Input.GetKeyDown(KeyCode.C);
+        // bool jump = Input.GetKeyDown(KeyCode.Space);
+        bool slide = Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.C);
 
 
         //States

@@ -418,9 +418,9 @@ GameObject:
   - component: {fileID: 4044491062371310945}
   - component: {fileID: 3642659524984426305}
   - component: {fileID: 2003947300600600399}
-  - component: {fileID: 7500071011768800458}
+  - component: {fileID: 9072515274499659188}
   m_Layer: 10
-  m_Name: RPGPopUp
+  m_Name: ChargeRPG
   m_TagString: RPG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,7 +483,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7500071011768800458
+--- !u!114 &9072515274499659188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9921ffd5738674fae25876db3bfd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponCost: 0
+  weaponCost: 150
 --- !u!1 &7183766452638181055
 GameObject:
   m_ObjectHideFlags: 0

@@ -8014,10 +8014,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPrefabs:
-  - {fileID: 5287989946736950497, guid: a22af7e5869c40a4da9d2139a360d736, type: 3}
-  - {fileID: 5287989946736950497, guid: e46f71aa054d2e849b97ca455b989aba, type: 3}
-  - {fileID: 5287989946736950497, guid: 7d662c652a680e94a9d77845bc63c6c6, type: 3}
-  - {fileID: 5287989946736950497, guid: 8e23ede2a9078a144b869a5ad9212182, type: 3}
+  - {fileID: 5287989946736950497, guid: 656fcbf6daa45ec418cfd4806988fd8f, type: 3}
+  - {fileID: 5287989946736950497, guid: b1e6a5dab2dbeec4883176da355df1e1, type: 3}
+  - {fileID: 5287989946736950497, guid: eb3163bf6b76e9e49acdb06467398c32, type: 3}
+  - {fileID: 5287989946736950497, guid: fe7e43662a63515469b6bea38d633eaf, type: 3}
 --- !u!114 &1285509266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12820,6 +12820,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306075223}
     m_Modifications:
+    - target: {fileID: 4694801597197369575, guid: 8718706cd76097644b293a6c062030dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -17.799744
+      objectReference: {fileID: 0}
     - target: {fileID: 7715601926199633273, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_Name
@@ -12929,6 +12934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -19.099792
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8718706cd76097644b293a6c062030dc, type: 3}

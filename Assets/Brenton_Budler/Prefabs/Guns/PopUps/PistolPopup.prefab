@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 5287989946736950496}
   - component: {fileID: 4044491062371310945}
   - component: {fileID: 5878795011963076008}
+  - component: {fileID: -4595567131128265271}
   m_Layer: 10
   m_Name: PistolPopup
   m_TagString: Pistol
@@ -418,7 +419,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287989946736950497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d558d60341e0484e9e7f29b0ba2bb6c, type: 3}
   m_Name: 
@@ -438,6 +439,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4595567131128265271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287989946736950497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9921ffd5738674fae25876db3bfd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponCost: 0
 --- !u!1 &5287989946758046190
 GameObject:
   m_ObjectHideFlags: 0
