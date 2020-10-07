@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   gunName: ShotGun
-  damage: 1
   ammo: 18
   clipSize: 2
   reloadTime: 1.5
   bulletValue: 10
-  minDamage: 5
+  minDamage: 10
   maxDamage: 15
   firerate: 0.1
   bloom: 100

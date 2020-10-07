@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   gunName: Pistol
-  damage: 1
   ammo: 36
   clipSize: 6
   reloadTime: 1
   bulletValue: 2
-  minDamage: 5
+  minDamage: 20
   maxDamage: 25
   firerate: 0.15
   bloom: 20

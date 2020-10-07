@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9921ffd5738674fae25876db3bfd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponCost: 150
+  weaponCost: 400
 --- !u!1 &7183766452638181055
 GameObject:
   m_ObjectHideFlags: 0

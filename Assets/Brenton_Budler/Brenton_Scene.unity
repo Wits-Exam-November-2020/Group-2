@@ -8199,10 +8199,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPrefabs:
-  - {fileID: 5287989946736950497, guid: 656fcbf6daa45ec418cfd4806988fd8f, type: 3}
   - {fileID: 5287989946736950497, guid: b1e6a5dab2dbeec4883176da355df1e1, type: 3}
   - {fileID: 5287989946736950497, guid: eb3163bf6b76e9e49acdb06467398c32, type: 3}
   - {fileID: 5287989946736950497, guid: fe7e43662a63515469b6bea38d633eaf, type: 3}
+  - {fileID: 5287989946736950497, guid: 656fcbf6daa45ec418cfd4806988fd8f, type: 3}
 --- !u!114 &1285509266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13326,7 +13326,7 @@ PrefabInstance:
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.39978
+      value: -24.399841
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8718706cd76097644b293a6c062030dc, type: 3}

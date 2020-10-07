@@ -256,7 +256,15 @@ public class Weapon : MonoBehaviour
 
 
         //Ammo
-        currentAmmo -= loadout[currentIndex].bulletValue;
+        if (currentAmmo - loadout[currentIndex].bulletValue>=0)
+        {
+            currentAmmo -= loadout[currentIndex].bulletValue;
+        }
+        else
+        {
+            currentAmmo = 0;
+        }
+        
 
 
         //cooldown

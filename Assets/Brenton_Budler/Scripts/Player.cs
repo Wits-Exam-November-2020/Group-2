@@ -110,8 +110,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
 
-        wallet = 200;
-        costOfAmmo = 100;
+        wallet = 10000;
+        costOfAmmo = 50;
         defaultSpeed = speed;
         invincible = false;
 
@@ -346,7 +346,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
 
-
+        weapon.RefreshAmmo(ui_ammobar);
 
         //Input
         float t_hmove = Input.GetAxisRaw("Horizontal");

@@ -6,8 +6,7 @@ using UnityEngine;
 public class Gun : ScriptableObject
 {
     public string gunName;
-    public int damage;
-
+    
     public int ammo;
     public int clipSize;
     public float reloadTime;

@@ -345,6 +345,7 @@ public class Interacting : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.R))
                     {
+                       
                         player.GetComponent<Player>().wallet -= player.GetComponent<Player>().costOfAmmo;
                         this.gameObject.GetComponent<Weapon>().currentAmmo = this.gameObject.GetComponent<Weapon>().maxAmmo;
 
