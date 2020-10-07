@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
 
-        wallet = 10000;
+        wallet = 200;
         costOfAmmo = 50;
         defaultSpeed = speed;
         invincible = false;
