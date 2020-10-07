@@ -8164,6 +8164,7 @@ GameObject:
   - component: {fileID: 1285509268}
   - component: {fileID: 1285509270}
   - component: {fileID: 1285509265}
+  - component: {fileID: 1285509271}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -8331,6 +8332,26 @@ MonoBehaviour:
       EnemyPrefabIndex: 2
   timeBetweenSpawns: 4
   timeBetweenWaves: 15
+--- !u!114 &1285509271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285509263}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18472bc1ea31e24284de43abe866123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 6559466365474908671, guid: f8f1e5600f0628d4491193c002ac4455, type: 3}
+  waves:
+  - enemies:
+    - amount: 50
+      EnemyPrefabIndex: 0
+  timeBetweenSpawns: 0.1
+  timeBetweenWaves: 1
 --- !u!1 &1293926648
 GameObject:
   m_ObjectHideFlags: 0

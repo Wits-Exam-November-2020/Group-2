@@ -30,6 +30,8 @@ public class EnemyController : MonoBehaviour
 
     public int attackRate;
 
+    private bool movingDown = false;
+
     private void Start()
     { 
         health = maxHealth;
@@ -45,7 +47,20 @@ public class EnemyController : MonoBehaviour
 
         player = GameObject.Find("Player(Clone)");
         target = GameObject.Find("Player(Clone)").transform;
-      
+
+
+        if (transform.position.y>50 && !movingDown)
+        {
+            movingDown = true;
+            this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            this.transform.rotation = Quaternion.identity;
+        }
+
+        if (transform.position.y < 50 && movingDown)
+        {
+            movingDown = false;
+        }
+
 
         ////point();
         if (gameObject.tag == "FlyingEnemy1")
@@ -54,9 +69,12 @@ public class EnemyController : MonoBehaviour
             if (Vector3.Distance(transform.position, player.transform.position) > 5)
             {
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
+                //this.GetComponent<Rigidbody>().velocity = moveSpeed * transform.forward;
             }
             else
             {
+
+                //this.GetComponent<Rigidbody>().velocity
                 if (!isAttacking)
                 {
                     isAttacking = true;
@@ -143,7 +161,7 @@ public class EnemyController : MonoBehaviour
 
         if (turn != Vector3.zero )
         {
-            if (hit.collider!=null)
+            if (hit.collider != null)
             {
                 //if (hit.collider.tag == "Building")
                 //{
@@ -151,20 +169,20 @@ public class EnemyController : MonoBehaviour
                 //    transform.Rotate(turn * turnSpeed * Time.deltaTime);
                 //}
 
-                if (hit.collider.tag=="FlyingEnemy1")
+                if (hit.collider.tag == "FlyingEnemy1")
                 {
-                    //moveSpeed = hit.distance - 0.5f;
-                   transform.Rotate(turn * turnSpeed * Time.deltaTime);
-                   transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f*Time.deltaTime);
+                        moveSpeed = hit.distance - 0.5f;
+                        transform.Rotate(turn * turnSpeed * Time.deltaTime);
+               // transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), 0.5f*Time.deltaTime);
 
                 }
                 else
                 {
-                    if ((hit.distance - 1f)>0)
+                    if ((hit.distance - 1f) > 0)
                     {
                         moveSpeed = hit.distance - 1f;
                     }
-                    
+
                     transform.Rotate(turn * turnSpeed * Time.deltaTime);
                 }
             }
@@ -210,7 +228,7 @@ public class EnemyController : MonoBehaviour
         }
       
         health -= amount;
-        Debug.Log(health);
+        Debug.Log(amount);
 
         if (health<=0)
         {

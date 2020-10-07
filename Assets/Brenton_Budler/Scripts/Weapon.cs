@@ -273,6 +273,7 @@ public class Weapon : MonoBehaviour
         for (int i = 0; i < Mathf.Max(1,loadout[currentIndex].pellets); i++)
         {
             int tempDamage = Random.Range(loadout[currentIndex].minDamage, loadout[currentIndex].maxDamage);
+
             //bloom (ACUURACY)
             Vector3 t_bloom = t_spawn.position + t_spawn.forward * 1000f;
             t_bloom += Random.Range(-loadout[currentIndex].bloom, loadout[currentIndex].bloom) * t_spawn.up;
@@ -300,7 +301,15 @@ public class Weapon : MonoBehaviour
 
                 if (t_hit.collider.gameObject.layer == 12)
                 {
-
+                    if (tempDamage -(int)(Vector3.Distance(transform.position, t_hit.collider.transform.position) * 0.1f) <0)
+                    {
+                        tempDamage = 1;
+                    }
+                    else
+                    {
+                        tempDamage -= (int)(Vector3.Distance(transform.position, t_hit.collider.transform.position) * 0.1f);
+                    }
+                    
 
                     if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) {
                         t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(tempDamage + dmgModifier);
@@ -355,7 +364,16 @@ public class Weapon : MonoBehaviour
         //int t_stache = loadout[currentIndex].GetStash();
 
         float t_ammo_ratio = (float)currentAmmo / (float)maxAmmo;
-        pbar.localScale = Vector3.Lerp(pbar.localScale, new Vector3(t_ammo_ratio, 1, 1), Time.deltaTime * 8f);
+
+        if (currentAmmo<=0)
+        {
+            pbar.localScale = Vector3.Lerp(pbar.localScale, new Vector3(0, 1, 1), Time.deltaTime * 8f);
+        }
+        else
+        {
+            pbar.localScale = Vector3.Lerp(pbar.localScale, new Vector3(t_ammo_ratio, 1, 1), Time.deltaTime * 8f);
+        }
+        
 
 
     }

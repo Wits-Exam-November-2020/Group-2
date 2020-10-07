@@ -193,10 +193,12 @@ public class Player : MonoBehaviour
             TakeDamage(25);
         }
 
-       // if (Input.GetKeyDown(KeyCode.L))
-       // {
+        // if (Input.GetKeyDown(KeyCode.L))
+        // {
         //    current_shield += 33;
         //}
+
+        invincible = true;
 
         
         //Input
