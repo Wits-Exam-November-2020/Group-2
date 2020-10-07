@@ -8313,9 +8313,9 @@ MonoBehaviour:
   - {fileID: 6559466365474908671, guid: 246c7efd671824a47acc894d2c6160de, type: 3}
   waves:
   - enemies:
-    - amount: 8
+    - amount: 12
       EnemyPrefabIndex: 0
-    - amount: 14
+    - amount: 5
       EnemyPrefabIndex: 1
   - enemies:
     - amount: 15
@@ -8325,9 +8325,9 @@ MonoBehaviour:
   - enemies:
     - amount: 10
       EnemyPrefabIndex: 0
-    - amount: 20
-      EnemyPrefabIndex: 1
     - amount: 12
+      EnemyPrefabIndex: 1
+    - amount: 20
       EnemyPrefabIndex: 2
   timeBetweenSpawns: 4
   timeBetweenWaves: 15

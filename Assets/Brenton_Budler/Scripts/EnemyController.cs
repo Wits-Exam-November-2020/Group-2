@@ -140,6 +140,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("down");
         }
 
+
         if (turn != Vector3.zero )
         {
             if (hit.collider!=null)

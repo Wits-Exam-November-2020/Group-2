@@ -123,8 +123,11 @@ public class NewEnemySpawner : MonoBehaviour
                 }
             }
         }
-   
+
+
     }
+
+
 
     int SortByDistance(GameObject point1, GameObject point2)
     {
