@@ -16,7 +16,7 @@ MonoBehaviour:
   ammo: 180
   clipSize: 60
   reloadTime: 1
-  bulletValue: 2
+  bulletValue: 1
   minDamage: 20
   maxDamage: 25
   firerate: 0.1
