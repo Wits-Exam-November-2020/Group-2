@@ -32,6 +32,15 @@ public class NewEnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //REMOVE AFTER DRONE FIX
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            GameObject[] FlyingEnemys = GameObject.FindGameObjectsWithTag("FlyingEnemy1");
+            foreach (GameObject stuckEnemy in FlyingEnemys)
+            {
+                Destroy(stuckEnemy);
+            }
+        }
 
         player = GameObject.Find("Player(Clone)");
         enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint").ToList<GameObject>();
@@ -123,6 +132,8 @@ public class NewEnemySpawner : MonoBehaviour
                 }
             }
         }
+
+
 
 
     }
