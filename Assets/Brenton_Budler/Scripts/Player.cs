@@ -96,6 +96,9 @@ public class Player : MonoBehaviour
     public AudioSource runningSound;
 
 
+    private Image takeDamageImage;
+    private float takeDamageWait;
+
     public int costOfAmmo;
     public int wallet;
 
@@ -109,6 +112,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+
 
         wallet = 200;
         costOfAmmo = 50;
@@ -139,6 +143,11 @@ public class Player : MonoBehaviour
         ui_ammobar = GameObject.Find("HUD/AmmoBar/Bar").transform;
         ui_shieldbar = GameObject.Find("HUD/Shield/Bar").transform;
         currencyText = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
+
+        takeDamageImage = GameObject.Find("HUD/DamagePanel").GetComponent<Image>();
+        takeDamageImage.color = new Color(0, 0, 0, 0);
+        
+
         UpdateHealthBar();
         UpdateShieldBar();
         //ui_ammo = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
@@ -163,7 +172,12 @@ public class Player : MonoBehaviour
         //{
         //    rig.useGravity = true;
         //}
-        currencyText.text = wallet.ToString(); 
+        currencyText.text = wallet.ToString();
+
+        if (takeDamageImage.color.a > 0)
+        {
+            takeDamageImage.color = Color.Lerp(takeDamageImage.color, new Color(0, 0, 0, 0), Time.deltaTime * 1f);
+        }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -198,7 +212,7 @@ public class Player : MonoBehaviour
         //    current_shield += 33;
         //}
 
-        invincible = true;
+        //invincible = true;
 
         
         //Input
@@ -631,6 +645,8 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int p_damage)
     {
+        takeDamageImage.color = new Color(1, 1, 1, 1);
+
         if (!invincible)
         {
             if (p_damage < current_shield)

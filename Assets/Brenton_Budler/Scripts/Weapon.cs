@@ -38,8 +38,8 @@ public class Weapon : MonoBehaviour
 
     public PopUpController popups;
 
+    private GameObject infiniteAmmmo;
 
-    
     #endregion
 
 
@@ -65,6 +65,8 @@ public class Weapon : MonoBehaviour
 
         hitmarkerImage = GameObject.Find("HUD/HitMarker/Image").GetComponent<Image>();
         hitmarkerImage.color = new Color(0, 1, 0, 0);
+
+        infiniteAmmmo = GameObject.Find("HUD/AmmoBar/InfiniteAmmo");
     }
 
     void Update()
@@ -93,6 +95,8 @@ public class Weapon : MonoBehaviour
         //{
         //    Equip(4);
         //}
+
+        
 
 
         //Ammo 
@@ -155,6 +159,15 @@ public class Weapon : MonoBehaviour
             hitmarkerImage.color = Color.Lerp(hitmarkerImage.color, new Color(0, 1, 0, 0), Time.deltaTime*0.5f);
         }
 
+
+        if (currentWeapon.tag=="Pistol")
+        {
+            infiniteAmmmo.SetActive(true);
+        }
+        else
+        {
+            infiniteAmmmo.SetActive(false);
+        }
         
     }
 
