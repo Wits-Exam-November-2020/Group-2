@@ -21,6 +21,7 @@ public class Interacting : MonoBehaviour
     public GameObject[] popUps;
 
     public AudioSource pickupSound;
+    public AudioSource ammoPurchaseSound;
 
 
 
@@ -345,7 +346,7 @@ public class Interacting : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.R))
                     {
-                       
+                        ammoPurchaseSound.Play();
                         player.GetComponent<Player>().wallet -= player.GetComponent<Player>().costOfAmmo;
                         this.gameObject.GetComponent<Weapon>().currentAmmo = this.gameObject.GetComponent<Weapon>().maxAmmo;
 

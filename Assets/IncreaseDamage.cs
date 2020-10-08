@@ -5,9 +5,13 @@ using UnityEngine;
 public class IncreaseDamage : MonoBehaviour
 {
     private GameObject player;
+    public GameObject passivePickupSoundPrefab;
+
 
     private void OnTriggerEnter(Collider other)
     {
+        Instantiate(passivePickupSoundPrefab, this.transform.position, Quaternion.identity);
+
         player = GameObject.Find("Player(Clone)");
 
         player.GetComponent<Weapon>().dmgModifier += 10;

@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e888dbd48371d3d4b9b4061668172c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currencyPickupSoundprefab: {fileID: 3000794001908716490, guid: 41ee92039ab69414e95848a834416d53,
+    type: 3}
 --- !u!114 &6532055188257655539
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -539,6 +539,7 @@ Transform:
   m_Children:
   - {fileID: 5287989945127560348}
   - {fileID: 5287989945486381637}
+  - {fileID: 1171610737498546969}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -752,3 +753,98 @@ Transform:
   m_Father: {fileID: 5287989946149284581}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1001 &8207524269332201185
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5287989946736950496}
+    m_Modifications:
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 6.53e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 9.562558e-28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039131323080851536, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponsParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2001747768cd2d444a632c658172399b, type: 3}
+--- !u!4 &1171610737498546969 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8207524269332201185}
+  m_PrefabAsset: {fileID: 0}

@@ -151,6 +151,8 @@ MonoBehaviour:
   hit2Sound: {fileID: 7396790505008476779}
   hit3Sound: {fileID: 2485185442961536676}
   attackRate: 1
+  deathSoundController: {fileID: 4145307477374714262, guid: f41c7c7aafccdaa45944d225c73ffe72,
+    type: 3}
 --- !u!82 &649217482206357480
 AudioSource:
   m_ObjectHideFlags: 0

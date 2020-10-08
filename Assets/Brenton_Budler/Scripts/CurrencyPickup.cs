@@ -6,6 +6,7 @@ public class CurrencyPickup : MonoBehaviour
 {
 
     private GameObject player;
+    public GameObject currencyPickupSoundprefab;
 
 
     private void OnCollisionEnter(Collision other)
@@ -22,6 +23,7 @@ public class CurrencyPickup : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         if (other.gameObject.tag == "Player" && gameObject.tag == "Cog")
         {
+            Instantiate(currencyPickupSoundprefab, this.transform.position, Quaternion.identity);
             player.GetComponent<Player>().wallet += 25;
             Destroy(this.gameObject);
         }

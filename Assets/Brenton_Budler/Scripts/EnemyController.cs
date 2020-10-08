@@ -32,6 +32,8 @@ public class EnemyController : MonoBehaviour
 
     private bool movingDown = false;
 
+    public GameObject deathSoundController;
+
     private void Start()
     { 
         health = maxHealth;
@@ -232,6 +234,7 @@ public class EnemyController : MonoBehaviour
 
         if (health<=0)
         {
+            Instantiate(deathSoundController, this.transform.position, Quaternion.identity);
             GameController.instance.kills++;
             if (tag == "FlyingEnemy1")
             {

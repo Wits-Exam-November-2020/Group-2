@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class Player : MonoBehaviour
 {
@@ -646,6 +647,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int p_damage)
     {
         takeDamageImage.color = new Color(1, 1, 1, 1);
+        DamageSoundController.playDamageSound = true;
+        
 
         if (!invincible)
         {

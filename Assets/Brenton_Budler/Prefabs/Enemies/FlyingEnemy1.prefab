@@ -128,6 +128,8 @@ MonoBehaviour:
   hit2Sound: {fileID: 6756185045546133522}
   hit3Sound: {fileID: 1950282258723464236}
   attackRate: 2
+  deathSoundController: {fileID: 4145307477374714262, guid: f41c7c7aafccdaa45944d225c73ffe72,
+    type: 3}
 --- !u!135 &2656204988329743594
 SphereCollider:
   m_ObjectHideFlags: 0
