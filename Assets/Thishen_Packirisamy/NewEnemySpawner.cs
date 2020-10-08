@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class NewEnemySpawner : MonoBehaviour
@@ -21,12 +22,17 @@ public class NewEnemySpawner : MonoBehaviour
     private int previousEndValue = 0;
     private bool wavesCompleted = false;
     private GameObject player;
+    private Text waveText;
+    private float textTime=0;
+
+    private bool shownText = false;
+    private bool waiting = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-       
+        waveText = GameObject.Find("HUD/WaveText").GetComponent<Text>();
+        ShowWaveText("Wave 1");
     }
 
     // Update is called once per frame
@@ -45,7 +51,17 @@ public class NewEnemySpawner : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint").ToList<GameObject>();
         waveSetup = true;
+        if (wavesCompleted ==true)
+        {
+            GameObject[] Basicinfantries = GameObject.FindGameObjectsWithTag("BasicInfantry");
+            GameObject[] FlyingEnemy = GameObject.FindGameObjectsWithTag("FlyingEnemy1");
+            if (Basicinfantries.Length == 0 && FlyingEnemy.Length == 0 && shownText==false)
+            {
+                    ShowWaveText("All Waves Cleared");
+                    shownText = true;
+            }
 
+        }
         if (wavesCompleted == false)
         {
             if (changingWave == true)
@@ -56,19 +72,27 @@ public class NewEnemySpawner : MonoBehaviour
                 
 
 
-                if (Basicinfantries.Length == 0 && FlyingEnemy.Length == 0)
+                if (Basicinfantries.Length == 0 && FlyingEnemy.Length == 0&& waiting==false)
+                {
+                    
+                    ShowWaveText("Wave " + currentWave + " Cleared");
+                    
+                    waveCleared = true;
+                    waiting = true;
+                }
+                if (waiting)
                 {
                     timeSinceWave += Time.deltaTime;
-                    waveCleared = true;
-
                 }
 
 
 
                 if (timeSinceWave > timeBetweenWaves)
                 {
+                    ShowWaveText("Wave " + (currentWave + 1));
                     changingWave = false;
                     waveCleared = false;
+                    waiting = false;
                 }
             }
             else
@@ -138,6 +162,8 @@ public class NewEnemySpawner : MonoBehaviour
 
     }
 
+  
+
 
 
     int SortByDistance(GameObject point1, GameObject point2)
@@ -147,19 +173,30 @@ public class NewEnemySpawner : MonoBehaviour
         return dist1.CompareTo(dist2);
     }
 
+    private void ShowWaveText(string text)
+    {
+        
+        waveText.text = text;
+        waveText.GetComponent<Animator>().SetTrigger("ShowText");
+       
+    }
     private void SetUpWave()
     {
+       
         int wave = currentWave++;
         if (wave >= waves.Length - 1)
         {
+            
             wavesCompleted = true;
         }
         else
         {
+            
             enemyCount = 0;
             timeSinceSpawn = 0;
             timeSinceWave = 0;
             waveSetup = true;
+            
         }
 
     }
