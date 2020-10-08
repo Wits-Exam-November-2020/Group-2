@@ -79,6 +79,7 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "Pistol")
             {
+                player = GameObject.Find("Player(Clone)");
                 if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
                 {
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Pistol";
@@ -88,7 +89,7 @@ public class Interacting : MonoBehaviour
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy Pistol for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
                 }
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<Player>().wallet >= Focus.collider.GetComponent<WeaponPurchased>().weaponCost)
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
@@ -103,7 +104,7 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "AR")
             {
-
+                player = GameObject.Find("Player(Clone)");
                 if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost==0)
                 {
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip AR";
@@ -116,7 +117,7 @@ public class Interacting : MonoBehaviour
 
                
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<Player>().wallet >= Focus.collider.GetComponent<WeaponPurchased>().weaponCost)
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
@@ -130,6 +131,7 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "ShotGun")
             {
+                player = GameObject.Find("Player(Clone)");
                 if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
                 {
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip Shotgun";
@@ -139,7 +141,7 @@ public class Interacting : MonoBehaviour
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy Shotgun for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
                 }
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<Player>().wallet >= Focus.collider.GetComponent<WeaponPurchased>().weaponCost)
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
@@ -154,6 +156,7 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "SMG")
             {
+                player = GameObject.Find("Player(Clone)");
                 if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
                 {
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip SMG";
@@ -163,10 +166,9 @@ public class Interacting : MonoBehaviour
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy SMG for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
                 }
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<Player>().wallet >= Focus.collider.GetComponent<WeaponPurchased>().weaponCost) 
                 {
                     pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
                     int weaponIndex = checkWeapon(player.GetComponent<Weapon>().currentWeapon.tag);
                     Instantiate(popUps[weaponIndex], Focus.collider.transform.position, Quaternion.identity);
                     this.gameObject.GetComponent<Weapon>().Equip(3);
@@ -177,6 +179,7 @@ public class Interacting : MonoBehaviour
 
             if (Focus.collider.gameObject.tag == "RPG")
             {
+                player = GameObject.Find("Player(Clone)");
                 if (Focus.collider.GetComponent<WeaponPurchased>().weaponCost == 0)
                 {
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Equip RPG";
@@ -186,7 +189,7 @@ public class Interacting : MonoBehaviour
                     promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Buy RPG for " + Focus.collider.GetComponent<WeaponPurchased>().weaponCost.ToString();
                 }
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<Player>().wallet >= Focus.collider.GetComponent<WeaponPurchased>().weaponCost)
                 {
                     pickupSound.Play();
                     player = GameObject.Find("Player(Clone)");
