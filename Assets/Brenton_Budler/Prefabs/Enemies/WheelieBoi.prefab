@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 99293532801575881}
   - component: {fileID: 7396790505008476779}
   - component: {fileID: 2485185442961536676}
+  - component: {fileID: 4551918337914184642}
   m_Layer: 12
   m_Name: WheelieBoi
   m_TagString: BasicInfantry
@@ -96,11 +97,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 6559466365474908671}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Enabled: 0
+  m_Radius: 1.2403693
+  m_Height: 2.4807386
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: -0.16931915, z: 0.048252583}
 --- !u!195 &6559466365474908641
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -537,6 +538,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4551918337914184642
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559466365474908671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2071362, y: 0.95816326, z: 1.8523912}
+  m_Center: {x: 0.035601616, y: -0.22010708, z: -0.1953454}
 --- !u!1001 &4983009049784901632
 PrefabInstance:
   m_ObjectHideFlags: 0
