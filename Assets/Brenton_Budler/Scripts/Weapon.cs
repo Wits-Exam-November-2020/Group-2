@@ -100,7 +100,7 @@ public class Weapon : MonoBehaviour
 
 
         //Ammo 
-        if (currentAmmo<0)
+        if (currentAmmo<=0)
         {
             currentAmmo = 0;
         }
@@ -117,12 +117,22 @@ public class Weapon : MonoBehaviour
             {
                 if (loadout[currentIndex].burst!=1) {
                     if (Input.GetMouseButtonDown(0) && currentCooldown <= 0 && isReloading == false)
-                    { 
-                        if (currentAmmo > 0) {
-                           
-                            Shoot(); }
-                        else { //no ammmo);
-                          
+                    {
+                        if (loadout[currentIndex].name == "Pistol")
+                        {
+                            Shoot();
+                        }
+                        else
+                        {
+                            if (currentAmmo > 0)
+                            {
+
+                                Shoot();
+                            }
+                            else
+                            { //no ammo);
+
+                            }
                         }
                     }
                 }
@@ -131,12 +141,23 @@ public class Weapon : MonoBehaviour
             {
                 if (Input.GetMouseButton(0) && currentCooldown <= 0 && isReloading==false)
                 {
-                    if (currentAmmo>0) {
-                       
-                        Shoot(); }
-                    else { //no ammo);
-                        
+                    if (loadout[currentIndex].name=="Pistol")
+                    {
+                        Shoot();
                     }
+                    else
+                    {
+                        if (currentAmmo > 0)
+                        {
+
+                            Shoot();
+                        }
+                        else
+                        { //no ammo);
+
+                        }
+                    }
+                   
                 }
             }
 

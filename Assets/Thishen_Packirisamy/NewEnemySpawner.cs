@@ -110,16 +110,16 @@ public class NewEnemySpawner : MonoBehaviour
                     enemySpawnPoints.Sort(SortByDistance);
 
                     int randomLimit;
-                    if (enemySpawnPoints.Count<3)
+                    if (enemySpawnPoints.Count<4)
                     {
                         randomLimit = enemySpawnPoints.Count;
                     }
                     else
                     {
-                        randomLimit = 3;
+                        randomLimit = 4;
                     }
                     
-                    Vector3 spawnObjectPos = enemySpawnPoints[Random.Range(0, randomLimit)].transform.position;
+                    Vector3 spawnObjectPos = enemySpawnPoints[Random.Range(1, randomLimit)].transform.position;
                     //Vector3 spawnPoint = new Vector3(spawnObjectPos.x,20,spawnObjectPos.z);
                     Vector3 spawnPoint = spawnObjectPos;
 

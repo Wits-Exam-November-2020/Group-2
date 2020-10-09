@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbacfae296c360a488e16ca1ac1b8559, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  gunName: ShotGun
+  gunName: unotGun
   ammo: 18
   clipSize: 2
   reloadTime: 1.5
-  bulletValue: 10
+  bulletValue: 8
   minDamage: 10
   maxDamage: 15
   firerate: 0.1
