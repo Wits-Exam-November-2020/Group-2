@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5417391958299915578}
   - component: {fileID: 8480673424864352580}
   - component: {fileID: 6532055188257655539}
+  - component: {fileID: 5729504031610986614}
   m_Layer: 0
   m_Name: Cog
   m_TagString: Cog
@@ -93,7 +94,7 @@ BoxCollider:
   m_GameObject: {fileID: 5417391958299915572}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.9248943, y: 1.8528137, z: 1.5558548}
   m_Center: {x: 0, y: 0, z: 0}
@@ -123,6 +124,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90b8e7e83c672145a51a48654778c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &5729504031610986614
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417391958299915572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.53
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1720865794152058414
 PrefabInstance:
   m_ObjectHideFlags: 0
