@@ -132,6 +132,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   explodeSound: {fileID: 5432366397948833351}
+  child: {fileID: 4951321354028215091}
   explosionEffect: {fileID: 3903689312015385406, guid: 230c250e2e62c04408e48e9d8d8e844b,
     type: 3}
 --- !u!82 &5432366397948833351
@@ -299,6 +300,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3ed6f2cc0fac7c4a95699f19f8dba95, type: 3}
+--- !u!1 &4951321354028215091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8831789570283511050, guid: d3ed6f2cc0fac7c4a95699f19f8dba95,
+    type: 3}
+  m_PrefabInstance: {fileID: 4478391517405771321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5763886403680743817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8204152790504687536, guid: d3ed6f2cc0fac7c4a95699f19f8dba95,

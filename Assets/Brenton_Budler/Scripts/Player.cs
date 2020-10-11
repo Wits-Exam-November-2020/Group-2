@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     private float movementCounter;
     private float idleCounter;
 
-    private float baseFOV;
+    public float baseFOV;
     private float sprintFOVModifier = 1.25f;
     private Vector3 cameraOrigin;
 
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
     {
 
 
-        wallet = 200;
+        wallet = 200; //200
         costOfAmmo = 50;
         defaultSpeed = speed;
         invincible = false;
@@ -584,13 +584,23 @@ public class Player : MonoBehaviour
         else
         {
             if (isSprinting) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
-            else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
+            else {
+                if (!this.GetComponent<Weapon>().isAiming)
+                {
+                    normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f);
+                }
+                }
 
             if (crouched) { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * crouchAmount, Time.deltaTime * 8f); }
-            else { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 8f); }
+            else {
+                if (!this.GetComponent<Weapon>().isAiming)
+                {
+                    normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 8f);
+                }
+                 }
 
-            if (hitGrap) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
-            else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
+            //if (hitGrap) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
+            //else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
 
 
         }

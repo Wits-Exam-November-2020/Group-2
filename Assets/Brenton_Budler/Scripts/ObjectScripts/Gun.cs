@@ -21,6 +21,8 @@ public class Gun : ScriptableObject
     public float kickback;
     public float aimSpeed;
 
+    public float fovModifier; //0.5
+
     public int burst; //0 semi 1 auto //2-> burst fire
 
     public bool isProjectile;

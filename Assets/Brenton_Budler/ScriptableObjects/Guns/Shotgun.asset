@@ -24,6 +24,7 @@ MonoBehaviour:
   recoil: 30
   kickback: 0.25
   aimSpeed: 10
+  fovModifier: 0.9
   burst: 0
   isProjectile: 0
   projectilePrefab: {fileID: 0}

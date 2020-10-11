@@ -16,6 +16,8 @@ public class Explode : MonoBehaviour
     private Renderer rend;
     private Collider col;
 
+
+    public GameObject child;
     public GameObject explosionEffect; 
     
 
@@ -60,7 +62,7 @@ public class Explode : MonoBehaviour
 
     private void Delay()
     {
-       // Destroy(gameObject);
+        Destroy(child);
     }
 
 

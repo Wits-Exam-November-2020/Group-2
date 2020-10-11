@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: AR
   m_EditorClassIdentifier: 
   gunName: AR
-  damage: 1
   ammo: 90
   clipSize: 30
   reloadTime: 1.5
@@ -25,6 +24,7 @@ MonoBehaviour:
   recoil: 7.5
   kickback: 0.05
   aimSpeed: 10
+  fovModifier: 0.5
   burst: 1
   isProjectile: 0
   projectilePrefab: {fileID: 0}

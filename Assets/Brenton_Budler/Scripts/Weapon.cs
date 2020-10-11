@@ -40,6 +40,8 @@ public class Weapon : MonoBehaviour
 
     private GameObject infiniteAmmmo;
 
+    public float aimFOVModifier;
+
     #endregion
 
 
@@ -189,7 +191,14 @@ public class Weapon : MonoBehaviour
         {
             infiniteAmmmo.SetActive(false);
         }
-        
+
+        if(isAiming)
+        {
+            this.GetComponent<Player>().normalCam.fieldOfView = Mathf.Lerp(this.GetComponent<Player>().normalCam.fieldOfView, this.GetComponent<Player>().baseFOV * loadout[currentIndex].fovModifier, Time.deltaTime * loadout[currentIndex].aimSpeed);
+            //this.GetComponent<Player>().normalCam.fieldOfView = this.GetComponent<Player>().baseFOV * aimFOVModifier;
+
+        }
+
     }
 
     #endregion
@@ -258,6 +267,7 @@ public class Weapon : MonoBehaviour
             t_anchor.position = Vector3.Lerp(t_anchor.position, t_state_hip.position, Time.deltaTime * loadout[currentIndex].aimSpeed);
         }
 
+        
 
     }
 

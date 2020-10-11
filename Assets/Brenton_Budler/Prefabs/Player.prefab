@@ -229,6 +229,7 @@ MonoBehaviour:
   crouchAmount: 0.5
   standingCollider: {fileID: 1071266608659604237}
   crouchingCollider: {fileID: 1071266609921387405}
+  baseFOV: 0
   invincible: 0
   jetpackActivation: {fileID: 8011954204533432112}
   jetpackUsing: {fileID: 6153660947120116375}
@@ -288,6 +289,7 @@ MonoBehaviour:
   isAiming: 0
   dmgModifier: 0
   popups: {fileID: 2223625587859349260}
+  aimFOVModifier: 0.5
 --- !u!114 &1204430168313502996
 MonoBehaviour:
   m_ObjectHideFlags: 0

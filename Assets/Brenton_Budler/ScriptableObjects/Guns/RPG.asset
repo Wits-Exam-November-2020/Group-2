@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: RPG
   m_EditorClassIdentifier: 
   gunName: RPG
-  damage: 0
   ammo: 6
   clipSize: 1
   reloadTime: 2
@@ -25,6 +24,7 @@ MonoBehaviour:
   recoil: 50
   kickback: 2
   aimSpeed: 10
+  fovModifier: 0.9
   burst: 0
   isProjectile: 1
   projectilePrefab: {fileID: 296435458798555464, guid: ba46b29db9f958546a9c7eb8a9c260d2,
