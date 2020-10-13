@@ -294,6 +294,8 @@ MonoBehaviour:
     type: 3}
   environmentalImpact: {fileID: 3794208587219256367, guid: abec22f7f40d13e4aaa5e340e6e6e751,
     type: 3}
+  bulletTrail: {fileID: 120648884187509030, guid: d2ec70c814159504cb3e12e99b00b151,
+    type: 3}
 --- !u!114 &1204430168313502996
 MonoBehaviour:
   m_ObjectHideFlags: 0

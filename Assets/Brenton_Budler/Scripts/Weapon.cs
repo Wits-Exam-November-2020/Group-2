@@ -45,6 +45,9 @@ public class Weapon : MonoBehaviour
     public GameObject enemySparksImpact;
     public GameObject environmentalImpact;
 
+    //bullet trail stuff
+    public LineRenderer bulletTrail;
+
     #endregion
 
 
@@ -332,6 +335,7 @@ public class Weapon : MonoBehaviour
             RaycastHit t_hit = new RaycastHit();
             if (Physics.Raycast(t_spawn.position, t_bloom, out t_hit, 1000f, canBeShot))
             {
+                SpawnBulletTrail(t_hit.point);
                 //GameObject t_newHole = Instantiate(bulletHolePrefab, t_hit.point + t_hit.normal * 0.0001f, Quaternion.identity) as GameObject;
                 //t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
                 //Destroy(t_newHole, 5f);
@@ -451,5 +455,33 @@ public class Weapon : MonoBehaviour
         }
     }
     #endregion
+
+    private void SpawnBulletTrail(Vector3 hitPoint)
+    {
+        if (isAiming)
+        {
+            Transform shootPointADS = currentWeapon.transform.Find("States/ADS/MuzzleFlashPointADS");
+            GameObject bulletTrailEffect = Instantiate(bulletTrail.gameObject, shootPointADS.position, Quaternion.identity);
+            LineRenderer lineR = bulletTrailEffect.GetComponent<LineRenderer>();
+
+            lineR.SetPosition(0, shootPointADS.position);
+            lineR.SetPosition(1, hitPoint);
+            Destroy(bulletTrailEffect, 2f);
+        }
+        else if (!isAiming)
+        {
+           
+            Transform shootPoint = currentWeapon.transform.Find("States/Hip/MuzzleFlashPointHIP");
+            GameObject bulletTrailEffect = Instantiate(bulletTrail.gameObject, shootPoint.position, Quaternion.identity);
+            LineRenderer lineR = bulletTrailEffect.GetComponent<LineRenderer>();
+
+            Debug.Log(shootPoint);
+
+            lineR.SetPosition(0, shootPoint.transform.position);
+            lineR.SetPosition(1, hitPoint);
+
+            Destroy(bulletTrailEffect, 2f);
+        }
+    }
     
 }
