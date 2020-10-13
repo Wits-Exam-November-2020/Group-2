@@ -143,21 +143,21 @@ public class EnemyController : MonoBehaviour
         if (Physics.Raycast(left, transform.forward, out hit, rayDistance))
         {
             turn += Vector3.up;
-            Debug.Log("right");
+
         }else if(Physics.Raycast(right, transform.forward, out hit, rayDistance))
         {
             turn += Vector3.down;
-            Debug.Log("left");
+         
         }
         else if (Physics.Raycast(down, transform.forward, out hit, rayDistance))
         {
             turn -= Vector3.right;
-            Debug.Log("up");
+            
         }
         else if (Physics.Raycast(up, transform.forward, out hit, rayDistance))
         {
             turn += Vector3.left;
-            Debug.Log("down");
+           
         }
 
 
