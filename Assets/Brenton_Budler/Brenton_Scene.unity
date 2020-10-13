@@ -4929,6 +4929,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578815605}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &593611187 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1243055072455435380, guid: 6f8a8e1524af17c45995e18037c32943,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085663709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598285706
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,7 +7871,7 @@ Transform:
   - {fileID: 1157506258}
   - {fileID: 384845481}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072103132
 GameObject:
@@ -8061,7 +8067,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1655911316}
     m_Modifications:
     - target: {fileID: 1243055072455435380, guid: 6f8a8e1524af17c45995e18037c32943,
         type: 3}
@@ -8121,12 +8127,12 @@ PrefabInstance:
     - target: {fileID: 1243055072455435380, guid: 6f8a8e1524af17c45995e18037c32943,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.0234
+      value: 3.0234003
       objectReference: {fileID: 0}
     - target: {fileID: 1243055072455435380, guid: 6f8a8e1524af17c45995e18037c32943,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.364533
+      value: 3.3645332
       objectReference: {fileID: 0}
     - target: {fileID: 5964134535216870491, guid: 6f8a8e1524af17c45995e18037c32943,
         type: 3}
@@ -12350,8 +12356,9 @@ Transform:
   - {fileID: 1188048277}
   - {fileID: 173825891}
   - {fileID: 1662200092}
+  - {fileID: 593611187}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1662200091
 PrefabInstance:
@@ -15799,7 +15806,7 @@ PrefabInstance:
     - target: {fileID: 7715601926246472430, guid: 8718706cd76097644b293a6c062030dc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.399902
+      value: -24.399963
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8718706cd76097644b293a6c062030dc, type: 3}
