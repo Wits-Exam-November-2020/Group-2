@@ -9257,6 +9257,7 @@ GameObject:
   - component: {fileID: 3794208587219687439}
   - component: {fileID: 3794208587234893135}
   - component: {fileID: 3794208587234862319}
+  - component: {fileID: 3353790128821526910}
   m_Layer: 0
   m_Name: ConcreteImpact
   m_TagString: Untagged
@@ -9288,7 +9289,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3794208587219256367}
   serializedVersion: 6
-  lengthInSec: 2.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -13898,3 +13899,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3353790128821526910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3794208587219256367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65944a76b3939c44aa2ed8d9e6e3558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1.2

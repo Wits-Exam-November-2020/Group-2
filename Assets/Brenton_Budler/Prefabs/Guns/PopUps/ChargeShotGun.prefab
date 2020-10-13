@@ -146,6 +146,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5287989946736950496}
     m_Modifications:
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 5.91e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.4033e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 5.91e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 9.419292e-17
+      objectReference: {fileID: 0}
     - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +225,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WeaponsParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.8734743
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.28920433
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9150943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2001747768cd2d444a632c658172399b, type: 3}

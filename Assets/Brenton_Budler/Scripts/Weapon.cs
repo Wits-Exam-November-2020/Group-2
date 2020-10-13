@@ -42,6 +42,9 @@ public class Weapon : MonoBehaviour
 
     public float aimFOVModifier;
 
+    public GameObject enemySparksImpact;
+    public GameObject environmentalImpact;
+
     #endregion
 
 
@@ -355,7 +358,9 @@ public class Weapon : MonoBehaviour
                     }
                     
 
-                    if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) {
+                    if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) 
+                    {
+                        Instantiate(enemySparksImpact, t_hit.point, t_hit.transform.rotation);
                         t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(tempDamage + dmgModifier);
                     }
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
@@ -364,6 +369,10 @@ public class Weapon : MonoBehaviour
                     // sfx.PlayOneShot(hitmarkerSound);
                     hitmarkerWait = 0.1f;
                    // popups.DamageDealt(tempDamage + dmgModifier , Vector3.Distance(transform.position, t_hit.collider.transform.position));
+                }
+                else
+                {
+                    Instantiate(environmentalImpact, t_hit.point, t_hit.transform.rotation);
                 }
             }
             else

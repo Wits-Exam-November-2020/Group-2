@@ -12,7 +12,7 @@ public class NewEnemySpawner : MonoBehaviour
     public Wave[] waves;
     public float timeBetweenSpawns;
     public float timeBetweenWaves;
-    private int currentWave = 0;
+    public int currentWave = 0;
     private float timeSinceSpawn = 0;
     private float timeSinceWave = 0;
     private bool changingWave = false;
