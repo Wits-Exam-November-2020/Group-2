@@ -567,22 +567,22 @@ PrefabInstance:
     - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 4e-44
       objectReference: {fileID: 0}
     - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 42
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3461800836645616642, guid: 2001747768cd2d444a632c658172399b,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 2.1196307e-27
+      value: 3.422598e-17
       objectReference: {fileID: 0}
     - target: {fileID: 7035922328497364472, guid: 2001747768cd2d444a632c658172399b,
         type: 3}
@@ -643,6 +643,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WeaponsParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.22975995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166573506237407660, guid: 2001747768cd2d444a632c658172399b,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.12041653
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2001747768cd2d444a632c658172399b, type: 3}
