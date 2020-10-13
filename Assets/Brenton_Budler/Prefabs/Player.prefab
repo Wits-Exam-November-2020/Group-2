@@ -290,6 +290,8 @@ MonoBehaviour:
   dmgModifier: 0
   popups: {fileID: 2223625587859349260}
   aimFOVModifier: 0.5
+  sparksOnHit: {fileID: 8410433244731884178, guid: c3ce9f6f76616ec49ba5f5d5ee672f40,
+    type: 3}
 --- !u!114 &1204430168313502996
 MonoBehaviour:
   m_ObjectHideFlags: 0

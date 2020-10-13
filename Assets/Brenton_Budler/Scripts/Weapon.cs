@@ -42,6 +42,8 @@ public class Weapon : MonoBehaviour
 
     public float aimFOVModifier;
 
+    public GameObject sparksOnHit;
+
     #endregion
 
 
@@ -355,7 +357,9 @@ public class Weapon : MonoBehaviour
                     }
                     
 
-                    if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) {
+                    if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) 
+                    {
+                        Instantiate(sparksOnHit, t_hit.point, t_hit.transform.rotation);
                         t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(tempDamage + dmgModifier);
                     }
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
