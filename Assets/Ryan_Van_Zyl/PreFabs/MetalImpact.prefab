@@ -4652,6 +4652,7 @@ GameObject:
   - component: {fileID: 8410433244732251826}
   - component: {fileID: 8410433244713901042}
   - component: {fileID: 8410433244713935442}
+  - component: {fileID: 1837849127715994225}
   m_Layer: 0
   m_Name: MetalImpact
   m_TagString: Untagged
@@ -9301,3 +9302,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1837849127715994225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8410433244731884178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65944a76b3939c44aa2ed8d9e6e3558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.5
