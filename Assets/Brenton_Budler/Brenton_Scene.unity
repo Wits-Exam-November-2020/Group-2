@@ -9690,6 +9690,7 @@ MonoBehaviour:
       EnemyPrefabIndex: 2
   timeBetweenSpawns: 4
   timeBetweenWaves: 15
+  currentWave: 0
 --- !u!114 &1285509271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9722,6 +9723,7 @@ MonoBehaviour:
       EnemyPrefabIndex: 2
   timeBetweenSpawns: 2
   timeBetweenWaves: 8
+  currentWave: 0
 --- !u!1 &1293926648
 GameObject:
   m_ObjectHideFlags: 0
