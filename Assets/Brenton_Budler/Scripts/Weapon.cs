@@ -388,9 +388,18 @@ public class Weapon : MonoBehaviour
 
     }
 
-    public void aimFOV()
+    public void aimFOV(float currentFOV)
     {
-        this.GetComponent<Player>().normalCam.fieldOfView = Mathf.Lerp(this.GetComponent<Player>().normalCam.fieldOfView, this.GetComponent<Player>().baseFOV * loadout[currentIndex].fovModifier, Time.deltaTime * loadout[currentIndex].aimSpeed);
+        if (currentFOV == 0)
+        {
+            this.GetComponent<Player>().normalCam.fieldOfView = Mathf.Lerp(this.GetComponent<Player>().normalCam.fieldOfView, this.GetComponent<Player>().baseFOV * loadout[currentIndex].fovModifier, Time.deltaTime * loadout[currentIndex].aimSpeed);
+        }
+        else
+        {
+            this.GetComponent<Player>().normalCam.fieldOfView = Mathf.Lerp(this.GetComponent<Player>().normalCam.fieldOfView, this.GetComponent<Player>().baseFOV * (currentFOV - loadout[currentIndex].fovModifier), Time.deltaTime * loadout[currentIndex].aimSpeed);
+
+        }
+
     }
    
 

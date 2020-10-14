@@ -467,14 +467,35 @@ public class Player : MonoBehaviour
         if (sliding)
         {
 
-            normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier * 1.25f, Time.deltaTime * 8f);
+            if (this.GetComponent<Weapon>().isAiming)
+            {
+                this.GetComponent<Weapon>().aimFOV(sprintFOVModifier*1.5f);
+            }
+            else
+            {
+                normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier * 1.25f, Time.deltaTime * 8f);
+            }
+               
 
             // normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier * 1.25f, Time.deltaTime * 8f);
             normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * slideAmount, Time.deltaTime * 6f);
         }
         else
         {
-            if (isSprinting) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
+            if (isSprinting) {
+
+                if (this.GetComponent<Weapon>().isAiming)
+                {
+                    this.GetComponent<Weapon>().aimFOV(sprintFOVModifier*1.25f);
+                }
+                else
+                {
+                    normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f);
+                }
+                
+
+
+            }
             else
             {
 
@@ -493,7 +514,7 @@ public class Player : MonoBehaviour
                 normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * crouchAmount, Time.deltaTime * 8f);
                 if (this.GetComponent<Weapon>().isAiming)
                 {
-                    this.GetComponent<Weapon>().aimFOV();
+                    this.GetComponent<Weapon>().aimFOV(0);
                 }
             }
             else
@@ -513,7 +534,7 @@ public class Player : MonoBehaviour
         {
             if (this.GetComponent<Weapon>().isAiming)
             {
-                this.GetComponent<Weapon>().aimFOV();
+                this.GetComponent<Weapon>().aimFOV(0);
             }
         }
 
