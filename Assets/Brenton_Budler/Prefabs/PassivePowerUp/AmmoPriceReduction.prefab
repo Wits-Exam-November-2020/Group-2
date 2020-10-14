@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 4246092267835585838}
   - component: {fileID: 4246092267835585839}
   - component: {fileID: 4246092267835585836}
-  - component: {fileID: -5084592150827865664}
+  - component: {fileID: -3566658606422571722}
+  - component: {fileID: 4048387989629702470}
+  - component: {fileID: 3043685323053301142}
   m_Layer: 0
   m_Name: AmmoPriceReduction
   m_TagString: AmmoPrice
@@ -28,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4246092267835585834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.98176, y: 1.07, z: -0.79204315}
+  m_LocalPosition: {x: 0, y: 0, z: 0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6697719715473792041}
@@ -94,9 +96,9 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5084592150827865664
+--- !u!114 &-3566658606422571722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,11 +107,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 4246092267835585834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86b7b9cf56f00c04b91761d14e8b921b, type: 3}
+  m_Script: {fileID: 11500000, guid: 38be965de23c85748a283660664564eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   passivePickupSoundPrefab: {fileID: 2671623685091871285, guid: e7f73f2059fbbf241ad36f278ce8f707,
     type: 3}
+--- !u!65 &4048387989629702470
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246092267835585834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6627407, y: 0.84341717, z: 0.92067677}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3043685323053301142
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246092267835585834}
+  serializedVersion: 2
+  m_Mass: 0.2
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &209868172212499657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,12 +151,17 @@ PrefabInstance:
     - target: {fileID: 3461800836645616642, guid: e65ef90b87eb1d341b4dd18e700d91e7,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3461800836645616642, guid: e65ef90b87eb1d341b4dd18e700d91e7,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.5824254e-26
+      value: -4.902019e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461800836645616642, guid: e65ef90b87eb1d341b4dd18e700d91e7,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7035922328497364472, guid: e65ef90b87eb1d341b4dd18e700d91e7,
         type: 3}

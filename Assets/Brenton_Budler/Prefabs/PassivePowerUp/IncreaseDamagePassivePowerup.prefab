@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 3247718397182603537}
   - component: {fileID: 3247718397182603536}
   - component: {fileID: 3247718397182603539}
-  - component: {fileID: -3811166290195179428}
+  - component: {fileID: 5573934737024055004}
+  - component: {fileID: 6647628838706800521}
+  - component: {fileID: 1480098276411993949}
   m_Layer: 0
   m_Name: IncreaseDamagePassivePowerup
   m_TagString: IncreaseDamage
@@ -94,9 +96,38 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-3811166290195179428
+--- !u!65 &5573934737024055004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247718397182603629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6627407, y: 0.84341717, z: 0.92067677}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6647628838706800521
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247718397182603629}
+  serializedVersion: 2
+  m_Mass: 0.2
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1480098276411993949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3247718397182603629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f6e857d0a8324f85c210159bd9466, type: 3}
+  m_Script: {fileID: 11500000, guid: 38be965de23c85748a283660664564eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   passivePickupSoundPrefab: {fileID: 2671623685091871285, guid: e7f73f2059fbbf241ad36f278ce8f707,
