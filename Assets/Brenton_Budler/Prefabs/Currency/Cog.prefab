@@ -97,7 +97,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.5631027, y: 2.5220003, z: 2.5273542}
-  m_Center: {x: -0.027439117, y: 0.010936737, z: 0.020131588}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8480673424864352580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15.301165
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &456582129028678404
 Rigidbody:

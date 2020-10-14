@@ -25,7 +25,8 @@ public class CurrencyPickup : MonoBehaviour
         if (other.gameObject.tag == "Player" && gameObject.tag == "Cog")
         {
             StartCoroutine(Move());
-            GetComponent<Collider>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<SphereCollider>().enabled = false;
             GetComponent<Rigidbody>().isKinematic=true;
         }
     }
