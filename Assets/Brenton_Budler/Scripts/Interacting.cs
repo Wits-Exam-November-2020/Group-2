@@ -49,10 +49,10 @@ public class Interacting : MonoBehaviour
         
 
 
-        if (this.transform.position.y >10 && Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            promptText.GetComponent<UnityEngine.UI.Text>().text = "Health Beacons must be placed on the ground";
-        }
+        //if (this.transform.position.y >10 && Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Health Beacons must be placed on the ground";
+        //}
         
 
 
@@ -61,19 +61,19 @@ public class Interacting : MonoBehaviour
         if (Physics.Raycast(t_spawn.position, t_spawn.forward, out  Focus, rayDistance))
         {
             
-            if (Focus.collider.gameObject.tag=="Chest"&& Focus.collider.gameObject.GetComponent<ChestController>().open == false)
-            {
+            //if (Focus.collider.gameObject.tag=="Chest"&& Focus.collider.gameObject.GetComponent<ChestController>().open == false)
+            //{
 
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press Q to Open Chest ";
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press Q to Open Chest ";
 
-                if (Input.GetKeyDown(KeyCode.Q))
-                {
+            //    if (Input.GetKeyDown(KeyCode.Q))
+            //    {
                   
-                    Focus.collider.gameObject.GetComponent<ChestController>().Open();
-                    currentChest = Focus.collider.gameObject;
+            //        Focus.collider.gameObject.GetComponent<ChestController>().Open();
+            //        currentChest = Focus.collider.gameObject;
 
-                }
-            }
+            //    }
+            //}
 
 
 
@@ -201,134 +201,134 @@ public class Interacting : MonoBehaviour
 
             }
 
-            if (Focus.collider.gameObject.tag == "Shield")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Shield";
+            //if (Focus.collider.gameObject.tag == "Shield")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Shield";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Player>().current_shield += 33;
-                    Destroy(Focus.collider.gameObject);
-                }
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<Player>().current_shield += 33;
+            //        Destroy(Focus.collider.gameObject);
+            //    }
 
-            }
+            //}
 
-            if (Focus.collider.gameObject.tag == "JetPackRecovery")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Jetpack Recovery Reduction";
+            //if (Focus.collider.gameObject.tag == "JetPackRecovery")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Jetpack Recovery Reduction";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Player>().jetRecovery += (player.GetComponent<Player>().jetRecovery * 0.1f);
-                    Destroy(Focus.collider.gameObject);
-                }
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<Player>().jetRecovery += (player.GetComponent<Player>().jetRecovery * 0.1f);
+            //        Destroy(Focus.collider.gameObject);
+            //    }
 
-            }
+            //}
 
-            if (Focus.collider.gameObject.tag == "SpeedIncrease")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Speed Increase";
+            //if (Focus.collider.gameObject.tag == "SpeedIncrease")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Speed Increase";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.1f);
-                    Destroy(Focus.collider.gameObject);
-                }
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<Player>().speed += (player.GetComponent<Player>().speed * 0.1f);
+            //        Destroy(Focus.collider.gameObject);
+            //    }
 
-            }
+            //}
 
-            if (Focus.collider.gameObject.tag == "IncreaseDamage")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Damage Increase";
+            //if (Focus.collider.gameObject.tag == "IncreaseDamage")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Damage Increase";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Weapon>().dmgModifier += 10;
-                    Destroy(Focus.collider.gameObject);
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<Weapon>().dmgModifier += 10;
+            //        Destroy(Focus.collider.gameObject);
 
-                }
+            //    }
 
-            }
+            //}
 
-            if (Focus.collider.gameObject.tag == "HealthRegen")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Health";
+            //if (Focus.collider.gameObject.tag == "HealthRegen")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Health";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Player>().current_health += player.GetComponent<Player>().max_health/4;
-                    Destroy(Focus.collider.gameObject);
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<Player>().current_health += player.GetComponent<Player>().max_health/4;
+            //        Destroy(Focus.collider.gameObject);
 
-                }
+            //    }
 
-            }
+            //}
 
-            if (Focus.collider.gameObject.tag == "AmmoPrice")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Ammo Price Reduction";
+            //if (Focus.collider.gameObject.tag == "AmmoPrice")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Ammo Price Reduction";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<Player>().costOfAmmo -= 10;
-                    Destroy(Focus.collider.gameObject);
-                }
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<Player>().costOfAmmo -= 10;
+            //        Destroy(Focus.collider.gameObject);
+            //    }
 
-            }
+            //}
 
 
-            if (Focus.collider.gameObject.tag == "Grenade")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Grenade";
+            //if (Focus.collider.gameObject.tag == "Grenade")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup Grenade";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<EquipmentHandler>().grenadeAmount += 1;
-                    Destroy(Focus.collider.gameObject);
-                }
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<EquipmentHandler>().grenadeAmount += 1;
+            //        Destroy(Focus.collider.gameObject);
+            //    }
 
-            }
+            //}
 
-            if (Focus.collider.gameObject.tag == "EMP")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup EMP";
+            //if (Focus.collider.gameObject.tag == "EMP")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup EMP";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<EquipmentHandler>().empAmount += 1;
-                    Destroy(Focus.collider.gameObject);
-                }
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<EquipmentHandler>().empAmount += 1;
+            //        Destroy(Focus.collider.gameObject);
+            //    }
 
-            }
+            //}
 
-            if (Focus.collider.gameObject.tag == "HealthBeacon")
-            {
-                promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup HealthBeacon";
+            //if (Focus.collider.gameObject.tag == "HealthBeacon")
+            //{
+            //    promptText.GetComponent<UnityEngine.UI.Text>().text = "Press E to Pickup HealthBeacon";
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    pickupSound.Play();
-                    player = GameObject.Find("Player(Clone)");
-                    player.GetComponent<EquipmentHandler>().healthBeaconAmount += 1;
-                    Destroy(Focus.collider.gameObject);
-                }
+            //    if (Input.GetKeyDown(KeyCode.E))
+            //    {
+            //        pickupSound.Play();
+            //        player = GameObject.Find("Player(Clone)");
+            //        player.GetComponent<EquipmentHandler>().healthBeaconAmount += 1;
+            //        Destroy(Focus.collider.gameObject);
+            //    }
 
-            }
+            //}
 
             if (Focus.collider.gameObject.tag == "AmmoBox")
             {

@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     private float idleCounter;
 
     public float baseFOV;
-    private float sprintFOVModifier = 1.25f;
+    public float sprintFOVModifier = 1.25f;
     private Vector3 cameraOrigin;
 
     private bool sliding;
@@ -208,13 +208,6 @@ public class Player : MonoBehaviour
             TakeDamage(25);
         }
 
-        // if (Input.GetKeyDown(KeyCode.L))
-        // {
-        //    current_shield += 33;
-        //}
-
-        //invincible = true;
-
         
         //Input
         float t_hmove = Input.GetAxisRaw("Horizontal");
@@ -226,7 +219,6 @@ public class Player : MonoBehaviour
         bool slide = Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.C);
         bool crouch = Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.C);
         jet = Input.GetKey(KeyCode.Space);
-        //   bool jet = Input.GetKey(KeyCode.Space);
 
 
 
@@ -241,7 +233,9 @@ public class Player : MonoBehaviour
         if (isSprinting )
         {
             if (Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl)|| Input.GetKeyDown(KeyCode.C)) {
+                
                 slidingSound.Play();
+
             }
         }
 
@@ -251,64 +245,17 @@ public class Player : MonoBehaviour
             SetCrouch(!crouched);
         }
 
-
-    
-
         //Jumping 
         if (isJumping)
         {
-
-            
             if (crouched) { SetCrouch(false); }
             rig.AddForce(Vector3.up * jumpForce);
             current_recovery = 0f;
         }
 
-        //Head Bob 
-        if (!isGrounded)
-        {
-            HeadBob(movementCounter, 0.01f, 0.01f);
-            idleCounter += 0;
-            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
-        }
-        else if (sliding)
-        {
-            //sliding
-          
-            HeadBob(movementCounter, 0.15f, 0.075f);
-            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
 
-        }
-        else if (t_hmove ==0 && t_vmove==0)
-        {
-            //Idling
-            HeadBob(idleCounter, 0.025f, 0.025f);
-            idleCounter += Time.deltaTime;
-            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 2f);
-        }
-        else if(!isSprinting &&!crouched){
-            
-            //Walking
-            HeadBob(movementCounter, 0.035f, 0.035f);
-            movementCounter += Time.deltaTime * 3f;
-            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 6f);
-        }
-        else if (crouched)
-        {
-            //crouching
-            HeadBob(movementCounter, 0.02f, 0.02f);
-            movementCounter += Time.deltaTime * 1.75f;
-            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 6f);
-
-        }
-        else
-        {
-            //sprinting 
-            
-            HeadBob(movementCounter, 0.15f, 0.075f);
-            movementCounter += Time.deltaTime * 7f;
-            weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.deltaTime * 10f);
-        }
+       
+        
 
         if (isSprinting && !runningSound.isPlaying)
         {
@@ -325,17 +272,18 @@ public class Player : MonoBehaviour
         //Sliding 
         if (isSliding)
         {
+            if (!crouched) { SetCrouch(true); }
             sliding = true;
             slide_dir = t_direction;
             slide_time = lengthOfSlide;
-            weaponParentCurrentPos += Vector3.down * (slideAmount - crouchAmount);
-            if (!crouched) { SetCrouch(true); }
+           // weaponParentCurrentPos += Vector3.down * crouchAmount;
+
 
         }
 
         //Grappling Hook SHOOOT 
 
-            HandleHookshotStart();
+            //HandleHookshotStart();
 
 
 
@@ -385,66 +333,6 @@ public class Player : MonoBehaviour
         //Movement
         float t_adjustedSpeed = speed;
 
-
-
-        if (thrownState)
-        {
-
-            rig.useGravity = true;
-            hookshotTransform.LookAt(hookshotPosition);
-            float hookShotThrowSpeed = 70f;
-            hookShotSize += hookShotThrowSpeed * Time.fixedDeltaTime;
-            hookshotTransform.localScale = new Vector3(1, 1, hookShotSize);
-
-            if (Vector3.Distance(transform.position, hookshotPosition) - hookShotSize < 0.5)
-            {
-                thrownState = false;
-                hitGrap = true;
-                hookshotTransform.localScale = Vector3.zero;
-                hookShotSize=0;
-            }
-
-            if (Input.GetKey(KeyCode.Space))
-            {
-                rig.useGravity = true;
-                hitGrap = false;
-                thrownState = false;
-                hookshotTransform.localScale = Vector3.zero;
-                hookShotSize=0;
-            }
-        }
-        else if (hitGrap)
-        {
-            rig.useGravity = false;
-            float hookshotSpeedMin = 2f;
-            float hookshotSpeedMax = 4f; 
-            hookShotSpeed = Mathf.Clamp(Vector3.Distance(transform.position, hookshotPosition), hookshotSpeedMin,hookshotSpeedMax);
-            
-            transform.position = Vector3.Lerp(transform.position, hookshotPosition, Time.fixedDeltaTime * hookShotSpeed);
-
-            
-           
-
-            if (Vector3.Distance(transform.position,hookshotPosition)<2f)
-            {
-                hitGrap = false;
-            }
-
-            Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                rig.useGravity = true;
-                hitGrap = false;
-                thrownState = false;
-                float momentumExtraSpeed = 7f;
-                characterVelocityMomentum = hookshotDir * hookShotSpeed * momentumExtraSpeed;
-                rig.AddForce(Vector3.up * jumpForce);
-            }
-
-        }
-        else
-        {
-
             rig.useGravity = true;
             if (!sliding)
             {
@@ -472,9 +360,11 @@ public class Player : MonoBehaviour
                 if (slide_time <= 0)
                 {
                     sliding = false;
-                    weaponParentCurrentPos += Vector3.up * (slideAmount - crouchAmount);
-                }
+                    // weaponParentCurrentPos += Vector3.up * crouchAmount;
+
             }
+            
+              }
 
             Vector3 t_targetVelcotiy = t_direction * t_adjustedSpeed * Time.deltaTime;
             t_targetVelcotiy += characterVelocityMomentum;
@@ -490,7 +380,7 @@ public class Player : MonoBehaviour
                     characterVelocityMomentum = Vector3.zero;
                 }
             }
-        }
+  
 
 
         //Jetting
@@ -576,34 +466,112 @@ public class Player : MonoBehaviour
         //Camera Stuff
         if (sliding)
         {
+
             normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier * 1.25f, Time.deltaTime * 8f);
+
+            // normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier * 1.25f, Time.deltaTime * 8f);
             normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * slideAmount, Time.deltaTime * 6f);
-
-
         }
         else
         {
             if (isSprinting) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
-            else {
+            else
+            {
+
+
+
                 if (!this.GetComponent<Weapon>().isAiming)
                 {
                     normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f);
                 }
-                }
 
-            if (crouched) { normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * crouchAmount, Time.deltaTime * 8f); }
-            else {
+            }
+
+            if (crouched)
+            {
+
+                normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin + Vector3.down * crouchAmount, Time.deltaTime * 8f);
+                if (this.GetComponent<Weapon>().isAiming)
+                {
+                    this.GetComponent<Weapon>().aimFOV();
+                }
+            }
+            else
+            {
+
                 if (!this.GetComponent<Weapon>().isAiming)
                 {
-                    normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 8f);
+                    normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f);
+
                 }
-                 }
+                normalCam.transform.localPosition = Vector3.Lerp(normalCam.transform.localPosition, cameraOrigin, Time.deltaTime * 8f);
+            }
+
+        }
+
+        if (!sliding && !isSprinting && !crouched)
+        {
+            if (this.GetComponent<Weapon>().isAiming)
+            {
+                this.GetComponent<Weapon>().aimFOV();
+            }
+        }
+
+
+            // 
 
             //if (hitGrap) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
             //else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
 
+           // weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, weaponParentCurrentPos, Time.fixedDeltaTime * 10f);
 
-        }
+            //Head Bob 
+            if (!isGrounded)
+            {
+                HeadBob(movementCounter, 0.01f, 0.01f);
+                idleCounter += 0;
+                weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.fixedDeltaTime * 10f);
+            }
+            else if (sliding)
+            {
+                //sliding
+
+                HeadBob(movementCounter, 0.15f, 0.075f);
+                weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.fixedDeltaTime * 10f);
+
+            }
+            else if (t_hmove == 0 && t_vmove == 0)
+            {
+                //Idling
+                HeadBob(idleCounter, 0.025f, 0.025f);
+                idleCounter += Time.deltaTime;
+                weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.fixedDeltaTime * 6f);
+            }
+            else if (!isSprinting && !crouched)
+            {
+
+                //Walking
+                HeadBob(movementCounter, 0.035f, 0.035f);
+                movementCounter += Time.deltaTime * 3f;
+                weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.fixedDeltaTime * 6f);
+            }
+            else if (crouched)
+            {
+                //crouching
+                HeadBob(movementCounter, 0.02f, 0.02f);
+                movementCounter += Time.deltaTime * 1.75f;
+                weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.fixedDeltaTime * 6f);
+
+            }
+            else
+            {
+                //sprinting 
+
+                HeadBob(movementCounter, 0.15f, 0.075f);
+                movementCounter += Time.deltaTime * 7f;
+                weaponParent.localPosition = Vector3.Lerp(weaponParent.localPosition, targetWeaponBobPosition, Time.fixedDeltaTime * 10f);
+            }
+        
 
     }
 
@@ -636,22 +604,30 @@ public class Player : MonoBehaviour
 
     void SetCrouch(bool p_state)
     {
-        if (crouched == p_state) { return; }
+        if (crouched == p_state) {
 
-        crouched = p_state;
 
-        if (crouched)
-        {
-            standingCollider.SetActive(false);
-            crouchingCollider.SetActive(true);
-            weaponParentCurrentPos += Vector3.down * crouchAmount;
+            return;
         }
         else
         {
-            standingCollider.SetActive(true);
-            crouchingCollider.SetActive(false);
-            weaponParentCurrentPos += Vector3.up * crouchAmount;
+            crouched = p_state;
+
+            if (crouched)
+            {
+                standingCollider.SetActive(false);
+                crouchingCollider.SetActive(true);
+                weaponParentCurrentPos += Vector3.down * crouchAmount;
+            }
+            else
+            {
+                standingCollider.SetActive(true);
+                crouchingCollider.SetActive(false);
+                weaponParentCurrentPos += Vector3.up * crouchAmount;
+            }
         }
+
+
     }
 
     public void TakeDamage(int p_damage)
@@ -696,21 +672,21 @@ public class Player : MonoBehaviour
     }
 
  
-    private void HandleHookshotStart()
-    {
-        Transform t_spawn = transform.Find("Cameras/Player Camera");
+    //private void HandleHookshotStart()
+    //{
+    //    Transform t_spawn = transform.Find("Cameras/Player Camera");
 
-        if (Input.GetKeyDown(KeyCode.G)&& Input.GetKeyDown(KeyCode.H))
-        {
-            if (Physics.Raycast(t_spawn.position, t_spawn.forward, out RaycastHit raycastHit))
-            {
+    //    if (Input.GetKeyDown(KeyCode.G)&& Input.GetKeyDown(KeyCode.H))
+    //    {
+    //        if (Physics.Raycast(t_spawn.position, t_spawn.forward, out RaycastHit raycastHit))
+    //        {
 
-                //Instantiate(bigcube, raycastHit.point, Quaternion.identity);
-                hookshotPosition = raycastHit.point;
-                thrownState = true;
-            }
-        }
-    }
+    //            //Instantiate(bigcube, raycastHit.point, Quaternion.identity);
+    //            hookshotPosition = raycastHit.point;
+    //            thrownState = true;
+    //        }
+    //    }
+    //}
 
 
 

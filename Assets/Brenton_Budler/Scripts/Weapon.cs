@@ -79,32 +79,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    Equip(0);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    Equip(1);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    Equip(2);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Alpha4))
-        //{
-        //    Equip(3);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Alpha5))
-        //{
-        //    Equip(4);
-        //}
-
-        
+    
 
 
         //Ammo 
@@ -200,7 +175,7 @@ public class Weapon : MonoBehaviour
 
         if(isAiming)
         {
-            this.GetComponent<Player>().normalCam.fieldOfView = Mathf.Lerp(this.GetComponent<Player>().normalCam.fieldOfView, this.GetComponent<Player>().baseFOV * loadout[currentIndex].fovModifier, Time.deltaTime * loadout[currentIndex].aimSpeed);
+          //  this.GetComponent<Player>().normalCam.fieldOfView = Mathf.Lerp(this.GetComponent<Player>().normalCam.fieldOfView, this.GetComponent<Player>().baseFOV * loadout[currentIndex].fovModifier , Time.deltaTime * loadout[currentIndex].aimSpeed);
             //this.GetComponent<Player>().normalCam.fieldOfView = this.GetComponent<Player>().baseFOV * aimFOVModifier;
 
         }
@@ -413,6 +388,10 @@ public class Weapon : MonoBehaviour
 
     }
 
+    public void aimFOV()
+    {
+        this.GetComponent<Player>().normalCam.fieldOfView = Mathf.Lerp(this.GetComponent<Player>().normalCam.fieldOfView, this.GetComponent<Player>().baseFOV * loadout[currentIndex].fovModifier, Time.deltaTime * loadout[currentIndex].aimSpeed);
+    }
    
 
     public void RefreshAmmo(Transform pbar)

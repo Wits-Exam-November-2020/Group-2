@@ -10,11 +10,15 @@ public class IncreaseDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(passivePickupSoundPrefab, this.transform.position, Quaternion.identity);
+        if (other.tag=="Player")
+        {
+            Instantiate(passivePickupSoundPrefab, this.transform.position, Quaternion.identity);
 
-        player = GameObject.Find("Player(Clone)");
+            player = GameObject.Find("Player(Clone)");
 
-        player.GetComponent<Weapon>().dmgModifier += 10;
-        Destroy(this.gameObject);
+            player.GetComponent<Weapon>().dmgModifier += 10;
+            Destroy(this.gameObject);
+        }
+      
     }
 }
