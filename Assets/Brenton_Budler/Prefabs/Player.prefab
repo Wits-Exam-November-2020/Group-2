@@ -230,6 +230,7 @@ MonoBehaviour:
   standingCollider: {fileID: 1071266608659604237}
   crouchingCollider: {fileID: 1071266609921387405}
   baseFOV: 0
+  sprintFOVModifier: 1.25
   invincible: 0
   jetpackActivation: {fileID: 8011954204533432112}
   jetpackUsing: {fileID: 6153660947120116375}
