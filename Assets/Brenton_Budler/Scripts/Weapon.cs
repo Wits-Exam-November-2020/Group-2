@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
 
     public float warrior;
     public int currentAmmo;
+    public AudioSource ammoEmptySound;
     public int maxAmmo ;
 
     private Transform ui_ammobar;
@@ -114,7 +115,7 @@ public class Weapon : MonoBehaviour
                             }
                             else
                             { //no ammo);
-
+                                ammoEmptySound.Play();
                             }
                         }
                     }
