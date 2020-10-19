@@ -145,6 +145,8 @@ MonoBehaviour:
   attackRate: 2
   deathSoundController: {fileID: 4145307477374714262, guid: f41c7c7aafccdaa45944d225c73ffe72,
     type: 3}
+  enemyDeathExplosion: {fileID: 8722469656045134776, guid: f3a4525339fd0df4ebf58e91af79d98a,
+    type: 3}
 --- !u!135 &2656204988329743594
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -155,6 +155,8 @@ MonoBehaviour:
   attackRate: 3
   deathSoundController: {fileID: 4145307477374714262, guid: f41c7c7aafccdaa45944d225c73ffe72,
     type: 3}
+  enemyDeathExplosion: {fileID: 5908486324658606236, guid: 2846127586055cb4c9879250fc8cb7f5,
+    type: 3}
 --- !u!114 &5602864223789640392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,9 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageEffect1: {fileID: 4057376146609636871}
-  startSparks: 0
-  sparks1: {fileID: 0}
-  sparks2: {fileID: 0}
 --- !u!82 &649217482206357480
 AudioSource:
   m_ObjectHideFlags: 0
