@@ -6,7 +6,13 @@ public class PickUpPowerUp : MonoBehaviour
 {
     private GameObject player;
     public GameObject passivePickupSoundPrefab;
+    private PowerUpUIManager powerupDisplay;
 
+    private void Start()
+    {
+        powerupDisplay = GameObject.Find("Canvas/HUD/ChipPowerUps").GetComponent<PowerUpUIManager>();
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,24 +65,37 @@ public class PickUpPowerUp : MonoBehaviour
 
     private void ApplyPowerUp()
     {
+        int space = 8;
         switch (tag)
         {
             case "AmmoPrice": player.GetComponent<Player>().costOfAmmo -= 10;
+                powerupDisplay.findSpace(2);
+               // Debug.Log("FOUND SPACE: " + space);
+
                 break;
             case "HealthRegen":
+                powerupDisplay.playHealth();
                 player.GetComponent<Player>().current_health = player.GetComponent<Player>().max_health;
+
                 break;
             case "IncreaseDamage":
                 player.GetComponent<Weapon>().dmgModifier += 10;
+                powerupDisplay.findSpace(1);
+               // Debug.Log("FOUND SPACE: " + space);
+
                 break;
             case "JetPackRecovery":
                 player.GetComponent<Player>().jetRecovery += 0.1f;
+                powerupDisplay.findSpace(4);
+                //Debug.Log("FOUND SPACE: " + space);
                 break;
             case "Shield":
+                powerupDisplay.playShield();
                 player.GetComponent<Player>().current_shield += 33;
                 break;
             case "SpeedIncrease":
-                player.GetComponent<Player>().speed += 50;
+                powerupDisplay.findSpace(3);
+               // Debug.Log("FOUND SPACE: " + space);
                 break;
         }
        

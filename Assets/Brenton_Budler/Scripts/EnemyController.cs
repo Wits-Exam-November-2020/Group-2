@@ -257,7 +257,7 @@ public class EnemyController : MonoBehaviour
             //}
 
 
-            int spawnChip = Random.Range(1, 10);// 1,20
+            int spawnChip = Random.Range(1, 10);// 1,10
             if (spawnChip==2)
             {
                 Instantiate(chip1, transform.position + randomAdd, Quaternion.identity);
