@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -21,7 +22,7 @@ public class EnemyController : MonoBehaviour
     private Transform target;
     public float health;
     public float maxHealth;
-
+    private List<GameObject> enemySpawnPoints;
     private bool isAttacking = false;
 
     public AudioSource hit1Sound;
@@ -34,12 +35,16 @@ public class EnemyController : MonoBehaviour
 
     public GameObject deathSoundController;
     public GameObject enemyDeathExplosion;
+    private float stuckCheckTime = 0;
+    private bool moved=false;
+    private Vector3 startPosStuckCheck;
+    public float stuckDistance=5;
 
     private void Start()
     { 
         health = maxHealth;
         moveSpeed = startSpeed;
-       
+        startPosStuckCheck = transform.position;
             
         
     }
@@ -68,6 +73,34 @@ public class EnemyController : MonoBehaviour
         ////point();
         if (gameObject.tag == "FlyingEnemy1")
         {
+
+            if (Vector3.Distance(transform.position, player.transform.position) > 8)
+            {
+                stuckCheckTime += Time.deltaTime;
+               
+                if ((int)stuckCheckTime%2==0)
+                {
+                    Debug.Log("checking");
+                    if (Vector3.Distance(transform.position,startPosStuckCheck)>stuckDistance)
+                    {
+                        moved = true;
+                        Debug.Log("moved");
+                    }
+                    if (stuckCheckTime >= 10)
+                    {
+                        if (moved == false)
+                        {
+                            Debug.Log("respawn");
+                            enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint").ToList<GameObject>();
+                            enemySpawnPoints.Sort(SortByDistance);
+                            transform.position = enemySpawnPoints[Random.Range(1, enemySpawnPoints.Count - 1)].transform.position;
+                        }
+                        startPosStuckCheck = transform.position;
+                        moved = false;
+                        stuckCheckTime = 0;
+                    }
+                }
+            }
             rays();
             if (Vector3.Distance(transform.position, player.transform.position) > 5)
             {
@@ -201,6 +234,12 @@ public class EnemyController : MonoBehaviour
     public void ResetAttack()
     {
         isAttacking = false;
+    }
+    int SortByDistance(GameObject point1, GameObject point2)
+    {
+        float dist1 = Vector3.Distance(point1.transform.position, player.transform.position);
+        float dist2 = Vector3.Distance(point2.transform.position, player.transform.position);
+        return dist1.CompareTo(dist2);
     }
 
     public void TakeDamage(float amount)
