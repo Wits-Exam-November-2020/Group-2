@@ -13,17 +13,22 @@ public class WeaponPurchased : MonoBehaviour
     {
         player = GameObject.Find("Player(Clone)");
 
-        if (player.GetComponent<Player>().wallet - weaponCost>=0) {
-            player.GetComponent<Player>().wallet -= weaponCost;
-            if (weaponCost>0)
-            {
-                player.GetComponent<Weapon>().currentAmmo = player.GetComponent<Weapon>().maxAmmo;
-            }
-            
-        }
-        else
+        if (player!=null)
         {
-            player.GetComponent<Interacting>().promptText.GetComponent<UnityEngine.UI.Text>().text = "Insufficient funds";
+            if (player.GetComponent<Player>().wallet - weaponCost >= 0)
+            {
+                player.GetComponent<Player>().wallet -= weaponCost;
+                if (weaponCost > 0)
+                {
+                    player.GetComponent<Weapon>().currentAmmo = player.GetComponent<Weapon>().maxAmmo;
+                }
+
+            }
+            else
+            {
+                player.GetComponent<Interacting>().promptText.GetComponent<UnityEngine.UI.Text>().text = "Insufficient funds";
+            }
         }
+
     }
 }
