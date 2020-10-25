@@ -40,6 +40,8 @@ public class Weapon : MonoBehaviour
     public PopUpController popups;
 
     private GameObject infiniteAmmmo;
+    private GameObject ammoBackGround;
+    private GameObject ammoBar;
 
     public float aimFOVModifier;
 
@@ -76,6 +78,8 @@ public class Weapon : MonoBehaviour
         hitmarkerImage.color = new Color(0, 1, 0, 0);
 
         infiniteAmmmo = GameObject.Find("HUD/AmmoBar/InfiniteAmmo");
+        ammoBackGround = GameObject.Find("HUD/AmmoBar/BackGround");
+        ammoBar = GameObject.Find("HUD/AmmoBar/Bar");
     }
 
     void Update()
@@ -168,10 +172,15 @@ public class Weapon : MonoBehaviour
         if (currentWeapon.tag=="Pistol")
         {
             infiniteAmmmo.SetActive(true);
+            ammoBackGround.SetActive(false);
+            ammoBar.SetActive(false);
         }
         else
         {
             infiniteAmmmo.SetActive(false);
+            ammoBackGround.SetActive(true);
+            ammoBar.SetActive(true);
+
         }
 
         if(isAiming)

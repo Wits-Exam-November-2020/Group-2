@@ -8,16 +8,20 @@ public class PowerUpUIManager : MonoBehaviour
     private int[] slots = { 0, 0, 0, 0 };
     public GameObject[] slot1Images;
     public Transform slot1Text;
+    public GameObject slot1TextImage;
 
 
     public GameObject[] slot2Images;
     public Transform slot2Text;
+    public GameObject slot2TextImage;
 
     public GameObject[] slot3Images;
     public Transform slot3Text;
+    public GameObject slot3TextImage;
 
     public GameObject[] slot4Images;
     public Transform slot4Text;
+    public GameObject slot4TextImage;
 
 
     private int damagePerc = 0;
@@ -83,6 +87,7 @@ public class PowerUpUIManager : MonoBehaviour
         switch (slotIndex)
         {
             case 0:
+               
                 switch (powerUp)
                 {
                     case 1: slot1Images[0].SetActive(true);
@@ -102,6 +107,7 @@ public class PowerUpUIManager : MonoBehaviour
                         slot1Text.GetComponent<TMPro.TextMeshProUGUI>().text = jetpackPerc + "%"; //JetPackRecovery
                         break;
                 }
+                slot1TextImage.SetActive(true);
 
                 break;
             case 1:
@@ -128,6 +134,8 @@ public class PowerUpUIManager : MonoBehaviour
                         slot2Text.GetComponent<TMPro.TextMeshProUGUI>().text = jetpackPerc + "%"; //JetPackRecovery
                         break;
                 }
+                slot2TextImage.SetActive(true);
+
                 break;
             case 2:
                 switch (powerUp)
@@ -153,6 +161,7 @@ public class PowerUpUIManager : MonoBehaviour
                         slot3Text.GetComponent<TMPro.TextMeshProUGUI>().text = jetpackPerc + "%"; //JetPackRecovery
                         break;
                 }
+                slot3TextImage.SetActive(true);
                 break;
             case 3:
                 switch (powerUp)
@@ -178,6 +187,7 @@ public class PowerUpUIManager : MonoBehaviour
                         slot4Text.GetComponent<TMPro.TextMeshProUGUI>().text = jetpackPerc + "%"; //JetPackRecovery
                         break;
                 }
+                slot4TextImage.SetActive(true);
                 break;
         }
     }
