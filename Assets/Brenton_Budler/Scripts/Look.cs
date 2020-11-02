@@ -11,8 +11,10 @@ public class Look : MonoBehaviour
     public Transform cams;
     public Transform weapon;
 
-    public float xSensitivity;
-    public float ySensitivity;
+    private float xSensitivity;
+    private float ySensitivity;
+    [HideInInspector]
+    public static float mouseSensitivity;
 
     public float maxAngle;
 
@@ -23,12 +25,15 @@ public class Look : MonoBehaviour
 
     void Start()
     {
-        camCenter = cams.localRotation;
+        cursorLocked = true;
+        camCenter = cams.localRotation;       
     }
 
     // Update is called once per frame
     void Update()
     {
+        xSensitivity = mouseSensitivity;
+        ySensitivity = mouseSensitivity;
         SetY();
         SetX();
         UpdateCursorLock();
@@ -69,7 +74,7 @@ public class Look : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && PauseMenu.isPaused)
             {
                 cursorLocked = false;
             }
@@ -79,7 +84,7 @@ public class Look : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && !PauseMenu.isPaused)
             {
                 cursorLocked = true;
             }

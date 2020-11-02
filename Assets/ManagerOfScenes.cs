@@ -14,6 +14,7 @@ public class ManagerOfScenes : MonoBehaviour
 
     public void PlayGame()
     {
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(1);
     }
 

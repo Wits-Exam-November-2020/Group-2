@@ -98,7 +98,7 @@ public class Weapon : MonoBehaviour
         //    currentAmmo = maxAmmo;
         //}
 
-        if (currentWeapon!=null)
+        if (currentWeapon!=null && !PauseMenu.isPaused)
         {
             Aim(Input.GetMouseButton(1));
             if (loadout[currentIndex].burst != 1)
