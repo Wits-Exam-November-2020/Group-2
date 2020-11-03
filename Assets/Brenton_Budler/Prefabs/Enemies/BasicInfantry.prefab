@@ -157,6 +157,7 @@ MonoBehaviour:
     type: 3}
   enemyDeathExplosion: {fileID: 5908486324658606236, guid: 2846127586055cb4c9879250fc8cb7f5,
     type: 3}
+  stuckDistance: 5
 --- !u!114 &5602864223789640392
 MonoBehaviour:
   m_ObjectHideFlags: 0
