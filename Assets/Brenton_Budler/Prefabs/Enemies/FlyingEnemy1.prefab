@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8276460043574846926}
   - component: {fileID: 5920969253540220937}
   - component: {fileID: 8544516457884267323}
+  - component: {fileID: 3615704810065679989}
   - component: {fileID: 7255528276621661775}
   - component: {fileID: 8271727233208296834}
   - component: {fileID: 5085661045678110619}
@@ -90,6 +91,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3615704810065679989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967766183823699162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cc69735108f1648b60168c5000b67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.5
+  range: 18
+  damage: 5
+  shootPoint: {fileID: 5618681242039311754}
+  projectile: {fileID: 2391099610106253383, guid: 6b9acc17bee539343aa6f8430c8c5102,
+    type: 3}
 --- !u!114 &7255528276621661775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +149,7 @@ MonoBehaviour:
   cog: {fileID: 5417391958299915572, guid: 51d9efe0d19d00248a0df4dce6472845, type: 3}
   chip1: {fileID: 3364812730155697115, guid: 9e2c1e8659ab02d4b8ce75d4aff7bd8b, type: 3}
   chip2: {fileID: 6859894840864431762, guid: 37213ea0871f71441a9a534f289fb546, type: 3}
-  damage: 5
+  damage: 0
   rotationSpeed: 5
   startSpeed: 8
   raycastOffset: 1
@@ -142,12 +161,14 @@ MonoBehaviour:
   hit1Sound: {fileID: 6546832912472439084}
   hit2Sound: {fileID: 6756185045546133522}
   hit3Sound: {fileID: 1950282258723464236}
-  attackRate: 2
+  attackRate: 10000000
   deathSoundController: {fileID: 4145307477374714262, guid: f41c7c7aafccdaa45944d225c73ffe72,
     type: 3}
   enemyDeathExplosion: {fileID: 8722469656045134776, guid: f3a4525339fd0df4ebf58e91af79d98a,
     type: 3}
   stuckDistance: 10
+  stopDistance: 15
+  anim: {fileID: 0}
 --- !u!135 &2656204988329743594
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -888,6 +909,12 @@ PrefabInstance:
 --- !u!4 &6395761357789598178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 787698461150808689, guid: 5d60ad3322769e64dafdc4288cffaad4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5921169741623073683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5618681242039311754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2293924647602439705, guid: 5d60ad3322769e64dafdc4288cffaad4,
     type: 3}
   m_PrefabInstance: {fileID: 5921169741623073683}
   m_PrefabAsset: {fileID: 0}

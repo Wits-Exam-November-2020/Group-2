@@ -39,6 +39,9 @@ public class EnemyController : MonoBehaviour
     private bool moved=false;
     private Vector3 startPosStuckCheck;
     public float stuckDistance=5;
+    public float stopDistance = 5;
+
+    public Animator anim;
 
     private void Start()
     { 
@@ -74,7 +77,7 @@ public class EnemyController : MonoBehaviour
         if (gameObject.tag == "FlyingEnemy1")
         {
 
-            if (Vector3.Distance(transform.position, player.transform.position) > 8)
+            if (Vector3.Distance(transform.position, player.transform.position) > (stopDistance + 3f))
             {
                 stuckCheckTime += Time.deltaTime;
                
@@ -102,18 +105,23 @@ public class EnemyController : MonoBehaviour
                 }
             }
             rays();
-            if (Vector3.Distance(transform.position, player.transform.position) > 5)
+            if (Vector3.Distance(transform.position, player.transform.position) > stopDistance)
             {
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
+             
                 //this.GetComponent<Rigidbody>().velocity = moveSpeed * transform.forward;
             }
             else
             {
 
                 //this.GetComponent<Rigidbody>().velocity
-                if (!isAttacking)
+                if (!isAttacking && damage != 0)
                 {
                     isAttacking = true;
+                    if (anim != null)
+                    {
+                        anim.SetTrigger("Attack");
+                    }
                     player.GetComponent<Player>().TakeDamage(damage);
                     Invoke("ResetAttack", attackRate);
 
@@ -128,9 +136,13 @@ public class EnemyController : MonoBehaviour
             enemy.SetDestination(target.position);
             if (Vector3.Distance(enemy.transform.position, target.position) <= enemy.stoppingDistance)
             {
-                if (!isAttacking)
+                if (!isAttacking && damage != 0)
                 {
                     isAttacking = true;
+                    if (anim != null)
+                    {
+                        anim.SetTrigger("Attack");
+                    }
                     player.GetComponent<Player>().TakeDamage(damage);
                     Invoke("ResetAttack", attackRate);
 
