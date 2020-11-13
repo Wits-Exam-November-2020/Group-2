@@ -42,6 +42,8 @@ public class EnemyController : MonoBehaviour
     public float stopDistance = 5;
 
     public Animator anim;
+    public AudioSource attackSound;
+    public AudioSource movementSound;
 
     private void Start()
     { 
@@ -123,6 +125,18 @@ public class EnemyController : MonoBehaviour
                         anim.SetTrigger("Attack");
                     }
                     player.GetComponent<Player>().TakeDamage(damage);
+                    if(attackSound != null)
+                    {
+                        attackSound.Play();
+                    }
+                    if(attackSound.isPlaying && movementSound != null)
+                    {                      
+                        movementSound.Stop();                          
+                    }
+                    else if (movementSound != null && !attackSound.isPlaying)
+                    {
+                        movementSound.Play();
+                    }
                     Invoke("ResetAttack", attackRate);
 
 
@@ -144,6 +158,18 @@ public class EnemyController : MonoBehaviour
                         anim.SetTrigger("Attack");
                     }
                     player.GetComponent<Player>().TakeDamage(damage);
+                    if (attackSound != null)
+                    {
+                        attackSound.Play();
+                    }
+                    if (attackSound.isPlaying && movementSound != null)
+                    {
+                        movementSound.Stop();
+                    }
+                    else if (movementSound != null && !attackSound.isPlaying)
+                    {
+                        movementSound.Play();
+                    }
                     Invoke("ResetAttack", attackRate);
 
 

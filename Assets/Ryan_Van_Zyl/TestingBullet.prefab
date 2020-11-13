@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3465885534894373705}
   - component: {fileID: 1579645133165783113}
   - component: {fileID: 7800810560472568292}
+  - component: {fileID: 1808481894881087560}
   m_Layer: 0
   m_Name: TestingBullet
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2391099610106253383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.61, y: 0.61, z: 0.61}
   m_Children:
   - {fileID: 3443191126103399381}
   m_Father: {fileID: 0}
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613d6f3b8cb41f243a50ad44b38a6d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 40
 --- !u!135 &7800810560472568292
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59,6 +60,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.31
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1808481894881087560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391099610106253383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65944a76b3939c44aa2ed8d9e6e3558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.4
 --- !u!1 &4418215788487360348
 GameObject:
   m_ObjectHideFlags: 0

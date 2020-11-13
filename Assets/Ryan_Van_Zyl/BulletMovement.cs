@@ -33,20 +33,7 @@ public class BulletMovement : MonoBehaviour
         }
 
         float distanceThisFrame = speed * Time.deltaTime;
-
-        if (dir.magnitude <= distanceThisFrame)
-        {
-            player.TakeDamage(damage);
-            HitTarget();
-            return;
-        }
-
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-
-
-
-
-
     }
 
 
@@ -61,12 +48,12 @@ public class BulletMovement : MonoBehaviour
         if (other.tag == "Player")
         {
             player.TakeDamage(damage);
+            Destroy(gameObject);
         }
+
+       
     }
 
 
-    private void HitTarget()
-    {
-        Destroy(gameObject);
-    }
+  
 }
