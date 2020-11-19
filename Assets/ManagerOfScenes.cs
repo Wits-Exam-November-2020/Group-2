@@ -22,4 +22,14 @@ public class ManagerOfScenes : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void LoadControlsScene()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Brenton_Budler/Brenton_Scene.unity
     guid: be83fdfbbc4f000449d69c2211c12c53
+  - enabled: 1
+    path: Assets/Brenton_Budler/ControlsMenu.unity
+    guid: 9bd1c6a744ad98446a35e2a1a409e065
   m_configObjects: {}
