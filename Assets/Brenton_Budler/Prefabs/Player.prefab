@@ -255,8 +255,6 @@ MonoBehaviour:
   player: {fileID: 1071266609167082408}
   cams: {fileID: 1071266609521266925}
   weapon: {fileID: 1071266609526291494}
-  xSensitivity: 100
-  ySensitivity: 100
   maxAngle: 75
 --- !u!114 &1071266609167082412
 MonoBehaviour:
