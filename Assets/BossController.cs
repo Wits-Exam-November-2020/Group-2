@@ -10,7 +10,10 @@ public class BossController : MonoBehaviour
     private float timeSinceSpawn = 0;
     public float timeBetweenSpawnEvents=4;
     public float timeBetweenSpawns = 1;
+    public float timeBetweenShots = 2;
+    private float timeSinceShot = 0;
     public int amountToSpawn=1;
+    public ProjectileController projCon;
     private int currentAmount;
 
     // Start is called before the first frame update
@@ -22,10 +25,11 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timeSinceSpawn += Time.deltaTime;
+
         if (timeSinceSpawn > timeBetweenSpawnEvents)
         {
-            
             anim.SetBool("open",true);
             timer += Time.deltaTime;
             if (timer>timeBetweenSpawns&&currentAmount>0)
@@ -40,6 +44,17 @@ public class BossController : MonoBehaviour
                 anim.SetBool("open", false);
                 timeSinceSpawn = 0;
                 timer = timeBetweenSpawns;
+            }
+        }
+        else
+        {
+            timeSinceShot += Time.deltaTime;
+            if (timeSinceShot > timeBetweenShots)
+            {
+                timeSinceShot = 0;
+                Debug.Log("asdfasd");
+                projCon.ShootProjectile();
+               
             }
         }
         
