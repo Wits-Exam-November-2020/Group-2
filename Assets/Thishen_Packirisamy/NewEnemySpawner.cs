@@ -10,6 +10,7 @@ public class NewEnemySpawner : MonoBehaviour
     public GameObject[] enemyPrefabs;
     private List<GameObject> enemySpawnPoints;
     public Wave[] waves;
+    public GameObject boss;
     public float timeBetweenSpawns;
     public float timeBetweenWaves;
     public int currentWave = 0;
@@ -57,8 +58,9 @@ public class NewEnemySpawner : MonoBehaviour
             GameObject[] FlyingEnemy = GameObject.FindGameObjectsWithTag("FlyingEnemy1");
             if (Basicinfantries.Length == 0 && FlyingEnemy.Length == 0 && shownText==false)
             {
-                    ShowWaveText("All Waves Cleared");
+                    ShowWaveText("Boss Round");
                     shownText = true;
+                    boss.SetActive(true);
             }
 
         }
