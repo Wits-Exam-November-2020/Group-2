@@ -17152,6 +17152,7 @@ MonoBehaviour:
       EnemyPrefabIndex: 1
     - amount: 20
       EnemyPrefabIndex: 2
+  boss: {fileID: 1394259419}
   timeBetweenSpawns: 4
   timeBetweenWaves: 15
   currentWave: 0
@@ -17173,10 +17174,14 @@ MonoBehaviour:
   - {fileID: 6559466365474908671, guid: 60087798697dc7c43bb242bad8bf07d5, type: 3}
   waves:
   - enemies:
-    - amount: 5
+    - amount: 2
       EnemyPrefabIndex: 0
-    - amount: 5
+    - amount: 1
       EnemyPrefabIndex: 1
+  - enemies:
+    - amount: 1
+      EnemyPrefabIndex: 0
+  boss: {fileID: 1394259419}
   timeBetweenSpawns: 2
   timeBetweenWaves: 8
   currentWave: 0
@@ -18452,7 +18457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1394259420
 Transform:
   m_ObjectHideFlags: 0
