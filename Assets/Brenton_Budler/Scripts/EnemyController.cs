@@ -308,7 +308,7 @@ public class EnemyController : MonoBehaviour
         }
       
         health -= amount;
-        Debug.Log(amount);
+    
 
         if (health<=0)
         {

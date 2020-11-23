@@ -15,6 +15,8 @@ public class BossController : MonoBehaviour
     public int amountToSpawn=1;
     public ProjectileController projCon;
     private int currentAmount;
+    public float health=200;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        player = GameObject.Find("Player(Clone)");
         timeSinceSpawn += Time.deltaTime;
 
         if (timeSinceSpawn > timeBetweenSpawnEvents)
@@ -61,8 +63,20 @@ public class BossController : MonoBehaviour
     }
 
 
-    private void SpawnDrones()
+    public void TakeDamage(float amount)
     {
 
+        if (amount > 0)
+        {
+            PopUpController popup = player.GetComponent<PopUpController>();
+            popup.DamageDealt((int)amount, Vector3.Distance(player.transform.position, transform.position));
+        }
+
+        health -= amount;
+
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -345,13 +345,24 @@ public class Weapon : MonoBehaviour
                     {
                         tempDamage -= (int)(Vector3.Distance(transform.position, t_hit.collider.transform.position) * 0.1f);
                     }
-                    
 
-                    if (t_hit.collider.gameObject.GetComponent<EnemyController>().health>0 ) 
+                    if (t_hit.collider.gameObject.tag=="Boss")
                     {
-                        Instantiate(enemySparksImpact, t_hit.point, t_hit.transform.rotation);
-                        t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(tempDamage + dmgModifier);
+                        if (t_hit.collider.gameObject.GetComponent<BossController>().health>0)
+                        {
+                            Instantiate(enemySparksImpact, t_hit.point, t_hit.transform.rotation);
+                            t_hit.collider.gameObject.GetComponent<BossController>().TakeDamage(tempDamage + dmgModifier);
+                        }
                     }
+                    else
+                    {
+                        if (t_hit.collider.gameObject.GetComponent<EnemyController>().health > 0)
+                        {
+                            Instantiate(enemySparksImpact, t_hit.point, t_hit.transform.rotation);
+                            t_hit.collider.gameObject.GetComponent<EnemyController>().TakeDamage(tempDamage + dmgModifier);
+                        }
+                    }
+                  
                     hitmarkerImage.color = new Color(0, 1, 0, 1);
 
                   

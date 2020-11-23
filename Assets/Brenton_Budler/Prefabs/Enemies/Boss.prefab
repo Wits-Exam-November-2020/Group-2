@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3406770167309728450}
   - component: {fileID: 1176470818}
-  m_Layer: 0
+  - component: {fileID: 6629017605428518478}
+  m_Layer: 12
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,9 +48,25 @@ MonoBehaviour:
   anim: {fileID: 7779972573316430086}
   flyingEnemy: {fileID: 6559466365474908671, guid: f8f1e5600f0628d4491193c002ac4455,
     type: 3}
-  timeBetweenSpawnEvents: 10
-  timeBetweenSpawns: 1
-  amountToSpawn: 3
+  timeBetweenSpawnEvents: 20
+  timeBetweenSpawns: 3
+  timeBetweenShots: 3
+  amountToSpawn: 4
+  projCon: {fileID: 5177945309821165037}
+  health: 500
+--- !u!65 &6629017605428518478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269388285417153664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.875585, y: 1.6627359, z: 3.0321608}
+  m_Center: {x: 0, y: 0.112080336, z: 0}
 --- !u!1001 &3640470464118450593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,20 +74,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3406770167309728450}
     m_Modifications:
-    - target: {fileID: 220201186277795746, guid: 182897bd89c9e09418ffed2ef969fa4d,
+    - target: {fileID: 2180567624243705664, guid: 182897bd89c9e09418ffed2ef969fa4d,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.462
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 5730162690607792082, guid: 182897bd89c9e09418ffed2ef969fa4d,
+    - target: {fileID: 2384815551651187543, guid: 182897bd89c9e09418ffed2ef969fa4d,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.058
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 5730162690607792082, guid: 182897bd89c9e09418ffed2ef969fa4d,
+    - target: {fileID: 4435068397793949360, guid: 182897bd89c9e09418ffed2ef969fa4d,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.326
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691985901440464757, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725301965751142333, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577522994603579125, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882892391345881890, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909428532867319719, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5924027776023267871, guid: 182897bd89c9e09418ffed2ef969fa4d,
         type: 3}
@@ -132,6 +174,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6448467800323936421, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278558884321573234, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396537558966542440, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457282130863371338, guid: 182897bd89c9e09418ffed2ef969fa4d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 182897bd89c9e09418ffed2ef969fa4d, type: 3}
 --- !u!4 &6968145566198850494 stripped
@@ -146,3 +208,15 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 3640470464118450593}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5177945309821165037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8457282130863371340, guid: 182897bd89c9e09418ffed2ef969fa4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3640470464118450593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4731adfd4b417e4a90b0ed1275d7f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
