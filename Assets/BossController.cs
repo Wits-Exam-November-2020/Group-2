@@ -15,13 +15,18 @@ public class BossController : MonoBehaviour
     public int amountToSpawn=1;
     public ProjectileController projCon;
     private int currentAmount;
-    public float health=200;
+    private float maxHealth = 500;
+    public float health=500;
     private GameObject player;
+    private Transform ui_BossHealthBar;
+    public GameObject WinScreen;
 
     // Start is called before the first frame update
     void Start()
     {
+        WinScreen.SetActive(false);
         currentAmount = amountToSpawn;
+        ui_BossHealthBar = GameObject.Find("BossEnemyPosition/Canvas/Health/Bar").transform;
     }
 
     // Update is called once per frame
@@ -59,7 +64,7 @@ public class BossController : MonoBehaviour
                
             }
         }
-        
+        UpdateHealthBar();
     }
 
 
@@ -76,7 +81,36 @@ public class BossController : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+
+            health = 0;
+           WinScreen.SetActive(true);
+            Time.timeScale = 0.1f;
+            player.GetComponent<Player>().dead = true;
+            Invoke("FreezeTime", 0.5f);
+
         }
+
+        UpdateHealthBar();
+    }
+
+    public void FreezeTime()
+    {
+        Time.timeScale = 0;
+        Look.cursorLocked = false;
+    }
+
+
+    void UpdateHealthBar()
+    {
+        
+        float t_health_ratio = ((float)health / (float)maxHealth);
+        Debug.Log(t_health_ratio);
+
+
+        ui_BossHealthBar.localScale = Vector3.Lerp(ui_BossHealthBar.localScale, new Vector3(t_health_ratio, 1, 1), Time.deltaTime * 8f);
+        //ui_BossHealthBar.localScale = new Vector3(t_health_ratio, 1, 1);
+
+
+
     }
 }

@@ -103,6 +103,9 @@ public class Player : MonoBehaviour
     public int costOfAmmo;
     public int wallet;
 
+    private GameObject deathMenu;
+    public bool dead;
+
     #endregion
 
     #region Built-in Functions
@@ -114,7 +117,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
 
-
+        dead = false;
         wallet = 200; //200
         costOfAmmo = 50;
         defaultSpeed = speed;
@@ -147,7 +150,10 @@ public class Player : MonoBehaviour
 
         takeDamageImage = GameObject.Find("HUD/DamagePanel").GetComponent<Image>();
         takeDamageImage.color = new Color(0, 0, 0, 0);
-        
+
+        deathMenu = GameObject.Find("HUD/LoseScreen");
+        deathMenu.SetActive(false);
+
 
         UpdateHealthBar();
         UpdateShieldBar();
@@ -212,6 +218,11 @@ public class Player : MonoBehaviour
         //Input
         float t_hmove = Input.GetAxisRaw("Horizontal");
         float t_vmove = Input.GetAxisRaw("Vertical");
+        if (dead)
+        {
+            t_hmove = 0;
+            t_vmove = 0;
+        }
 
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
@@ -317,6 +328,12 @@ public class Player : MonoBehaviour
         float t_hmove = Input.GetAxisRaw("Horizontal");
         float t_vmove = Input.GetAxisRaw("Vertical");
 
+        if (dead)
+        {
+            t_hmove = 0;
+            t_vmove = 0;
+        }
+
         //Controls
         bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         // bool jump = Input.GetKeyDown(KeyCode.Space);
@@ -398,7 +415,7 @@ public class Player : MonoBehaviour
             if (t_hmove!=0 || t_vmove!=0)
             {
 
-         
+              
 
                 if (walking.isPlaying)
                 {
@@ -679,11 +696,25 @@ public class Player : MonoBehaviour
         UpdateShieldBar();
         if (current_health<=0)
         {
-            SceneManager.LoadScene(0);
-            GameController.instance.Spawn();
-            current_health = max_health;
-            Destroy(gameObject);
+            PauseMenu.isPaused = true;
+            
+            current_health = 0;
+            deathMenu.SetActive(true);
+            Time.timeScale = 0.1f;
+            dead = true;
+            Invoke("FreezeTime", 0.4f);
+
+            //SceneManager.LoadScene(0);
+            //GameController.instance.Spawn();
+            //current_health = max_health;
+            //Destroy(gameObject);
         }
+    }
+
+    public void FreezeTime()
+    {
+        Time.timeScale = 0;
+        Look.cursorLocked = false;
     }
 
     public void Heal()

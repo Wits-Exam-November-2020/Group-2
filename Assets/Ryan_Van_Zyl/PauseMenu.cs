@@ -8,14 +8,15 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
 
     public GameObject pauseMenu;
+    public GameObject player;
 
 
     // Start is called before the first frame update
     void Start()
-    {    
-
+    {
+        isPaused = false;
         pauseMenu.SetActive(false);
-       
+        player = GameObject.Find("Player(Clone)");
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class PauseMenu : MonoBehaviour
 
        
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.GetComponent<Player>().dead)
         {
             if (isPaused)
             {
@@ -60,6 +61,13 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         SceneManager.LoadScene(0);
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        Look.cursorLocked = true;
+        SceneManager.LoadScene(1);
     }
 
 }
