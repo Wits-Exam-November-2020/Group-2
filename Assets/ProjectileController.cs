@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    public GameObject muzzleFlash;
+    private GameObject currentMuzzle;
 
     public GameObject projectilePrefab; 
     // Start is called before the first frame update
@@ -24,6 +26,8 @@ public class ProjectileController : MonoBehaviour
 
     public void ShootProjectile()
     {
+        currentMuzzle = Instantiate(muzzleFlash, transform.position, transform.rotation) as GameObject;
+        currentMuzzle.transform.parent = transform;
         GameObject currentBullet = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         currentBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse);
         Debug.Log(this.GetComponent<Rigidbody>().velocity.y);
