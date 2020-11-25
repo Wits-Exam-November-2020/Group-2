@@ -109,7 +109,7 @@ MonoBehaviour:
   damage: 5
   knockBackForce: 1200
   shootPoint: {fileID: 5618681242039311754}
-  projectile: {fileID: 2391099610106253383, guid: 6b9acc17bee539343aa6f8430c8c5102,
+  projectile: {fileID: 2716044697699006805, guid: 61e3582f207397545b0b6ae137051dcf,
     type: 3}
   muzzleFlash: {fileID: 160582, guid: d4cc8462fa21810489d7f5d0d706c66f, type: 3}
   shootSound: {fileID: 5865956316494939953}

@@ -33,6 +33,7 @@ public class DroneShoot : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
@@ -53,7 +54,7 @@ public class DroneShoot : MonoBehaviour
     {
         if ((Vector3.Distance(this.transform.position, target.position)) <= range)
         {
-            GameObject bulletGo = (GameObject)Instantiate(projectile, shootPoint.position, Quaternion.identity);
+            GameObject bulletGo = (GameObject)Instantiate(projectile, shootPoint.position, shootPoint.rotation);
             BulletMovement bulletMov = bulletGo.GetComponent<BulletMovement>();
 
             if (bulletMov != null)
