@@ -68,7 +68,17 @@ public class PickUpPowerUp : MonoBehaviour
         int space = 8;
         switch (tag)
         {
-            case "AmmoPrice": player.GetComponent<Player>().costOfAmmo -= 10;
+            case "AmmoPrice":
+
+                if (player.GetComponent<Player>().costOfAmmo - 10 >= 0)
+                {
+                    player.GetComponent<Player>().costOfAmmo -= 10;
+                }
+                else
+                {
+                    player.GetComponent<Player>().costOfAmmo =0 ;
+                }
+                
                 powerupDisplay.findSpace(2);
                // Debug.Log("FOUND SPACE: " + space);
 

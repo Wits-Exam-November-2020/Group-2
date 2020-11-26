@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cog: {fileID: 5417391958299915572, guid: 51d9efe0d19d00248a0df4dce6472845, type: 3}
   chip1: {fileID: 4246092267835585834, guid: e612faddeac902046abe2c441885410e, type: 3}
-  chip2: {fileID: 289179371773733404, guid: 68afd117ff5eeb54b84e6a0682944d16, type: 3}
+  chip2: {fileID: 4246092267835585834, guid: a1df68bd6cec8ba42ade0ce467b2e61e, type: 3}
   damage: 10
   rotationSpeed: 0.5
   startSpeed: 3

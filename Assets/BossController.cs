@@ -16,12 +16,15 @@ public class BossController : MonoBehaviour
     public int amountToSpawn=1;
     public ProjectileController projCon;
     private int currentAmount;
-    public float maxHealth = 500;
-    public float health=500;
+    public float maxHealth = 5000;
+    public float health=5000;
     private GameObject player;
     private Transform ui_BossHealthBar;
     public GameObject WinScreen;
     public Text killsText;
+    public GameObject[] body;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +88,11 @@ public class BossController : MonoBehaviour
         {
 
             health = 0;
+            for (int i = 0; i < body.Length; i++)
+            {
+                body[i].SetActive(false);
+            }
+          
             WinScreen.SetActive(true);
             killsText.text = "" + GameController.instance.kills;
             Time.timeScale = 0.1f;
