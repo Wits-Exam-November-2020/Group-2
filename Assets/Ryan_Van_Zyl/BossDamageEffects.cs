@@ -7,8 +7,10 @@ public class BossDamageEffects : MonoBehaviour
 
     private BossController bController;
     public GameObject sEffect1, sEffect2, sEffect3, sEffect4;
-    public GameObject explode1, explode2, explode3, explode4;
-    public GameObject body1, body2, body3, body4;
+    public GameObject explosionEffect;
+    public GameObject partsExplode;
+    public Transform spawnEffects;
+
     private float maxHealth;
 
     // Start is called before the first frame update
@@ -22,16 +24,7 @@ public class BossDamageEffects : MonoBehaviour
         sEffect3.SetActive(false);
         sEffect4.SetActive(false);
 
-        explode1.SetActive(false);
-        explode2.SetActive(false);
-        explode3.SetActive(false);
-        explode4.SetActive(false);
-
-        body1.SetActive(false);
-        body2.SetActive(false);
-        body3.SetActive(false);
-        body4.SetActive(false);
-
+     
 
     }
 
@@ -55,17 +48,11 @@ public class BossDamageEffects : MonoBehaviour
             sEffect4.SetActive(true);
         }
 
-        if(bController.health <= 0)
+        if (bController.health <= 0)
         {
-            explode1.SetActive(true);
-            explode2.SetActive(true);
-            explode3.SetActive(true);
-            explode4.SetActive(true);
-
-            body1.SetActive(true);
-            body2.SetActive(true);
-            body3.SetActive(true);
-            body4.SetActive(true);
+            Instantiate(partsExplode, spawnEffects.position, Quaternion.identity);
+            Instantiate(explosionEffect, spawnEffects.position, Quaternion.identity);
         }
+
     }
 }
