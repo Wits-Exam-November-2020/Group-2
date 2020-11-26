@@ -10,7 +10,8 @@ public class BossDamageEffects : MonoBehaviour
     public GameObject explosionEffect;
     public GameObject partsExplode;
     public Transform spawnEffects;
-    private bool bossDead = false;
+   
+    private bool bossExplode = false;
 
     private float maxHealth;
 
@@ -19,7 +20,7 @@ public class BossDamageEffects : MonoBehaviour
     {
         bController = this.GetComponent<BossController>();
         maxHealth = bController.health;
-        bossDead = false;
+      
         sEffect1.SetActive(false);
         sEffect2.SetActive(false);
         sEffect3.SetActive(false);
@@ -49,17 +50,14 @@ public class BossDamageEffects : MonoBehaviour
             sEffect4.SetActive(true);
         }
 
-        if (bController.health <= 0)
-        {
-            bossDead = true;
-        }
-
-        if (bossDead)
+        if (bController.health <= 0 && !bossExplode)
         {
             Instantiate(partsExplode, spawnEffects.position, Quaternion.identity);
             Instantiate(explosionEffect, spawnEffects.position, Quaternion.identity);
-            bossDead = false;
+            bossExplode = true;
+
         }
 
+        
     }
 }
