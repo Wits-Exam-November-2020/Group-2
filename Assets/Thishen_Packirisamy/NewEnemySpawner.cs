@@ -60,7 +60,7 @@ public class NewEnemySpawner : MonoBehaviour
             GameObject[] FlyingEnemy = GameObject.FindGameObjectsWithTag("FlyingEnemy1");
             if (Basicinfantries.Length == 0 && FlyingEnemy.Length == 0 && shownText==false)
             {
-                    ShowWaveText("Boss Round");
+                    //ShowWaveText("Boss Round");
                     shownText = true;
                     bossActive = true;
                     boss.SetActive(true);

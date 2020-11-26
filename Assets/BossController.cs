@@ -16,7 +16,7 @@ public class BossController : MonoBehaviour
     public int amountToSpawn=1;
     public ProjectileController projCon;
     private int currentAmount;
-    private float maxHealth = 500;
+    public float maxHealth = 500;
     public float health=500;
     private GameObject player;
     private Transform ui_BossHealthBar;
@@ -100,6 +100,7 @@ public class BossController : MonoBehaviour
     {
         Time.timeScale = 0;
         Look.cursorLocked = false;
+        Destroy(this.gameObject);
     }
 
 
