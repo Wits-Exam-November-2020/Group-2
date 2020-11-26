@@ -6,6 +6,7 @@ public class ProjectileController : MonoBehaviour
 {
     public GameObject muzzleFlash;
     private GameObject currentMuzzle;
+    public AudioSource shootSound;
 
     public GameObject projectilePrefab; 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class ProjectileController : MonoBehaviour
 
     public void ShootProjectile()
     {
+        shootSound.Play();
         currentMuzzle = Instantiate(muzzleFlash, transform.position, transform.rotation) as GameObject;
         currentMuzzle.transform.parent = transform;
         GameObject currentBullet = Instantiate(projectilePrefab, transform.position, Quaternion.identity);

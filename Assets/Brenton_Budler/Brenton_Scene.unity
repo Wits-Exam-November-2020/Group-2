@@ -18021,6 +18021,7 @@ MonoBehaviour:
     - amount: 20
       EnemyPrefabIndex: 2
   boss: {fileID: 1394259419}
+  bossActive: 0
   timeBetweenSpawns: 4
   timeBetweenWaves: 15
   currentWave: 0
@@ -18050,6 +18051,7 @@ MonoBehaviour:
     - amount: 1
       EnemyPrefabIndex: 0
   boss: {fileID: 1394259419}
+  bossActive: 0
   timeBetweenSpawns: 2
   timeBetweenWaves: 8
   currentWave: 0
@@ -21472,10 +21474,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 53037476370817206, guid: 73bd6e232ef7278459829792cf67e04f,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1308907408047979196, guid: 73bd6e232ef7278459829792cf67e04f,
         type: 3}
       propertyPath: m_Name
       value: MusicController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308907408047979197, guid: 73bd6e232ef7278459829792cf67e04f,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308907408047979197, guid: 73bd6e232ef7278459829792cf67e04f,
+        type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1308907408047979199, guid: 73bd6e232ef7278459829792cf67e04f,
         type: 3}

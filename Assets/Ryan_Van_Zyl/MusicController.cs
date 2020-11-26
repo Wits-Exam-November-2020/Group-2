@@ -7,12 +7,15 @@ public class MusicController : MonoBehaviour
 {
     private bool wave2Started;
     private bool volumeChanged;
-    public AudioSource musicSource;
+    public AudioSource mainMusic;
+    public AudioSource bossSong;
+
     private float mainVolume;
+    private NewEnemySpawner waveManager;
 
     private void Awake()
     {
-        mainVolume = musicSource.volume;
+        mainVolume = mainMusic.volume;
         wave2Started = false;
         volumeChanged = false;
         DontDestroyOnLoad(this.gameObject);
@@ -29,12 +32,13 @@ public class MusicController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            musicSource.volume = mainVolume;
+            mainMusic.volume = mainVolume;
+            bossSong.volume = mainVolume;
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 1 && !volumeChanged)
         {
-            NewEnemySpawner waveManager = GameObject.Find("Manager").GetComponent<NewEnemySpawner>();
+            waveManager = GameObject.Find("Manager").GetComponent<NewEnemySpawner>();
             if (waveManager.currentWave == 2 && !volumeChanged)
             {
                 wave2Started = true;
@@ -43,10 +47,24 @@ public class MusicController : MonoBehaviour
             {
                 volumeChanged = true;
                 wave2Started = false;
-                musicSource.volume += 0.04f;
+                mainMusic.volume += 0.04f;
             }
 
         }
+
+        if(waveManager.bossActive)
+        {
+            bossSong.Play();
+            mainMusic.Stop();
+        }
+        else if(!bossSong.isPlaying)
+        {
+           if (!mainMusic.isPlaying)
+            {
+                mainMusic.Play();
+            }
+        }
+        
         
     }
 

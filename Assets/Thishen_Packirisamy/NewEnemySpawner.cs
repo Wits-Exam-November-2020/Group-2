@@ -11,6 +11,7 @@ public class NewEnemySpawner : MonoBehaviour
     private List<GameObject> enemySpawnPoints;
     public Wave[] waves;
     public GameObject boss;
+    public bool bossActive = false;
     public float timeBetweenSpawns;
     public float timeBetweenWaves;
     public int currentWave = 0;
@@ -34,6 +35,7 @@ public class NewEnemySpawner : MonoBehaviour
     {
         waveText = GameObject.Find("HUD/WaveText").GetComponent<Text>();
         ShowWaveText("Wave 1");
+        bossActive = false;
     }
 
     // Update is called once per frame
@@ -60,6 +62,7 @@ public class NewEnemySpawner : MonoBehaviour
             {
                     ShowWaveText("Boss Round");
                     shownText = true;
+                    bossActive = true;
                     boss.SetActive(true);
             }
 
