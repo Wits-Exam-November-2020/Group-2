@@ -214,6 +214,7 @@ MonoBehaviour:
   jetWait: 0.5
   jetRecovery: 0.2
   lengthOfSlide: 0.5
+  killsText: {fileID: 0}
   max_fuel: 2
   max_health: 100
   max_shield: 96
@@ -240,6 +241,7 @@ MonoBehaviour:
   runningSound: {fileID: 1299057154948392729}
   costOfAmmo: 0
   wallet: 0
+  dead: 0
 --- !u!114 &1071266609167082415
 MonoBehaviour:
   m_ObjectHideFlags: 0

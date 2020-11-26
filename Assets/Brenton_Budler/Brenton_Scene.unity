@@ -18067,7 +18067,7 @@ GameObject:
   - component: {fileID: 1286770707}
   - component: {fileID: 1286770706}
   m_Layer: 5
-  m_Name: Kills_Text
+  m_Name: Boss_Kills_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22612,6 +22612,10 @@ PrefabInstance:
       propertyPath: WinScreen
       value: 
       objectReference: {fileID: 614848275}
+    - target: {fileID: 1176470818, guid: 97f67d506fde0d84989a2786c90a7ef3, type: 3}
+      propertyPath: killsText
+      value: 
+      objectReference: {fileID: 1286770706}
     - target: {fileID: 2269388285417153664, guid: 97f67d506fde0d84989a2786c90a7ef3,
         type: 3}
       propertyPath: m_Name

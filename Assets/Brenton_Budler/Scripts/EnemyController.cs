@@ -85,17 +85,17 @@ public class EnemyController : MonoBehaviour
                
                 if ((int)stuckCheckTime%2==0)
                 {
-                    Debug.Log("checking");
+
                     if (Vector3.Distance(transform.position,startPosStuckCheck)>stuckDistance)
                     {
                         moved = true;
-                        Debug.Log("moved");
+                      
                     }
                     if (stuckCheckTime >= 10)
                     {
                         if (moved == false)
                         {
-                            Debug.Log("respawn");
+                         
                             enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint").ToList<GameObject>();
                             enemySpawnPoints.Sort(SortByDistance);
                             transform.position = enemySpawnPoints[Random.Range(1, enemySpawnPoints.Count - 1)].transform.position;
@@ -174,7 +174,7 @@ public class EnemyController : MonoBehaviour
 
 
                 }
-                Debug.Log("Attack");
+
             }
     }
 

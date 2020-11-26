@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public float jetWait;
     public float jetRecovery;
     public float lengthOfSlide;
+    private Text killsText;
 
     public float max_fuel;
     public int max_health;
@@ -116,7 +117,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-
+     
         dead = false;
         wallet = 200; //200
         costOfAmmo = 50;
@@ -147,6 +148,7 @@ public class Player : MonoBehaviour
         ui_ammobar = GameObject.Find("HUD/AmmoBar/Bar").transform;
         ui_shieldbar = GameObject.Find("HUD/Shield/Bar").transform;
         currencyText = GameObject.Find("HUD/Ammo/Text").GetComponent<Text>();
+        killsText = GameObject.Find("HUD/LoseScreen/Kills_Text").GetComponent<Text>();
 
         takeDamageImage = GameObject.Find("HUD/DamagePanel").GetComponent<Image>();
         takeDamageImage.color = new Color(0, 0, 0, 0);
@@ -697,13 +699,14 @@ public class Player : MonoBehaviour
         if (current_health<=0)
         {
             PauseMenu.isPaused = true;
-            
             current_health = 0;
             deathMenu.SetActive(true);
+            killsText.text = "" + GameController.instance.kills;
+
             Time.timeScale = 0.1f;
             dead = true;
             Invoke("FreezeTime", 0.4f);
-
+            
             //SceneManager.LoadScene(0);
             //GameController.instance.Spawn();
             //current_health = max_health;

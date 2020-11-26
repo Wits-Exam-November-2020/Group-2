@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class BossController : MonoBehaviour
     private GameObject player;
     private Transform ui_BossHealthBar;
     public GameObject WinScreen;
+    public Text killsText;
 
     // Start is called before the first frame update
     void Start()
@@ -83,7 +85,8 @@ public class BossController : MonoBehaviour
         {
 
             health = 0;
-           WinScreen.SetActive(true);
+            WinScreen.SetActive(true);
+            killsText.text = "" + GameController.instance.kills;
             Time.timeScale = 0.1f;
             player.GetComponent<Player>().dead = true;
             Invoke("FreezeTime", 0.5f);
