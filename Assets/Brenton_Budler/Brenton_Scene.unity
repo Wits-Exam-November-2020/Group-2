@@ -21528,25 +21528,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 53037476370817206, guid: 73bd6e232ef7278459829792cf67e04f,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1308907408047979196, guid: 73bd6e232ef7278459829792cf67e04f,
         type: 3}
       propertyPath: m_Name
       value: MusicController
-      objectReference: {fileID: 0}
-    - target: {fileID: 1308907408047979197, guid: 73bd6e232ef7278459829792cf67e04f,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1308907408047979197, guid: 73bd6e232ef7278459829792cf67e04f,
-        type: 3}
-      propertyPath: Loop
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1308907408047979199, guid: 73bd6e232ef7278459829792cf67e04f,
         type: 3}

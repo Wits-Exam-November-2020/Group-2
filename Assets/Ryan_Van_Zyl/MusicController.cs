@@ -8,7 +8,7 @@ public class MusicController : MonoBehaviour
     private bool wave2Started;
     private bool volumeChanged;
     public AudioSource mainMusic;
-    public AudioSource bossSong;
+
 
     private float mainVolume;
     private NewEnemySpawner waveManager;
@@ -33,7 +33,7 @@ public class MusicController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             mainMusic.volume = mainVolume;
-            bossSong.volume = mainVolume;
+    
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 1 && !volumeChanged)
@@ -52,19 +52,7 @@ public class MusicController : MonoBehaviour
 
         }
 
-        if(waveManager.bossActive)
-        {
-            bossSong.Play();
-            mainMusic.Stop();
-        }
-        else if(!bossSong.isPlaying)
-        {
-           if (!mainMusic.isPlaying)
-            {
-                mainMusic.Play();
-            }
-        }
-        
+    
         
     }
 
