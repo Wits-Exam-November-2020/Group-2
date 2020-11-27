@@ -19,13 +19,16 @@ public class BulletMovement : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         dir = target.position - transform.position;
 
     }
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("Player(Clone)").GetComponent<Player>();
+
         if (target == null)
         {
             Destroy(gameObject);
